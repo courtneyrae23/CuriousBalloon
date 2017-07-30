@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RenderManLookFile Version="1" Format="RenderMan Look Data" AssemblyName="camera2_camShape2_Final">
+    <InjectablePayloads>
+        <Payload Id="Picnic_Bench1:PxrLMDiffuse1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "Picnic_Bench1_place2dTexture4" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["Picnic_Bench1_place2dTexture4_0"]
+	Pattern "PxrMayaFile" "Picnic_Bench1_file3" "string fileTextureName" ["renderman/textures/job/Bench.jpg.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["Picnic_Bench1_place2dTexture4:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["Picnic_Bench1_file3_0"]
+	Bxdf "PxrLMDiffuse" "Picnic_Bench1_Bench_M" "reference color frontColor" ["Picnic_Bench1_file3:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["Picnic_Bench1_Bench_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="Tree:PxrLMDiffuse3SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "Tree_place2dTexture11" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["Tree_place2dTexture11_0"]
+	Pattern "PxrMayaFile" "Tree_file9" "string fileTextureName" ["renderman/textures/job/Bark.png.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["Tree_place2dTexture11:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["Tree_file9_0"]
+	Bxdf "PxrLMDiffuse" "Tree_Trunk_M" "reference color frontColor" ["Tree_file9:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["Tree_Trunk_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="lamp:PxrLMDiffuse1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMDiffuse" "lamp_Lamp_Body_M" "color frontColor" [0 0 0] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] 
+		"normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["lamp_Lamp_Body_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="lamp:PxrLMGlass1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMGlass" "lamp_Lamp_Glass_M" "int thin" [1] "float eta" [1.5] "color reflectionColor" [1 0.616932 0] "color refractionColor" [1 1 0] "float roughness" [0.05] "float absorption" [0] "color transmissionColor" [0.214041 0.214041 0.214041] 
+		"int shadows" [0] "normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["lamp_Lamp_Glass_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="Tree:PxrLMDiffuse1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "Tree_place2dTexture9" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["Tree_place2dTexture9_0"]
+	Pattern "PxrMayaFile" "Tree_file7" "string fileTextureName" ["renderman/textures/job/Leaves Dark.jpg.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["Tree_place2dTexture9:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["Tree_file7_0"]
+	Bxdf "PxrLMDiffuse" "Tree_Dark_Leaves_M" "reference color frontColor" ["Tree_file7:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["Tree_Dark_Leaves_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="apple1:PxrLMDiffuse2SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "apple1_place2dTexture1" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["apple1_place2dTexture1_0"]
+	Pattern "PxrMayaFile" "apple1_file1" "string fileTextureName" ["renderman/textures/job/Apple.jpg.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["apple1_place2dTexture1:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["apple1_file1_0"]
+	Bxdf "PxrLMDiffuse" "apple1_PxrLMDiffuse2" "reference color frontColor" ["apple1_file1:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["apple1_PxrLMDiffuse2_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="BirthdayCake:PxrLMDiffuse5SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "BirthdayCake_place2dTexture10" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["BirthdayCake_place2dTexture10_0"]
+	Pattern "PxrMayaFile" "BirthdayCake_file10" "string fileTextureName" ["renderman/textures/job/Cake Frosting.jpg.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["BirthdayCake_place2dTexture10:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["BirthdayCake_file10_0"]
+	Bxdf "PxrLMDiffuse" "BirthdayCake_Frosting_M" "reference color frontColor" ["BirthdayCake_file10:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["BirthdayCake_Frosting_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="YellowBalloon1:PxrLMDiffuse4SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMDiffuse" "YellowBalloon1_Purple" "color frontColor" [0.277055 0 0.277055] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] 
+		"normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["YellowBalloon1_Purple_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="apple1:PxrLMDiffuse1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMDiffuse" "apple1_PxrLMDiffuse1" "color frontColor" [0.00854038 0 0.000109946] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] 
+		"normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["apple1_PxrLMDiffuse1_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="basket:PxrLMDiffuse2SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "basket_place2dTexture2" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["basket_place2dTexture2_0"]
+	Pattern "PxrMayaFile" "basket_file2" "string fileTextureName" ["renderman/textures/job/Basket.jpg.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["basket_place2dTexture2:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["basket_file2_0"]
+	Bxdf "PxrLMDiffuse" "basket_Basket_M" "reference color frontColor" ["basket_file2:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["basket_Basket_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="BirthdayCake:PxrLMDiffuse4SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "BirthdayCake_place2dTexture9" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["BirthdayCake_place2dTexture9_0"]
+	Pattern "PxrMayaFile" "BirthdayCake_file9" "string fileTextureName" ["renderman/textures/job/Cake Brown.jpg.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["BirthdayCake_place2dTexture9:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["BirthdayCake_file9_0"]
+	Bxdf "PxrLMDiffuse" "BirthdayCake_Brown_M" "reference color frontColor" ["BirthdayCake_file9:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["BirthdayCake_Brown_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="sun:PxrLMDiffuse1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "sun_place2dTexture4" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["sun_place2dTexture4_0"]
+	Pattern "PxrMayaFile" "sun_file3" "string fileTextureName" ["renderman/textures/job/Sunburst.jpg.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["sun_place2dTexture4:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["sun_file3_0"]
+	Bxdf "PxrLMDiffuse" "sun_Sun_M" "reference color frontColor" ["sun_file3:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["sun_Sun_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="BirthdayCake:PxrLMPlastic1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMPlastic" "BirthdayCake_Candle_M" "color diffuseColor" [1 1 1] "float diffuseRoughness" [0.842697] "float translucence" [0.640449] "color sheen" [0 0 0] "color incandescence" [0 0 0] "normal diffuseNn" [0 0 0] 
+		"color specularColor" [1 1 1] "float specularRoughness" [0.1] "float specularAnisotropy" [0] "color specularEta" [1.5 1.5 1.5] "normal specularNn" [0 0 0] "vector specularTn" [0 0 0] 
+		"color clearcoatColor" [0 0 0] "float clearcoatRoughness" [0.01] "float clearcoatAnisotropy" [0] "float clearcoatEta" [1.3] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] "normal clearcoatNn" [0 0 0] 
+		"vector clearcoatTn" [0 0 0] "float presence" [1] "int inputAOV" [0] "int sampleLightEmission" [0] "__instanceid" ["BirthdayCake_Candle_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="GreenBalloonwithFaceandCheeks:PxrLMDiffuse1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMDiffuse" "GreenBalloonwithFaceandCheeks_Green" "color frontColor" [0 1 0] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] 
+		"normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["GreenBalloonwithFaceandCheeks_Green_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="PxrLMDiffuse4SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMDiffuse" "All_String" "color frontColor" [0.497942 0.497942 0.497942] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] 
+		"normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["All_String_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="moon:PxrLMDiffuse1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "moon_place2dTexture2" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["moon_place2dTexture2_0"]
+	Pattern "PxrMayaFile" "moon_file2" "string fileTextureName" ["renderman/textures/job/Moon Craters.jpg.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["moon_place2dTexture2:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["moon_file2_0"]
+	Bxdf "PxrLMDiffuse" "moon_Moon_M" "reference color frontColor" ["moon_file2:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["moon_Moon_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="Bag_and_Chip:PxrLMDiffuse1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "Bag_and_Chip_place2dTexture3" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["Bag_and_Chip_place2dTexture3_0"]
+	Pattern "PxrMayaFile" "Bag_and_Chip_file2" "string fileTextureName" ["renderman/textures/job/Lays.jpg.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["Bag_and_Chip_place2dTexture3:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["Bag_and_Chip_file2_0"]
+	Bxdf "PxrLMDiffuse" "Bag_and_Chip_PxrLMDiffuse1" "reference color frontColor" ["Bag_and_Chip_file2:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["Bag_and_Chip_PxrLMDiffuse1_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="PxrLMDiffuse2SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMDiffuse" "All_White" "color frontColor" [1 1 1] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] 
+		"normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["All_White_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="Bag_and_Chip:PxrLMDiffuse2SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "Bag_and_Chip_place2dTexture4" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["Bag_and_Chip_place2dTexture4_0"]
+	Pattern "PxrMayaNoise" "Bag_and_Chip_noise1" "float threshold" [0] "float amplitude" [1] "float ratio" [0.707] "float frequencyRatio" [2] "int depthMax" [3] "int inflection" [0] "float time" [0] "float frequency" [8] "float implode" [0] "float[2] implodeCenter" [0.5 0.5] "int noiseType" [1] "float density" [1] "float spottyness" [0.1] 
+		"float sizeRand" [0] "float randomness" [1] "int falloff" [2] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] "color colorOffset" [0 0 0] "float alphaGain" [1] 
+		"float alphaOffset" [0] "int alphaIsLuminance" [1] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["Bag_and_Chip_place2dTexture4:result"] "__instanceid" ["Bag_and_Chip_noise1_0"]
+	Pattern "PxrBump" "Bag_and_Chip_bump2d1" "reference float inputBump" ["Bag_and_Chip_noise1:outAlpha"] "string filename" [""] "int firstChannel" [0] "int atlasStyle" [0] "int invertT" [1] "float blur" [0] "int lerp" [1] "normal inputN" [1 0 0] "float center" [0] "float scale" [1] "int reverse" [0] "int disable" [0] "__instanceid" ["Bag_and_Chip_bump2d1_0"]
+	Bxdf "PxrLMDiffuse" "Bag_and_Chip_PxrLMDiffuse2" "color frontColor" [1 1 0.0125104] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0.426966] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] 
+		"reference normal bumpNormal" ["Bag_and_Chip_bump2d1:resultN"] "float presence" [1] "int inputAOV" [0] "__instanceid" ["Bag_and_Chip_PxrLMDiffuse2_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="BlueBalloonwithFaceandCheeks:PxrLMDiffuse1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMDiffuse" "BlueBalloonwithFaceandCheeks_Blue" "color frontColor" [0 1 0.735798] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] 
+		"normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["BlueBalloonwithFaceandCheeks_Blue_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="Ground_and_lights:PxrLMDiffuse2SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "Ground_and_lights_place2dTexture2" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["Ground_and_lights_place2dTexture2_0"]
+	Pattern "PxrMayaFile" "Ground_and_lights_file2" "string fileTextureName" ["renderman/textures/job/Grass.jpg.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["Ground_and_lights_place2dTexture2:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["Ground_and_lights_file2_0"]
+	Bxdf "PxrLMDiffuse" "Ground_and_lights_Grass" "reference color frontColor" ["Ground_and_lights_file2:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["Ground_and_lights_Grass_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="PxrLMDiffuse3SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMDiffuse" "All_Black" "color frontColor" [0.000510836 0 0] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] 
+		"normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["All_Black_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="Tree:PxrLMDiffuse2SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "Tree_place2dTexture10" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["Tree_place2dTexture10_0"]
+	Pattern "PxrMayaFile" "Tree_file8" "string fileTextureName" ["renderman/textures/job/Leaves Bright.jpg.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["Tree_place2dTexture10:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["Tree_file8_0"]
+	Bxdf "PxrLMDiffuse" "Tree_Bright_Leaves_M" "reference color frontColor" ["Tree_file8:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["Tree_Bright_Leaves_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+    </InjectablePayloads>
+    <TightBindings>
+        <Binding Key="Characters/YellowBalloon1:YellowBalloon/YellowBalloon1:Face_Rig1:Balloon_Center/YellowBalloon1:Face_Rig1:FACE/YellowBalloon1:Face_Rig1:RW/YellowBalloon1:Face_Rig1:RWShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Apples/Apple2/Branch/BranchShape" PayloadId="apple1:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube32/Picnic_Bench1:pCubeShape32" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Characters/BlueBalloonwithFaceandCheeks:YellowBalloon/BlueBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/BlueBalloonwithFaceandCheeks:Face_Rig1:FACE/BlueBalloonwithFaceandCheeks:Face_Rig1:RW/BlueBalloonwithFaceandCheeks:Face_Rig1:RWShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Characters/YellowBalloon1:YellowBalloon/YellowBalloon1:Face_Rig1:Balloon_Center/YellowBalloon1:Face_Rig1:FACE/YellowBalloon1:Face_Rig1:LEB/YellowBalloon1:Face_Rig1:LEBShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube10/Picnic_Bench1:pCubeShape10" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Tree:Tree_Group/Tree:Bush4/Tree:BushShape4" PayloadId="Tree:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube36/Picnic_Bench1:pCubeShape36" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Table_Stuff/basket:Basket/basket:Cover/basket:CoverShape" PayloadId="basket:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Tree:Tree_Group/Tree:Trunk/Tree:TrunkShape" PayloadId="Tree:PxrLMDiffuse3SG"/>
+        <Binding Key="Environment/Table_Stuff/Apples/Apple/Apple/AppleShape" PayloadId="apple1:PxrLMDiffuse2SG"/>
+        <Binding Key="Characters/YellowBalloon1:YellowBalloon/YellowBalloon1:pSphere1/YellowBalloon1:pSphereShape1" PayloadId="YellowBalloon1:PxrLMDiffuse4SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube17/Picnic_Bench1:pCubeShape17" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube31/Picnic_Bench1:pCubeShape31" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Characters/BlueBalloonwithFaceandCheeks:YellowBalloon/BlueBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/BlueBalloonwithFaceandCheeks:Face_Rig1:FACE/BlueBalloonwithFaceandCheeks:Face_Rig1:M_Smile/BlueBalloonwithFaceandCheeks:Face_Rig1:M_SmileShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube35/Picnic_Bench1:pCubeShape35" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Table_Stuff/basket:Basket/basket:Left_Handle/basket:Left_HandleShape" PayloadId="basket:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Tree:Tree_Group/Tree:Bush1/Tree:BushShape1" PayloadId="Tree:PxrLMDiffuse2SG"/>
+        <Binding Key="Characters/BlueBalloonwithFaceandCheeks:YellowBalloon/BlueBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/BlueBalloonwithFaceandCheeks:Face_Rig1:FACE/BlueBalloonwithFaceandCheeks:Face_Rig1:RWS/BlueBalloonwithFaceandCheeks:Face_Rig1:RWSShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Apples/Apple/Branch/BranchShape" PayloadId="apple1:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube37/Picnic_Bench1:pCubeShape37" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Tree:Tree_Group/Tree:Bush3/Tree:BushShape3" PayloadId="Tree:PxrLMDiffuse2SG"/>
+        <Binding Key="Characters/YellowBalloon1:YellowBalloon/YellowBalloon1:Face_Rig1:Balloon_Center/YellowBalloon1:Face_Rig1:FACE/YellowBalloon1:Face_Rig1:RWS/YellowBalloon1:Face_Rig1:RWSShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Packet/Bag_and_Chip:PacketShape" PayloadId="Bag_and_Chip:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube19/Picnic_Bench1:pCubeShape19" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Characters/BlueBalloonwithFaceandCheeks:YellowBalloon/BlueBalloonwithFaceandCheeks:pCone1/BlueBalloonwithFaceandCheeks:pConeShape1" PayloadId="BlueBalloonwithFaceandCheeks:PxrLMDiffuse1SG"/>
+        <Binding Key="Characters/YellowBalloon1:YellowBalloon/YellowBalloon1:pCone1/YellowBalloon1:pConeShape1" PayloadId="YellowBalloon1:PxrLMDiffuse4SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube28/Picnic_Bench1:pCubeShape28" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube33/Picnic_Bench1:pCubeShape33" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Characters/GreenBalloonwithFaceandCheeks:YellowBalloon/GreenBalloonwithFaceandCheeks:pCylinder1/pCylinderShape1Deformed" PayloadId="PxrLMDiffuse4SG"/>
+        <Binding Key="Environment/Table_Stuff/basket:Basket/basket:Body/basket:BodyShape" PayloadId="basket:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Apples/Apple2/Apple/AppleShape" PayloadId="apple1:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube29/Picnic_Bench1:pCubeShape29" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube34/Picnic_Bench1:pCubeShape34" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Characters/BlueBalloonwithFaceandCheeks:YellowBalloon/BlueBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/BlueBalloonwithFaceandCheeks:Face_Rig1:FACE/BlueBalloonwithFaceandCheeks:Face_Rig1:REB/BlueBalloonwithFaceandCheeks:Face_Rig1:REBShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Characters/YellowBalloon1:YellowBalloon/YellowBalloon1:pCylinder1/pCylinderShape1Deformed" PayloadId="PxrLMDiffuse4SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube25/Picnic_Bench1:pCubeShape25" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube30/Picnic_Bench1:pCubeShape30" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Characters/BlueBalloonwithFaceandCheeks:YellowBalloon/BlueBalloonwithFaceandCheeks:pCylinder1/pCylinderShape1Deformed" PayloadId="PxrLMDiffuse4SG"/>
+        <Binding Key="Characters/YellowBalloon1:YellowBalloon/YellowBalloon1:Face_Rig1:Balloon_Center/YellowBalloon1:Face_Rig1:FACE/YellowBalloon1:Face_Rig1:LW/YellowBalloon1:Face_Rig1:LWShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bench/Picnic_Bench1:pCube38/Picnic_Bench1:pCubeShape38" PayloadId="Picnic_Bench1:PxrLMDiffuse1SG"/>
+        <Binding Key="Characters/BlueBalloonwithFaceandCheeks:YellowBalloon/BlueBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/BlueBalloonwithFaceandCheeks:Face_Rig1:FACE/BlueBalloonwithFaceandCheeks:Face_Rig1:LW/BlueBalloonwithFaceandCheeks:Face_Rig1:LWShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/basket:Basket/basket:Right_Handle/basket:Right_HandleShape" PayloadId="basket:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/lamp:Lamp/lamp:Body/lamp:BodyShape" PayloadId="lamp:PxrLMDiffuse1SG"/>
+        <Binding Key="Characters/GreenBalloonwithFaceandCheeks:YellowBalloon/GreenBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/GreenBalloonwithFaceandCheeks:Face_Rig1:FACE/GreenBalloonwithFaceandCheeks:Face_Rig1:LWS/GreenBalloonwithFaceandCheeks:Face_Rig1:LWSShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Apples/Apple1/Apple/AppleShape" PayloadId="apple1:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube15/Bag_and_Chip:pCubeShape15" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube20/Bag_and_Chip:pCubeShape20" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube6/Bag_and_Chip:pCubeShape6" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/BirthdayCake:Cake/BirthdayCake:Candle3/BirthdayCake:CandleShape3" PayloadId="BirthdayCake:PxrLMPlastic1SG"/>
+        <Binding Key="Environment/Table_Stuff/Apples/Apple1/Branch/BranchShape" PayloadId="apple1:PxrLMDiffuse1SG"/>
+        <Binding Key="Characters/GreenBalloonwithFaceandCheeks:YellowBalloon/GreenBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/GreenBalloonwithFaceandCheeks:Face_Rig1:FACE/GreenBalloonwithFaceandCheeks:Face_Rig1:LB/GreenBalloonwithFaceandCheeks:Face_Rig1:LBShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube13/Bag_and_Chip:pCubeShape13" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube8/Bag_and_Chip:pCubeShape8" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/BirthdayCake:Cake/BirthdayCake:Candle1/BirthdayCake:CandleShape1" PayloadId="BirthdayCake:PxrLMPlastic1SG"/>
+        <Binding Key="Characters/GreenBalloonwithFaceandCheeks:YellowBalloon/GreenBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/GreenBalloonwithFaceandCheeks:Face_Rig1:FACE/GreenBalloonwithFaceandCheeks:Face_Rig1:RW/GreenBalloonwithFaceandCheeks:Face_Rig1:RWShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Apples/apple1:Apple/apple1:Apple/apple1:AppleShape" PayloadId="apple1:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube3/Bag_and_Chip:pCubeShape3" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Apples/apple1:Apple/apple1:Branch/apple1:BranchShape" PayloadId="apple1:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube27/Bag_and_Chip:pCubeShape27" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube32/Bag_and_Chip:pCubeShape32" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Characters/GreenBalloonwithFaceandCheeks:YellowBalloon/GreenBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/GreenBalloonwithFaceandCheeks:Face_Rig1:FACE/GreenBalloonwithFaceandCheeks:Face_Rig1:REB/GreenBalloonwithFaceandCheeks:Face_Rig1:REBShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Characters/GreenBalloonwithFaceandCheeks:YellowBalloon/GreenBalloonwithFaceandCheeks:pSphere1/GreenBalloonwithFaceandCheeks:pSphereShape1" PayloadId="GreenBalloonwithFaceandCheeks:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube18/Bag_and_Chip:pCubeShape18" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube23/Bag_and_Chip:pCubeShape23" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/BirthdayCake:Cake/BirthdayCake:Bottom/BirthdayCake:BottomShape" PayloadId="BirthdayCake:PxrLMDiffuse4SG"/>
+        <Binding Key="Environment/Table_Stuff/BirthdayCake:Cake/BirthdayCake:Candle6/BirthdayCake:CandleShape6" PayloadId="BirthdayCake:PxrLMPlastic1SG"/>
+        <Binding Key="Environment/Table_Stuff/BirthdayCake:Cake/BirthdayCake:Top/BirthdayCake:TopShape" PayloadId="BirthdayCake:PxrLMDiffuse4SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube14/Bag_and_Chip:pCubeShape14" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/BirthdayCake:Cake/BirthdayCake:Candle2/BirthdayCake:CandleShape2" PayloadId="BirthdayCake:PxrLMPlastic1SG"/>
+        <Binding Key="Characters/GreenBalloonwithFaceandCheeks:YellowBalloon/GreenBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/GreenBalloonwithFaceandCheeks:Face_Rig1:FACE/GreenBalloonwithFaceandCheeks:Face_Rig1:LEB/GreenBalloonwithFaceandCheeks:Face_Rig1:LEBShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube9/Bag_and_Chip:pCubeShape9" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/BirthdayCake:Cake/BirthdayCake:Middle/BirthdayCake:MiddleShape" PayloadId="BirthdayCake:PxrLMDiffuse5SG"/>
+        <Binding Key="Characters/GreenBalloonwithFaceandCheeks:YellowBalloon/GreenBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/GreenBalloonwithFaceandCheeks:Face_Rig1:FACE/GreenBalloonwithFaceandCheeks:Face_Rig1:LW/GreenBalloonwithFaceandCheeks:Face_Rig1:LWShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube16/Bag_and_Chip:pCubeShape16" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube21/Bag_and_Chip:pCubeShape21" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/BirthdayCake:Cake/BirthdayCake:Candle4/BirthdayCake:CandleShape4" PayloadId="BirthdayCake:PxrLMPlastic1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube17/Bag_and_Chip:pCubeShape17" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube22/Bag_and_Chip:pCubeShape22" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube4/Bag_and_Chip:pCubeShape4" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/BirthdayCake:Cake/BirthdayCake:Candle12/BirthdayCake:CandleShape12" PayloadId="BirthdayCake:PxrLMPlastic1SG"/>
+        <Binding Key="Environment/Table_Stuff/BirthdayCake:Cake/BirthdayCake:Candle5/BirthdayCake:CandleShape5" PayloadId="BirthdayCake:PxrLMPlastic1SG"/>
+        <Binding Key="Environment/Ground_and_lights:pPlane1/Ground_and_lights:pPlaneShape1" PayloadId="Ground_and_lights:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube19/Bag_and_Chip:pCubeShape19" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube24/Bag_and_Chip:pCubeShape24" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/BirthdayCake:Cake/BirthdayCake:Candle7/BirthdayCake:CandleShape7" PayloadId="BirthdayCake:PxrLMPlastic1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube25/Bag_and_Chip:pCubeShape25" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube30/Bag_and_Chip:pCubeShape30" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/BirthdayCake:Cake/BirthdayCake:Candle8/BirthdayCake:CandleShape8" PayloadId="BirthdayCake:PxrLMPlastic1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube26/Bag_and_Chip:pCubeShape26" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube31/Bag_and_Chip:pCubeShape31" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/BirthdayCake:Cake/BirthdayCake:Candle9/BirthdayCake:CandleShape9" PayloadId="BirthdayCake:PxrLMPlastic1SG"/>
+        <Binding Key="Characters/GreenBalloonwithFaceandCheeks:YellowBalloon/GreenBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/GreenBalloonwithFaceandCheeks:Face_Rig1:FACE/GreenBalloonwithFaceandCheeks:Face_Rig1:M_Smile/GreenBalloonwithFaceandCheeks:Face_Rig1:M_SmileShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Environment/Table_Stuff/BirthdayCake:Cake/BirthdayCake:Candle10/BirthdayCake:CandleShape10" PayloadId="BirthdayCake:PxrLMPlastic1SG"/>
+        <Binding Key="Environment/sun:Sun/sun:SunShape" PayloadId="sun:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube5/Bag_and_Chip:pCubeShape5" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube7/Bag_and_Chip:pCubeShape7" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube10/Bag_and_Chip:pCubeShape10" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube11/Bag_and_Chip:pCubeShape11" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Characters/GreenBalloonwithFaceandCheeks:YellowBalloon/GreenBalloonwithFaceandCheeks:pCone1/GreenBalloonwithFaceandCheeks:pConeShape1" PayloadId="GreenBalloonwithFaceandCheeks:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube12/Bag_and_Chip:pCubeShape12" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube28/Bag_and_Chip:pCubeShape28" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube33/Bag_and_Chip:pCubeShape33" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Table_Stuff/Bag_and_Chip:Chips/Bag_and_Chip:Chips/Bag_and_Chip:pCube29/Bag_and_Chip:pCubeShape29" PayloadId="Bag_and_Chip:PxrLMDiffuse2SG"/>
+        <Binding Key="Environment/Tree:Tree_Group/Tree:Head/Tree:HeadShape" PayloadId="Tree:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/lamp:Lamp/lamp:Glass/lamp:GlassShape" PayloadId="lamp:PxrLMGlass1SG"/>
+        <Binding Key="Environment/moon:Moon/moon:MoonShape" PayloadId="moon:PxrLMDiffuse1SG"/>
+        <Binding Key="Environment/Tree:Tree_Group/Tree:Bush2/Tree:BushShape2" PayloadId="Tree:PxrLMDiffuse2SG"/>
+        <Binding Key="Characters/YellowBalloon1:YellowBalloon/YellowBalloon1:Face_Rig1:Balloon_Center/YellowBalloon1:Face_Rig1:FACE/YellowBalloon1:Face_Rig1:REB/YellowBalloon1:Face_Rig1:REBShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Characters/YellowBalloon1:YellowBalloon/YellowBalloon1:Face_Rig1:Balloon_Center/YellowBalloon1:Face_Rig1:FACE/YellowBalloon1:Face_Rig1:RB/YellowBalloon1:Face_Rig1:RBShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Characters/BlueBalloonwithFaceandCheeks:YellowBalloon/BlueBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/BlueBalloonwithFaceandCheeks:Face_Rig1:FACE/BlueBalloonwithFaceandCheeks:Face_Rig1:LB/BlueBalloonwithFaceandCheeks:Face_Rig1:LBShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Characters/BlueBalloonwithFaceandCheeks:YellowBalloon/BlueBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/BlueBalloonwithFaceandCheeks:Face_Rig1:FACE/BlueBalloonwithFaceandCheeks:Face_Rig1:LWS/BlueBalloonwithFaceandCheeks:Face_Rig1:LWSShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Characters/YellowBalloon1:YellowBalloon/YellowBalloon1:Face_Rig1:Balloon_Center/YellowBalloon1:Face_Rig1:FACE/YellowBalloon1:Face_Rig1:LB/YellowBalloon1:Face_Rig1:LBShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Characters/YellowBalloon1:YellowBalloon/YellowBalloon1:Face_Rig1:Balloon_Center/YellowBalloon1:Face_Rig1:FACE/YellowBalloon1:Face_Rig1:LWS/YellowBalloon1:Face_Rig1:LWSShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Characters/BlueBalloonwithFaceandCheeks:YellowBalloon/BlueBalloonwithFaceandCheeks:pSphere1/BlueBalloonwithFaceandCheeks:pSphereShape1" PayloadId="BlueBalloonwithFaceandCheeks:PxrLMDiffuse1SG"/>
+        <Binding Key="Characters/YellowBalloon1:YellowBalloon/YellowBalloon1:Face_Rig1:Balloon_Center/YellowBalloon1:Face_Rig1:FACE/YellowBalloon1:Face_Rig1:M_Smile/YellowBalloon1:Face_Rig1:M_SmileShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Characters/BlueBalloonwithFaceandCheeks:YellowBalloon/BlueBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/BlueBalloonwithFaceandCheeks:Face_Rig1:FACE/BlueBalloonwithFaceandCheeks:Face_Rig1:RB/BlueBalloonwithFaceandCheeks:Face_Rig1:RBShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Characters/BlueBalloonwithFaceandCheeks:YellowBalloon/BlueBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/BlueBalloonwithFaceandCheeks:Face_Rig1:FACE/BlueBalloonwithFaceandCheeks:Face_Rig1:LEB/BlueBalloonwithFaceandCheeks:Face_Rig1:LEBShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Characters/GreenBalloonwithFaceandCheeks:YellowBalloon/GreenBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/GreenBalloonwithFaceandCheeks:Face_Rig1:FACE/GreenBalloonwithFaceandCheeks:Face_Rig1:RB/GreenBalloonwithFaceandCheeks:Face_Rig1:RBShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Characters/GreenBalloonwithFaceandCheeks:YellowBalloon/GreenBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center/GreenBalloonwithFaceandCheeks:Face_Rig1:FACE/GreenBalloonwithFaceandCheeks:Face_Rig1:RWS/GreenBalloonwithFaceandCheeks:Face_Rig1:RWSShape" PayloadId="PxrLMDiffuse2SG"/>
+    </TightBindings>
+</RenderManLookFile>

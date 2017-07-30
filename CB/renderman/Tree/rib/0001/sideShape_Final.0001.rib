@@ -1,0 +1,291 @@
+##RenderMan RIB
+#Created by RenderMan for Maya 20.10 (@1623687 Jun 15 2016)
+#Wed Aug 24 12:06:26 PM Pacific Daylight Time 2016
+version 3.04
+Option "ribparse" "string varsubst" [""]
+Option "ribparse" "string varsubst" ["$"]
+IfBegin "!defined(RMSPROJ_FROM_ENV)" 
+	Option "user" "string RMSPROJ" ["C:/Users/Arthur/Dropbox/The Curious Balloon/CB/"]
+IfEnd 
+IfBegin "!defined(RMSTREE)" 
+	Option "user" "string RMSTREE" ["C:/Program Files/Pixar/RenderManStudio-20.10-maya2016.5/"]
+IfEnd 
+Option "searchpath" "string resource" ["${RMSPROJ}:@"]
+Option "searchpath" "string archive" ["${RMSPROJ}:."]
+Option "searchpath" "string display" ["${RMSTREE}/bin:@"]
+Option "searchpath" "string shader" ["${RMSPROJ}:${RMSTREE}/lib/shaders/:@"]
+Option "searchpath" "string texture" ["${RMSPROJ}:${RMSTREE}/lib/textures/:@"]
+Option "searchpath" "string rixplugin" ["${RMSTREE}/lib/shaders/:@"]
+Option "searchpath" "string dirmap" [""]
+Option "searchpath" "string rifilter" ["${RMSTREE}/lib/rif/:${RMANTREE}/etc:@"]
+Option "searchpath" "string procedural" ["${RMSTREE}/lib/plugins/:${RMSTREE}/lib/plugins:${RMANTREE}/etc:@"]
+##rifcontrol insert begin -rif RLFInjector -rifend
+FrameBegin 1
+	Identity 
+	Option "user" "string pass_id" ["sideShape_Final"] "string pass_phase" ["/Job/Frames/Images"] "string pass_class" ["Final"] "string pass_flavor" [""] "string pass_crew" [""] "string pass_camera_name" ["sideShape"] "string pass_camera_flavor" [""] "string pass_layer" ["defaultRenderLayer"] "string renderer" ["RIS"] "int pass_features_trace" [1] "int input_color_profile" [0]
+	Option "trace" "int maxdepth" [10]
+	PixelVariance 0.005
+	Option "bucket" "string order" ["horizontal"]
+	Option "limits" "int[2] bucketsize" [16 16]
+	Option "limits" "int gridsize" [256]
+	Option "trace" "float decimationrate" [1]
+	Option "hair" "float minwidth" [0.5]
+	Option "statistics" "int level" [1]
+	Option "statistics" "string filename" ["stdout"]
+	Option "statistics" "string xmlfilename" ["renderman/Tree/rib/0001/sideShape_Final.0001.xml"]
+	Option "limits" "color zthreshold" [0.996 0.996 0.996]
+	Option "limits" "color othreshold" [0.996 0.996 0.996]
+	Option "limits" "int texturememory" [2097152]
+	Option "limits" "int geocachememory" [2097152]
+	Option "limits" "int proceduralmemory" [0]
+	Option "limits" "int deepshadowtiles" [1000]
+	Option "limits" "int deepshadowmemory" [102400]
+	Option "limits" "int radiositycachememory" [102400]
+	Option "limits" "int brickmemory" [10240]
+	Option "shading" "int directlightinglocalizedsampling" [0]
+	Option "limits" "int opacitycachememory" [1024000]
+	CropWindow 0 1 0 1
+	Option "photon" "string lifetime" ["transient"]
+	Option "photon" "int emit" [0]
+	Hider "raytrace" "int adaptall" [0] "string integrationmode" ["path"] "int incremental" [1] "string pixelfiltermode" ["weighted"] "int minsamples" [0] "int maxsamples" [512] "float darkfalloff" [0.025]
+	Integrator "PxrPathTracer" "PxrPathTracer" "int maxPathLength" [10] "string sampleMode" ["bxdf"] "int numLightSamples" [8] "int numBxdfSamples" [8] "int numIndirectSamples" [1] "int numDiffuseSamples" [1] "int numSpecularSamples" [1] "int numSubsurfaceSamples" [1] "int numRefractionSamples" [1] "int rouletteDepth" [4] "float rouletteThreshold" [0.2] "string imagePlaneSubset" ["rman__imageplane"] "int clampDepth" [2] "float clampLuminance" [10] "int allowCaustics" [0]
+	Format 1440 810 1
+	Option "user" "string[1] lightgroups" ["environment"]
+	Display "renderman/Tree/images/sideShape/Tree" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "int merge" [0] "string connection" ["-launchURI C:/Program%20Files/Pixar/RenderManStudio-20.10-maya2016.5/bin/it"] "string dspyParams" [" itOpenHandler {::ice::startTimer;};;; itCloseHandler {::ice::endTimer %arglist; };;; dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 50857 -context \"renderman/Tree/images/sideShape/Tree\" -notes \"(Wed Aug 24 12:06:26 PM Pacific Daylight Time 2016)\nPxrPathTracer  MaxSamples 512  Mode bxdf  Light 8  Bsdf 8  Indir 1\""]
+	#Camera sideShape
+	Clipping 0.1 10000
+	Projection "orthographic" 
+	ScreenWindow -11.7601 11.7601 -6.61503 6.61503
+	Shutter 0 0
+	ConcatTransform [ 0 0 -1 0  0 1 0 0  -1 0 -2.22045e-016 0  -0.0656517 -5.51886 100.116 1 ]
+	Camera "world" "float[2] shutteropening" [0 1]
+	Option "user" "color camera_bg" [0 0 0] "float camera_bga" [0]
+	Imager "background" "color color" [0 0 0] "float alpha" [0]
+	ResourceBegin 
+		WorldBegin 
+			##RLF ScopeBegin -name sideShape_Final -localbinding 1 -rlffilename renderman/Tree/rib/0001/sideShape_Final.0001.rlf -namespace 
+			ScopedCoordinateSystem "world_ref"
+			Attribute "user" "float[17] pasted__place2dTexture2" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture1" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture9" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] pasted__place2dTexture3" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture2" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture3" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture4" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture10" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture5" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture11" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture6" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture7" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture8" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "visibility" "int transmission" [1] "int indirect" [1]
+			Bxdf "PxrDiffuse" "default" 
+			Attribute "user" "int shader_bindingstrength" [0]
+			Attribute "trace" "int maxdiffusedepth" [1] "int maxspeculardepth" [2] "int samplemotion" [1] "float autobias" [1] "float bias" [0.001] "int displacements" [1]
+			Attribute "dice" "string referencecamera" ["worldcamera"]
+			ShadingRate 1
+			Attribute "displacementbound" "string coordinatesystem" ["shader"] "float sphere" [0]
+			Attribute "photon" "string causticmap" [""] "string globalmap" [""]
+			Attribute "user" "string irRenderCam" ["true,100.116,5.51886,-0.0656517"]
+			Attribute "user" "string irRenderCamFOV" ["0"]
+			Attribute "user" "string irRenderCamXform" ["2.22045e-016,0,-1,0,0,1,0,0,1,0,2.22045e-016,0,100.116,5.51886,-0.0656517,1"]
+			Attribute "user" "string irRenderCamRatio" ["1"]
+			AttributeBegin 
+				Attribute "identifier" "string name" ["PxrStdEnvMapLightShape1"]
+				Attribute "grouping" "string membership" ["+rman__imageplane"]
+				Transform [ -1 0 -1.22465e-016 0  0 1 0 0  -1.22465e-016 -0 1 0  0 0 0 1 ]
+				Rotate -90 1 0 0
+				Bxdf "PxrLightEmission" "visualizer" "string __instanceid" ["PxrStdEnvMapLightShape1_visualizer"]
+				IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+					ShadingRate 10
+					Surface "renderman/Tree/shaders/PxrStdEnvMapLightShape1_rfm" "float rman__LightPrimaryVisibility" [1] "float exposure" [0] "string rman__EnvMap" [""] "color envTint" [1 1 1] "float enableProcedural" [1] "float[2] rman__ProceduralResolution" [1024 512] "color proceduralColor" [1 1 1] "float enableTemperature" [0] 
+						"float temperature" [6500] "color specAmount" [1 1 1] "color diffAmount" [1 1 1] "float fixedSampleCount" [-1] "float importance" [1] "float enableShadows" [1] "color shadowColor" [0 0 0] 
+						"float adaptiveShadows" [1] "float shadowMaxDist" [-1] "float shadowTraceBias" [-1] "string shadowSubset" [""] "string shadowExcludeSubset" [""] "string __group" ["environment"] "float intensity" [1] "string coordSys" ["shader"] "__instanceid" ["renderman/Tree/shaders/PxrStdEnvMapLightShape1_rfm_0"]
+					ShadingRate 10
+					AreaLightSource "renderman/Tree/shaders/PxrStdEnvMapLightShape1_rfm" "PxrStdEnvMapLightShape1" "float rman__LightPrimaryVisibility" [1] "float exposure" [0] "string rman__EnvMap" [""] "color envTint" [1 1 1] "float enableProcedural" [1] "float[2] rman__ProceduralResolution" [1024 512] "color proceduralColor" [1 1 1] "float enableTemperature" [0] 
+						"float temperature" [6500] "color specAmount" [1 1 1] "color diffAmount" [1 1 1] "float fixedSampleCount" [-1] "float importance" [1] "float enableShadows" [1] "color shadowColor" [0 0 0] 
+						"float adaptiveShadows" [1] "float shadowMaxDist" [-1] "float shadowTraceBias" [-1] "string shadowSubset" [""] "string shadowExcludeSubset" [""] "string __group" ["environment"] "float intensity" [1] "string coordSys" ["shader"] "__instanceid" ["renderman/Tree/shaders/PxrStdEnvMapLightShape1_rfm_0"]
+					Attribute "user" "int shader_bindingstrength" [0]
+				IfEnd 
+				Attribute "visibility" "int camera" [1]
+				Attribute "visibility" "int indirect" [0] "int transmission" [0]
+				ShadingRate 10
+				Sides 1
+				Attribute "dice" "string offscreenstrategy" ["sphericalprojection"]
+				ReverseOrientation 
+				Opacity [1 1 1]
+				Sides 1
+				Geometry "envsphere" "constant float[2] resolution" [1024 512]
+			AttributeEnd 
+			Illuminate "PxrStdEnvMapLightShape1" 1
+			AttributeBegin 
+			AttributeEnd 
+			AttributeBegin 
+			AttributeEnd 
+			AttributeBegin 
+			AttributeEnd 
+			AttributeBegin 
+			AttributeEnd 
+			AttributeBegin 
+				Attribute "identifier" "string name" ["Tree_Group"]
+				Attribute "identifier" "float id" [7]
+				ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Trunk"]
+					Attribute "identifier" "float id" [8]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0.5 -0.160786 1 ]
+					AttributeBegin 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["TrunkShape"]
+							Attribute "identifier" "float id" [20]
+							Sides 2
+							ShadingInterpolation "smooth"
+							Attribute "user" "int receivesShadows" [1]
+							Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+							Attribute "shade" "string transmissionhitmode" ["shader"]
+							Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+							##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse3SG,
+							TransformBegin 
+								Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Tree/rib/job/staticGeoCache.job.zip!renderman/Tree/rib/job/TrunkShape.job.rib"] "float[6] bound" [-1.85775 1.07972 -0.648383 6.58702 -2.22282 2.14586] "int __immediatesubdivide" [0]
+							TransformEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Bush1"]
+					Attribute "identifier" "float id" [1]
+					ConcatTransform [ 0.327513 -0.0516465 -0.00241566 0  0.040397 0.261318 -0.109958 0  0.0220349 0.125414 0.306144 0  0.633018 4.62802 -1.52588 1 ]
+					AttributeBegin 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BushShape1"]
+							Attribute "identifier" "float id" [14]
+							Sides 2
+							ShadingInterpolation "smooth"
+							Attribute "user" "int receivesShadows" [1]
+							Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+							Attribute "shade" "string transmissionhitmode" ["shader"]
+							Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+							##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse2SG,
+							TransformBegin 
+								Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Tree/rib/job/staticGeoCache.job.zip!renderman/Tree/rib/job/BushShape1.job.rib"] "float[6] bound" [-4.43847 4.23954 -2.88338 3.78387 -4.5424 4.5457] "int __immediatesubdivide" [0]
+							TransformEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Bush2"]
+					Attribute "identifier" "float id" [2]
+					ConcatTransform [ 0.211201 0.148936 -0.0433241 0  -0.133941 0.176369 -0.0466455 0  0.00306564 0.0691689 0.252728 0  -1.95884 5.04264 -1.09603 1 ]
+					AttributeBegin 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BushShape2"]
+							Attribute "identifier" "float id" [15]
+							Sides 2
+							ShadingInterpolation "smooth"
+							Attribute "user" "int receivesShadows" [1]
+							Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+							Attribute "shade" "string transmissionhitmode" ["shader"]
+							Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+							##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse2SG,
+							TransformBegin 
+								Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Tree/rib/job/staticGeoCache.job.zip!renderman/Tree/rib/job/BushShape2.job.rib"] "float[6] bound" [-4.55439 4.54793 -2.80263 4.44457 -4.47974 4.57272] "int __immediatesubdivide" [0]
+							TransformEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Head"]
+					Attribute "identifier" "float id" [5]
+					ConcatTransform [ 0.624765 -0.100663 0.00241332 0  0.086967 0.539451 -0.0129329 0  9.88003e-018 0.0151672 0.632646 0  -0.241627 7.37831 -0.138676 1 ]
+					AttributeBegin 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["HeadShape"]
+							Attribute "identifier" "float id" [18]
+							Sides 2
+							ShadingInterpolation "smooth"
+							Attribute "user" "int receivesShadows" [1]
+							Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+							Attribute "shade" "string transmissionhitmode" ["shader"]
+							Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+							##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse1SG,
+							TransformBegin 
+								Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Tree/rib/job/staticGeoCache.job.zip!renderman/Tree/rib/job/HeadShape.job.rib"] "float[6] bound" [-4.55439 4.54793 -2.80263 4.44457 -4.47974 4.57272] "int __immediatesubdivide" [0]
+							TransformEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Bush3"]
+					Attribute "identifier" "float id" [3]
+					ConcatTransform [ 0.367994 -0.05803 -0.00271423 0  0.0501743 0.317557 0.0132682 0  0.00028583 -0.0155974 0.372224 0  0.635032 3.63347 1.87969 1 ]
+					AttributeBegin 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BushShape3"]
+							Attribute "identifier" "float id" [16]
+							Sides 2
+							ShadingInterpolation "smooth"
+							Attribute "user" "int receivesShadows" [1]
+							Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+							Attribute "shade" "string transmissionhitmode" ["shader"]
+							Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+							##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse2SG,
+							TransformBegin 
+								Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Tree/rib/job/staticGeoCache.job.zip!renderman/Tree/rib/job/BushShape3.job.rib"] "float[6] bound" [-4.56203 4.52812 -2.74279 5.24191 -4.42215 4.67642] "int __immediatesubdivide" [0]
+							TransformEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Bush4"]
+					Attribute "identifier" "float id" [4]
+					ConcatTransform [ 0.328947 0.121957 0.00371115 0  -0.0969532 0.257651 0.126647 0  0.0478156 -0.138668 0.318713 0  -1.38216 5.13858 1.26058 1 ]
+					AttributeBegin 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BushShape4"]
+							Attribute "identifier" "float id" [17]
+							Sides 2
+							ShadingInterpolation "smooth"
+							Attribute "user" "int receivesShadows" [1]
+							Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+							Attribute "shade" "string transmissionhitmode" ["shader"]
+							Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+							##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse1SG,
+							TransformBegin 
+								Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Tree/rib/job/staticGeoCache.job.zip!renderman/Tree/rib/job/BushShape4.job.rib"] "float[6] bound" [-4.55439 4.54793 -2.80263 4.44457 -4.47974 4.57272] "int __immediatesubdivide" [0]
+							TransformEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+			AttributeEnd 
+			AttributeBegin 
+				Attribute "identifier" "string name" ["persp1"]
+				Attribute "identifier" "float id" [11]
+				ConcatTransform [ 0.0662739 -6.93889e-018 -0.997801 0  -0.110157 0.993887 -0.00731661 0  0.991702 0.1104 0.0658688 0  17.2259 5.43027 0.970716 1 ]
+				AttributeBegin 
+				AttributeEnd 
+			AttributeEnd 
+			AttributeBegin 
+				Attribute "identifier" "string name" ["PxrStdEnvMapLight1"]
+				Attribute "identifier" "float id" [6]
+				ConcatTransform [ -230.267 -0 -0 0  0 230.267 0 0  0 0 230.267 0  0 0 0 1 ]
+				AttributeBegin 
+				AttributeEnd 
+			AttributeEnd 
+			##RLF ScopeEnd -name sideShape_Final
+		WorldEnd 
+	ResourceEnd 
+	##streammarker 3
+FrameEnd 

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RenderManLookFile Version="1" Format="RenderMan Look Data" AssemblyName="perspShape_Final">
+    <InjectablePayloads>
+        <Payload Id="PxrDisney2SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+Bxdf "PxrDisney" "PxrDisney2" "color baseColor" [0.0331048 0.214041 0.603827] "color emitColor" [0 0 0] "float subsurface" [0] "color subsurfaceColor" [0 0 0] "float metallic" [0] "float specular" [0.5] 
+"float specularTint" [0] "float roughness" [0.25] "float anisotropic" [0] "float sheen" [0] "float sheenTint" [0.5] "float clearcoat" [0] "float clearcoatGloss" [1] "normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrDisney2_0"]
+VPInterior "null" 
+Interior "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="initialShadingGroup" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+VPInterior "null" 
+Interior "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="blinn1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+Bxdf "PxrDisney" "PxrDisney1" "color baseColor" [0 0 1] "color emitColor" [0 0 0] "float subsurface" [0.352113] "color subsurfaceColor" [0 0 0] "float metallic" [0] "float specular" [0.5] 
+"float specularTint" [0] "float roughness" [0.183099] "float anisotropic" [0] "float sheen" [0] "float sheenTint" [0.5] "float clearcoat" [0.169014] "float clearcoatGloss" [1] "normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrDisney1_0"]
+VPInterior "null" 
+Interior "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+    </InjectablePayloads>
+    <TightBindings>
+        <Binding Key="nurbsToPoly11/nurbsToPolyShape11" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane44/nurbsPlaneShape44" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane52/nurbsPlaneShape52" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane47/nurbsPlaneShape47" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane20/nurbsPlaneShape20" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane60/nurbsPlaneShape60" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane55/nurbsPlaneShape55" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane23/nurbsPlaneShape23" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane18/nurbsPlaneShape18" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsToPoly27/nurbsToPolyShape27" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane58/nurbsPlaneShape58" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsToPoly23/nurbsToPolyShape23" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsToPoly18/nurbsToPolyShape18" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane26/nurbsPlaneShape26" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsToPoly14/nurbsToPolyShape14" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane29/nurbsPlaneShape29" PayloadId="initialShadingGroup"/>
+        <Binding Key="polySurface1/polySurfaceShape2" PayloadId="PxrDisney2SG"/>
+        <Binding Key="nurbsToPoly10/nurbsToPolyShape10" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane37/nurbsPlaneShape37" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane50/nurbsPlaneShape50" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane45/nurbsPlaneShape45" PayloadId="initialShadingGroup"/>
+        <Binding Key="pCube1/pCubeShape1" PayloadId="blinn1SG"/>
+        <Binding Key="nurbsPlane53/nurbsPlaneShape53" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane48/nurbsPlaneShape48" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsToPoly9/nurbsToPolyShape9" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane21/nurbsPlaneShape21" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane56/nurbsPlaneShape56" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsToPoly13/nurbsToPolyShape13" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane24/nurbsPlaneShape24" PayloadId="initialShadingGroup"/>
+        <Binding Key="group/pasted__nurbsPlane6/pasted__nurbsPlaneShape6" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane59/nurbsPlaneShape59" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane27/nurbsPlaneShape27" PayloadId="initialShadingGroup"/>
+        <Binding Key="group/pasted__nurbsPlane7/pasted__nurbsPlaneShape7" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane38/nurbsPlaneShape38" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsToPoly25/nurbsToPolyShape25" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane51/nurbsPlaneShape51" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane46/nurbsPlaneShape46" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsToPoly12/nurbsToPolyShape12" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane54/nurbsPlaneShape54" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane49/nurbsPlaneShape49" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane22/nurbsPlaneShape22" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane62/nurbsPlaneShape62" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane57/nurbsPlaneShape57" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane25/nurbsPlaneShape25" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsToPoly28/nurbsToPolyShape28" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsPlane28/nurbsPlaneShape28" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsToPoly24/nurbsToPolyShape24" PayloadId="initialShadingGroup"/>
+    </TightBindings>
+</RenderManLookFile>

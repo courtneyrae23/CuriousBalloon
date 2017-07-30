@@ -1,0 +1,3225 @@
+##RenderMan RIB
+#Created by RenderMan for Maya 20.2 (@1521997 Aug 25 2015)
+#Tue Dec 08 9:29:12 AM Pacific Standard Time 2015
+version 3.04
+Option "ribparse" "string varsubst" [""]
+Option "ribparse" "string varsubst" ["$"]
+IfBegin "!defined(RMSPROJ_FROM_ENV)" 
+	Option "user" "string RMSPROJ" ["C:/Users/court_000/Dropbox/The Curious Balloon/CB/"]
+IfEnd 
+IfBegin "!defined(RMSTREE)" 
+	Option "user" "string RMSTREE" ["C:/Program Files/Pixar/RenderManStudio-20.2-maya2016/"]
+IfEnd 
+Option "searchpath" "string resource" ["${RMSPROJ}:@"]
+Option "searchpath" "string archive" ["${RMSPROJ}:."]
+Option "searchpath" "string display" ["${RMSTREE}/bin:@"]
+Option "searchpath" "string shader" ["${RMSPROJ}:${RMSTREE}/lib/shaders/:@"]
+Option "searchpath" "string texture" ["${RMSPROJ}:${RMSTREE}/lib/textures/:@"]
+Option "searchpath" "string rixplugin" ["${RMSTREE}/lib/shaders/:@"]
+Option "searchpath" "string dirmap" [""]
+Option "searchpath" "string rifilter" ["${RMSTREE}/lib/rif/:${RMANTREE}/etc:@"]
+Option "searchpath" "string procedural" ["${RMSTREE}/lib/plugins/:${RMSTREE}/lib/plugins:${RMANTREE}/etc:@"]
+##rifcontrol insert begin -rif RLFInjector -rifend
+FrameBegin 0
+	Identity 
+	Option "user" "string pass_id" ["camera2_camShape2_RerenderRIS"] "string pass_phase" ["/Job/Frames/Images"] "string pass_class" ["RerenderRIS"] "string pass_flavor" [""] "string pass_crew" [""] "string pass_camera_name" ["camera2:camShape2"] "string pass_camera_flavor" [""] "string pass_layer" [""] "string renderer" ["RIS"] "int pass_features_trace" [1] "int input_color_profile" [0]
+	Option "trace" "int maxdepth" [10]
+	PixelVariance 0.01
+	Option "bucket" "string order" ["spiral"]
+	Option "limits" "int[2] bucketsize" [16 16]
+	Option "limits" "int gridsize" [256]
+	Option "trace" "float decimationrate" [1]
+	Option "hair" "float minwidth" [0.5]
+	Option "statistics" "int level" [1]
+	Option "statistics" "string filename" ["stdout"]
+	Option "statistics" "string xmlfilename" ["renderman/Set/rib/0000/camera2_camShape2_RerenderRIS.0000.xml"]
+	Option "limits" "color zthreshold" [0.996 0.996 0.996]
+	Option "limits" "color othreshold" [0.996 0.996 0.996]
+	Option "limits" "int texturememory" [2097152]
+	Option "limits" "int geocachememory" [2097152]
+	Option "limits" "int proceduralmemory" [0]
+	Option "limits" "int deepshadowtiles" [1000]
+	Option "limits" "int deepshadowmemory" [102400]
+	Option "limits" "int radiositycachememory" [102400]
+	Option "limits" "int brickmemory" [10240]
+	Option "shading" "int directlightinglocalizedsampling" [0]
+	Option "limits" "int opacitycachememory" [1024000]
+	Option "shading" "int directlightingsamples" [4]
+	CropWindow 0 1 0 1
+	Option "photon" "string lifetime" ["transient"]
+	Option "photon" "int emit" [0]
+	Hider "raytrace" "int adaptall" [0] "string integrationmode" ["path"] "int incremental" [1] "string pixelfiltermode" ["weighted"] "string samplemode" [""] "int minsamples" [0] "int maxsamples" [16]
+	Integrator "PxrPathTracer" "PxrPathTracer" "int maxPathLength" [10] "string sampleMode" ["bxdf"] "int numLightSamples" [8] "int numBxdfSamples" [8] "int numIndirectSamples" [1] "int numDiffuseSamples" [1] "int numSpecularSamples" [1] "int numSubsurfaceSamples" [1] "int numRefractionSamples" [1] "int rouletteDepth" [4] "float rouletteThreshold" [0.2] "string imagePlaneSubset" ["rman__imageplane"] "int clampDepth" [2] "float clampLuminance" [10] "int allowCaustics" [0]
+	Format 1280 720 1
+	Option "user" "string[1] lightgroups" ["environment"]
+	Display "renderman/Set/images/Set_0000" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "string connection" ["-launchURI C:/Program%20Files/Pixar/RenderManStudio-20.2-maya2016/bin/it"] "string dspyParams" [" itOpenHandler {::ice::startTimer;};;; itCloseHandler {::ice::endTimer %arglist; };;; dspyRender -renderer preview -time 0 -crop 0 1 0 1 -port 53776 -context \"_preview\" -notes \"(Tue Dec 08 9:29:10 AM Pacific Standard Time 2015)\nPxrPathTracer  MaxSamples 64  Mode bxdf  Light 8  Bsdf 8  Indir 1\""]
+	#Camera camera2:camShape2
+	Clipping 0.1 10000
+	Projection "perspective" "fov" [54.4322]
+	ScreenWindow -1 1 -0.5625 0.5625
+	Shutter 0 0
+	ConcatTransform [ 1 0 2.12042e-006 0  -3.72529e-009 1 0 -5.57466e-010  1.69069e-009 0 -1 2.53001e-010  1.79903 -28.8289 63.5221 1 ]
+	Camera "world" "float[2] shutteropening" [0 1]
+	Option "user" "color camera_bg" [0 0 0] "float camera_bga" [0]
+	Imager "background" "color color" [0 0 0] "float alpha" [0]
+	ResourceBegin 
+		WorldBegin 
+			##RLF ScopeBegin -name camera2_camShape2_RerenderRIS -localbinding 1 -rlffilename renderman/Set/rib/0000/camera2_camShape2_RerenderRIS.0000.rlf -namespace 
+			ScopedCoordinateSystem "world_ref"
+			Attribute "user" "float[17] BirthdayCake:place2dTexture8" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Picnic_Bench1:place2dTexture1" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Tree:place2dTexture3" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] mySet:place2dTexture5" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture1" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] BirthdayCake:place2dTexture9" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Picnic_Bench1:place2dTexture2" [1 1 0 0 0
+				0 0 0 1 1 12 8 0 0 0 0 0]
+			Attribute "user" "float[17] Tree:place2dTexture4" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture2" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Picnic_Bench1:place2dTexture3" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Tree:place2dTexture5" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture3" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Picnic_Bench1:place2dTexture4" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Tree:place2dTexture6" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] moon:place2dTexture1" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture4" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Tree:place2dTexture7" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Bag_and_Chip:place2dTexture4" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] basket:place2dTexture1" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] moon:place2dTexture2" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] mySet:place2dTexture1" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] place2dTexture5" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] sun:place2dTexture1" [1 1 0 0 0
+				0 0 0 1 1 13.5 13.5 0 0 0 0 0]
+			Attribute "user" "float[17] Tree:place2dTexture8" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] basket:place2dTexture2" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] mySet:place2dTexture2" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] sun:place2dTexture2" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Tree:pasted__place2dTexture2" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] sun:place2dTexture3" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] BirthdayCake:place2dTexture6" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Tree:place2dTexture1" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Tree:place2dTexture9" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] mySet:place2dTexture3" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Tree:pasted__place2dTexture3" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] sun:place2dTexture4" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] BirthdayCake:place2dTexture7" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Tree:place2dTexture2" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] mySet:place2dTexture4" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Tree:place2dTexture10" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Tree:place2dTexture11" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] BirthdayCake:place2dTexture1" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] BirthdayCake:place2dTexture2" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] BirthdayCake:place2dTexture3" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] BirthdayCake:place2dTexture4" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] BirthdayCake:place2dTexture5" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] BirthdayCake:place2dTexture10" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] BirthdayCake:place2dTexture11" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] apple1:place2dTexture1" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Bag_and_Chip:place2dTexture1" [1 1 0 0 0
+				0 0 0 1 1 13.5 13.5 0 0 0 0 0]
+			Attribute "user" "float[17] Bag_and_Chip:place2dTexture2" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Bag_and_Chip:place2dTexture3" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Ground_and_lights:place2dTexture1" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "user" "float[17] Ground_and_lights:place2dTexture2" [1 1 0 0 0
+				0 0 0 1 1 1 1 0 0 0 0 0]
+			Attribute "visibility" "int transmission" [1] "int indirect" [1]
+			Bxdf "PxrDiffuse" "default" 
+			Attribute "user" "int shader_bindingstrength" [0]
+			Attribute "trace" "int maxdiffusedepth" [1] "int maxspeculardepth" [2] "int samplemotion" [1] "float autobias" [1] "float bias" [0.001] "int displacements" [1]
+			Attribute "dice" "string referencecamera" ["worldcamera"]
+			ShadingRate 1
+			Attribute "displacementbound" "string coordinatesystem" ["shader"] "float sphere" [0]
+			Attribute "photon" "string causticmap" [""] "string globalmap" [""]
+			AttributeBegin 
+				Attribute "identifier" "string name" ["Ground_and_lights:PxrStdEnvDayLightShape1"]
+				Attribute "grouping" "string membership" ["+rman__imageplane"]
+				Transform [ 1 0 0 0  0 1 0 0  0 0 1 0  -0.0891472 2.94397 -29.3 1 ]
+				Bxdf "PxrLightEmission" "visualizer" "string __instanceid" ["Ground_and_lights:PxrStdEnvDayLightShape1_visualizer"]
+				Surface "renderman/Set/shaders/Ground_and_lights_PxrStdEnvDayLightShape1_rfm" "string rman__Shape" ["envday"] "float rman__LightPrimaryVisibility" [1] "string coordSys" ["shader"] "float exposure" [0] "color sunTint" [0 0 0] "float sunSize" [0] "float method" [0] "vector directionVector" [0 1 -1] "float month" [11] 
+					"float day" [20] "float year" [2014] "float hour" [14.6333] "float zone" [-8] "float latitude" [47.6019] "float longitude" [-122.332] "float haziness" [2] "color skyTint" [1 0.83063 0.917237] "color specAmount" [1 1 1] 
+					"color diffAmount" [1 1 1] "float fixedSampleCount" [-1] "float importance" [1] "float enableShadows" [1] "color shadowColor" [0 0 0] "float adaptiveShadows" [1] "float shadowMaxDist" [-1] "float shadowTraceBias" [-1] 
+					"string shadowSubset" [""] "string shadowExcludeSubset" [""] "string __group" ["environment"] "float intensity" [1] "__instanceid" ["renderman/Set/shaders/Ground_and_lights_PxrStdEnvDayLightShape1_rfm_0"]
+				AreaLightSource "renderman/Set/shaders/Ground_and_lights_PxrStdEnvDayLightShape1_rfm" "Ground_and_lights:PxrStdEnvDayLightShape1" "string rman__Shape" ["envday"] "float rman__LightPrimaryVisibility" [1] "string coordSys" ["shader"] "float exposure" [0] "color sunTint" [0 0 0] "float sunSize" [0] "float method" [0] "vector directionVector" [0 1 -1] "float month" [11] 
+					"float day" [20] "float year" [2014] "float hour" [14.6333] "float zone" [-8] "float latitude" [47.6019] "float longitude" [-122.332] "float haziness" [2] "color skyTint" [1 0.83063 0.917237] "color specAmount" [1 1 1] 
+					"color diffAmount" [1 1 1] "float fixedSampleCount" [-1] "float importance" [1] "float enableShadows" [1] "color shadowColor" [0 0 0] "float adaptiveShadows" [1] "float shadowMaxDist" [-1] "float shadowTraceBias" [-1] 
+					"string shadowSubset" [""] "string shadowExcludeSubset" [""] "string __group" ["environment"] "float intensity" [1] "__instanceid" ["renderman/Set/shaders/Ground_and_lights_PxrStdEnvDayLightShape1_rfm_0"]
+				Attribute "visibility" "int camera" [1]
+				Attribute "visibility" "int indirect" [0] "int transmission" [0]
+				ShadingRate 100
+				Sides 1
+				Attribute "dice" "string offscreenstrategy" ["sphericalprojection"]
+				ReverseOrientation 
+				Opacity [1 1 1]
+				Sides 1
+				Rotate 90 1 0 0
+				Geometry "envsphere" "constant float[2] resolution" [1024 512]
+			AttributeEnd 
+			Illuminate "Ground_and_lights:PxrStdEnvDayLightShape1" 1
+			AttributeBegin 
+				Attribute "identifier" "string name" ["Lamp_Light_14Shape"]
+				Transform [ 1 0 0 0  0 1 0 0  0 0 1 0  -25.0617 24.2146 10.8203 1 ]
+				Bxdf "PxrLightEmission" "visualizer" "string __instanceid" ["Lamp_Light_14Shape_visualizer"]
+				ShadingRate 5
+				Surface "renderman/Set/shaders/Lamp_Light_14Shape_rfm" "float rman__LightPrimaryVisibility" [0] "string rman__Shape" ["sphere"] "float exposure" [14] "color lightColor" [1 1 1] "float enableTemperature" [1] "float temperature" [6500] "float enableEmissionMap" [0] "string rman__EmissionMap" [""] "float linearizeEmissionMap" [0] "float[2] rman__ProceduralResolution" [1024 1024] 
+					"float emissionMapScaleS" [1] "float emissionMapScaleT" [1] "float emissionMapOffsetS" [0] "float emissionMapOffsetT" [0] "color specAmount" [1 1 1] "color diffAmount" [1 1 1] "float fixedSampleCount" [-1] "float importance" [1] 
+					"float coneAngle" [20] "float penumbraAngle" [5] "float penumbraExponent" [0] "string profileMap" [""] "string iesProfile" [""] "float profileRange" [-1] "float distributionAngle" [90] "float angularVisibility" [1] "float enableBarnDoors" [0] "float barnTop" [0] "float barnBottom" [0] "float barnLeft" [0] "float barnRight" [0] 
+					"string barnDoorMap" ["default.tex"] "float enableShadows" [1] "color shadowColor" [0 0 0] "float adaptiveShadows" [1] "float shadowMaxDist" [-1] "float shadowTraceBias" [-1] "string shadowSubset" [""] "string shadowExcludeSubset" ["lampset"] "float areaNormalize" [1] "string __group" [""] "float intensity" [1] "__instanceid" ["renderman/Set/shaders/Lamp_Light_14Shape_rfm_0"]
+				ShadingRate 5
+				AreaLightSource "renderman/Set/shaders/Lamp_Light_14Shape_rfm" "Lamp_Light_14Shape" "float rman__LightPrimaryVisibility" [0] "string rman__Shape" ["sphere"] "float exposure" [14] "color lightColor" [1 1 1] "float enableTemperature" [1] "float temperature" [6500] "float enableEmissionMap" [0] "string rman__EmissionMap" [""] "float linearizeEmissionMap" [0] "float[2] rman__ProceduralResolution" [1024 1024] 
+					"float emissionMapScaleS" [1] "float emissionMapScaleT" [1] "float emissionMapOffsetS" [0] "float emissionMapOffsetT" [0] "color specAmount" [1 1 1] "color diffAmount" [1 1 1] "float fixedSampleCount" [-1] "float importance" [1] 
+					"float coneAngle" [20] "float penumbraAngle" [5] "float penumbraExponent" [0] "string profileMap" [""] "string iesProfile" [""] "float profileRange" [-1] "float distributionAngle" [90] "float angularVisibility" [1] "float enableBarnDoors" [0] "float barnTop" [0] "float barnBottom" [0] "float barnLeft" [0] "float barnRight" [0] 
+					"string barnDoorMap" ["default.tex"] "float enableShadows" [1] "color shadowColor" [0 0 0] "float adaptiveShadows" [1] "float shadowMaxDist" [-1] "float shadowTraceBias" [-1] "string shadowSubset" [""] "string shadowExcludeSubset" ["lampset"] "float areaNormalize" [1] "string __group" [""] "float intensity" [1] "__instanceid" ["renderman/Set/shaders/Lamp_Light_14Shape_rfm_0"]
+				Attribute "visibility" "int camera" [0]
+				Attribute "visibility" "int indirect" [0] "int transmission" [0]
+				ShadingRate 5
+				Sides 1
+				Attribute "dice" "string offscreenstrategy" ["sphericalprojection"]
+				Geometry "spherelight" "constant float radius" [0.5]
+			AttributeEnd 
+			Illuminate "Lamp_Light_14Shape" 1
+			AttributeBegin 
+				Attribute "identifier" "string name" ["Distant_LightShape"]
+				Transform [ 1 0 -0 0  -0 0.972162 -0.234308 0  0 0.234308 0.972162 0  0 38.4182 84.9985 1 ]
+				Bxdf "PxrLightEmission" "visualizer" "string __instanceid" ["Distant_LightShape_visualizer"]
+				IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+					ShadingRate 5
+					Surface "renderman/Set/shaders/Distant_LightShape_rfm" "float rman__LightPrimaryVisibility" [0] "string rman__Shape" ["distant"] "float exposure" [-1] "color lightColor" [1 1 1] "float enableTemperature" [0] "float temperature" [7000] "float enableEmissionMap" [0] "string rman__EmissionMap" [""] "float linearizeEmissionMap" [0] "float[2] rman__ProceduralResolution" [1024 1024] 
+						"float emissionMapScaleS" [1] "float emissionMapScaleT" [1] "float emissionMapOffsetS" [0] "float emissionMapOffsetT" [0] "color specAmount" [1 1 1] "color diffAmount" [1 1 1] "float fixedSampleCount" [-1] "float importance" [1] 
+						"float coneAngle" [20] "float penumbraAngle" [5] "float penumbraExponent" [0] "string profileMap" [""] "string iesProfile" [""] "float profileRange" [-1] "float distributionAngle" [90] "float angularVisibility" [1] "float enableBarnDoors" [0] "float barnTop" [0] "float barnBottom" [0] "float barnLeft" [0] "float barnRight" [0] 
+						"string barnDoorMap" ["default.tex"] "float enableShadows" [0] "color shadowColor" [0 0 0] "float adaptiveShadows" [1] "float shadowMaxDist" [-1] "float shadowTraceBias" [-1] "string shadowSubset" [""] "string shadowExcludeSubset" [""] "float areaNormalize" [1] "string __group" [""] "float intensity" [1] "__instanceid" ["renderman/Set/shaders/Distant_LightShape_rfm_0"]
+					ShadingRate 5
+					AreaLightSource "renderman/Set/shaders/Distant_LightShape_rfm" "Distant_LightShape" "float rman__LightPrimaryVisibility" [0] "string rman__Shape" ["distant"] "float exposure" [-1] "color lightColor" [1 1 1] "float enableTemperature" [0] "float temperature" [7000] "float enableEmissionMap" [0] "string rman__EmissionMap" [""] "float linearizeEmissionMap" [0] "float[2] rman__ProceduralResolution" [1024 1024] 
+						"float emissionMapScaleS" [1] "float emissionMapScaleT" [1] "float emissionMapOffsetS" [0] "float emissionMapOffsetT" [0] "color specAmount" [1 1 1] "color diffAmount" [1 1 1] "float fixedSampleCount" [-1] "float importance" [1] 
+						"float coneAngle" [20] "float penumbraAngle" [5] "float penumbraExponent" [0] "string profileMap" [""] "string iesProfile" [""] "float profileRange" [-1] "float distributionAngle" [90] "float angularVisibility" [1] "float enableBarnDoors" [0] "float barnTop" [0] "float barnBottom" [0] "float barnLeft" [0] "float barnRight" [0] 
+						"string barnDoorMap" ["default.tex"] "float enableShadows" [0] "color shadowColor" [0 0 0] "float adaptiveShadows" [1] "float shadowMaxDist" [-1] "float shadowTraceBias" [-1] "string shadowSubset" [""] "string shadowExcludeSubset" [""] "float areaNormalize" [1] "string __group" [""] "float intensity" [1] "__instanceid" ["renderman/Set/shaders/Distant_LightShape_rfm_0"]
+					Attribute "user" "int shader_bindingstrength" [0]
+				IfEnd 
+				Attribute "visibility" "int camera" [0]
+				Attribute "visibility" "int indirect" [0] "int transmission" [0]
+				ShadingRate 5
+				Sides 1
+				Attribute "dice" "string offscreenstrategy" ["sphericalprojection"]
+				Geometry "distantlight" "constant float anglesubtended" [1]
+			AttributeEnd 
+			Illuminate "Distant_LightShape" 1
+			AttributeBegin 
+				Attribute "identifier" "string name" ["Moon_HighlightShape"]
+				Transform [ 1 0 0 0  0 1 0 0  0 0 1 0  -20.6204 48.9329 -35.0827 1 ]
+				Bxdf "PxrLightEmission" "visualizer" "string __instanceid" ["Moon_HighlightShape_visualizer"]
+				IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+					ShadingRate 5
+					Surface "renderman/Set/shaders/Moon_HighlightShape_rfm" "float rman__LightPrimaryVisibility" [0] "string rman__Shape" ["rect"] "float exposure" [6] "color lightColor" [1 1 1] "float enableTemperature" [1] "float temperature" [5000] "float enableEmissionMap" [0] "string rman__EmissionMap" [""] "float linearizeEmissionMap" [0] "float[2] rman__ProceduralResolution" [1024 1024] 
+						"float emissionMapScaleS" [1] "float emissionMapScaleT" [1] "float emissionMapOffsetS" [0] "float emissionMapOffsetT" [0] "color specAmount" [1 1 1] "color diffAmount" [1 1 1] "float fixedSampleCount" [-1] "float importance" [1] 
+						"float coneAngle" [20] "float penumbraAngle" [5] "float penumbraExponent" [0] "string profileMap" [""] "string iesProfile" [""] "float profileRange" [-1] "float distributionAngle" [90] "float angularVisibility" [1] "float enableBarnDoors" [0] "float barnTop" [0] "float barnBottom" [0] "float barnLeft" [0] "float barnRight" [0] 
+						"string barnDoorMap" ["default.tex"] "float enableShadows" [0] "color shadowColor" [0 0 0] "float adaptiveShadows" [1] "float shadowMaxDist" [-1] "float shadowTraceBias" [-1] "string shadowSubset" [""] "string shadowExcludeSubset" [""] "float areaNormalize" [1] "string __group" [""] "float intensity" [1] "__instanceid" ["renderman/Set/shaders/Moon_HighlightShape_rfm_0"]
+					ShadingRate 5
+					AreaLightSource "renderman/Set/shaders/Moon_HighlightShape_rfm" "Moon_HighlightShape" "float rman__LightPrimaryVisibility" [0] "string rman__Shape" ["rect"] "float exposure" [6] "color lightColor" [1 1 1] "float enableTemperature" [1] "float temperature" [5000] "float enableEmissionMap" [0] "string rman__EmissionMap" [""] "float linearizeEmissionMap" [0] "float[2] rman__ProceduralResolution" [1024 1024] 
+						"float emissionMapScaleS" [1] "float emissionMapScaleT" [1] "float emissionMapOffsetS" [0] "float emissionMapOffsetT" [0] "color specAmount" [1 1 1] "color diffAmount" [1 1 1] "float fixedSampleCount" [-1] "float importance" [1] 
+						"float coneAngle" [20] "float penumbraAngle" [5] "float penumbraExponent" [0] "string profileMap" [""] "string iesProfile" [""] "float profileRange" [-1] "float distributionAngle" [90] "float angularVisibility" [1] "float enableBarnDoors" [0] "float barnTop" [0] "float barnBottom" [0] "float barnLeft" [0] "float barnRight" [0] 
+						"string barnDoorMap" ["default.tex"] "float enableShadows" [0] "color shadowColor" [0 0 0] "float adaptiveShadows" [1] "float shadowMaxDist" [-1] "float shadowTraceBias" [-1] "string shadowSubset" [""] "string shadowExcludeSubset" [""] "float areaNormalize" [1] "string __group" [""] "float intensity" [1] "__instanceid" ["renderman/Set/shaders/Moon_HighlightShape_rfm_0"]
+					Attribute "user" "int shader_bindingstrength" [0]
+				IfEnd 
+				Attribute "visibility" "int camera" [0]
+				Attribute "visibility" "int indirect" [0] "int transmission" [0]
+				ShadingRate 5
+				Sides 1
+				Attribute "dice" "string offscreenstrategy" ["sphericalprojection"]
+				ReverseOrientation 
+				Geometry "rectlight" 
+			AttributeEnd 
+			Illuminate "Moon_HighlightShape" 1
+			AttributeBegin 
+			AttributeEnd 
+			AttributeBegin 
+			AttributeEnd 
+			AttributeBegin 
+			AttributeEnd 
+			AttributeBegin 
+			AttributeEnd 
+			AttributeBegin 
+				Attribute "identifier" "string name" ["Camera"]
+				Attribute "identifier" "float id" [489]
+				ConcatTransform [ 0.999076 0 0.042976 0  0.00269849 0.998027 -0.0627325 0  -0.0428912 0.0627905 0.997105 0  -13.04 77.9225 110.47 1 ]
+				AttributeBegin 
+				AttributeEnd 
+			AttributeEnd 
+			AttributeBegin 
+				Attribute "identifier" "string name" ["camera2:cam2"]
+				Attribute "identifier" "float id" [1818]
+				ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -1.79903 28.8289 63.5221 1 ]
+				AttributeBegin 
+				AttributeEnd 
+			AttributeEnd 
+			AttributeBegin 
+				Attribute "identifier" "string name" ["Environment"]
+				Attribute "identifier" "float id" [492]
+				ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Table_Stuff"]
+					Attribute "identifier" "float id" [1375]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Bench"]
+						Attribute "identifier" "float id" [44]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -1.13388 0 0 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube10"]
+							Attribute "identifier" "float id" [930]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape10"]
+									Attribute "identifier" "float id" [2613]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape10.job.rib"] "float[6] bound" [7.58054 8.02198 1.49316 2.31047 -5.93282 5.51068] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube17"]
+							Attribute "identifier" "float id" [931]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape17"]
+									Attribute "identifier" "float id" [2614]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape17.job.rib"] "float[6] bound" [7.29512 7.68382 -0.520048 5.04129 2.02373 4.42801] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube19"]
+							Attribute "identifier" "float id" [932]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape19"]
+									Attribute "identifier" "float id" [2615]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape19.job.rib"] "float[6] bound" [7.02251 7.3873 3.79256 4.79133 -3.85847 3.60939] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube25"]
+							Attribute "identifier" "float id" [933]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape25"]
+									Attribute "identifier" "float id" [2616]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape25.job.rib"] "float[6] bound" [-9.19255 8.85733 4.70291 5.22037 -2.71984 -0.279203] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube28"]
+							Attribute "identifier" "float id" [934]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape28"]
+									Attribute "identifier" "float id" [2617]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape28.job.rib"] "float[6] bound" [-9.19255 8.85733 2.31982 2.83727 4.23294 7.27336] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube29"]
+							Attribute "identifier" "float id" [935]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape29"]
+									Attribute "identifier" "float id" [2618]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape29.job.rib"] "float[6] bound" [-9.19255 8.85733 2.31982 2.83727 -7.73423 -4.69381] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube30"]
+							Attribute "identifier" "float id" [936]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape30"]
+									Attribute "identifier" "float id" [2619]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape30.job.rib"] "float[6] bound" [-8.41415 -8.02544 -0.520048 5.04129 2.02373 4.42801] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube31"]
+							Attribute "identifier" "float id" [937]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape31"]
+									Attribute "identifier" "float id" [2620]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape31.job.rib"] "float[6] bound" [7.15775 7.81178 -0.525084 5.04633 -4.86058 -2.4506] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube32"]
+							Attribute "identifier" "float id" [938]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape32"]
+									Attribute "identifier" "float id" [2621]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape32.job.rib"] "float[6] bound" [-8.54681 -7.89278 -0.525084 5.04633 -4.86058 -2.4506] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube33"]
+							Attribute "identifier" "float id" [939]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape33"]
+									Attribute "identifier" "float id" [2622]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape33.job.rib"] "float[6] bound" [-8.79797 -8.40813 1.3603 2.2794 -5.89365 5.51583] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube34"]
+							Attribute "identifier" "float id" [940]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape34"]
+									Attribute "identifier" "float id" [2623]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape34.job.rib"] "float[6] bound" [-8.01173 -7.64694 3.79256 4.79133 -3.85847 3.60939] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube35"]
+							Attribute "identifier" "float id" [941]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape35"]
+									Attribute "identifier" "float id" [2624]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape35.job.rib"] "float[6] bound" [-7.82841 7.26704 4.32266 4.67396 -0.73129 0.151236] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube36"]
+							Attribute "identifier" "float id" [942]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape36"]
+									Attribute "identifier" "float id" [2625]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape36.job.rib"] "float[6] bound" [-9.19255 8.85733 4.70291 5.22037 -5.24409 -2.80345] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube37"]
+							Attribute "identifier" "float id" [943]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape37"]
+									Attribute "identifier" "float id" [2626]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape37.job.rib"] "float[6] bound" [-9.19255 8.85733 4.70291 5.22037 -0.191451 2.24918] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Picnic_Bench1:pCube38"]
+							Attribute "identifier" "float id" [944]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Picnic_Bench1:pCubeShape38"]
+									Attribute "identifier" "float id" [2627]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Picnic_Bench1:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Picnic_Bench1_pCubeShape38.job.rib"] "float[6] bound" [-9.19255 8.85733 4.70291 5.22037 2.38373 4.82437] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Apples"]
+						Attribute "identifier" "float id" [7]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -1.51406 0 1.07833 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Apple"]
+							Attribute "identifier" "float id" [4]
+							ConcatTransform [ 0.49433 0 0 0  0 0.49433 0 0  0 0 0.49433 0  1.94563 5.27771 0.666406 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Apple"]
+								Attribute "identifier" "float id" [3]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["AppleShape"]
+										Attribute "identifier" "float id" [1832]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,apple1:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Apples_Apple_Apple_AppleShape.job.rib"] "float[6] bound" [-0.321515 1.67843 -0.191603 1.98864 -0.912969 1.08595] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Branch"]
+								Attribute "identifier" "float id" [488]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["BranchShape"]
+										Attribute "identifier" "float id" [2243]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,apple1:PxrLMDiffuse1SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Apples_Apple_Branch_BranchShape.job.rib"] "float[6] bound" [0.539995 0.759502 1.59274 2.32525 -0.00282446 0.216862] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Apple1"]
+							Attribute "identifier" "float id" [5]
+							ConcatTransform [ 0.213276 0.286473 -0.291047 0  0.24116 0.176634 0.350577 0  0.329571 -0.314635 -0.0681849 0  2.96423 5.40228 1.11078 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Apple"]
+								Attribute "identifier" "float id" [2]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["AppleShape"]
+										Attribute "identifier" "float id" [1831]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,apple1:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Apple1_Apple_AppleShape.job.rib"] "float[6] bound" [-0.321515 1.67843 -0.191603 1.98864 -0.912969 1.08595] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Branch"]
+								Attribute "identifier" "float id" [487]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["BranchShape"]
+										Attribute "identifier" "float id" [2242]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,apple1:PxrLMDiffuse1SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Apple1_Branch_BranchShape.job.rib"] "float[6] bound" [0.539995 0.759502 1.59274 2.32525 -0.00282446 0.216862] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Apple2"]
+							Attribute "identifier" "float id" [6]
+							ConcatTransform [ -0.272527 -0.0788775 -0.295002 0  -0.304854 0.0931619 0.256718 0  0.0176736 0.390664 -0.120783 0  1.68332 5.55235 1.02776 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Apple"]
+								Attribute "identifier" "float id" [1]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["AppleShape"]
+										Attribute "identifier" "float id" [1830]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,apple1:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Apple2_Apple_AppleShape.job.rib"] "float[6] bound" [-0.321515 1.67843 -0.191603 1.98864 -0.912969 1.08595] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Branch"]
+								Attribute "identifier" "float id" [486]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["BranchShape"]
+										Attribute "identifier" "float id" [2241]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,apple1:PxrLMDiffuse1SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Apple2_Branch_BranchShape.job.rib"] "float[6] bound" [0.539995 0.759502 1.59274 2.32525 -0.00282446 0.216862] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["apple1:Apple"]
+							Attribute "identifier" "float id" [1810]
+							ConcatTransform [ 0.0927909 -0.180629 0.505367 0  -0.506744 0.1394 0.142868 0  -0.17673 -0.494544 -0.144311 0  1.44968 5.78967 -0.572893 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["apple1:Apple"]
+								Attribute "identifier" "float id" [1811]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["apple1:AppleShape"]
+										Attribute "identifier" "float id" [3370]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,apple1:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/apple1_AppleShape.job.rib"] "float[6] bound" [-0.321515 1.67843 -0.191603 1.98864 -0.912969 1.08595] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["apple1:Branch"]
+								Attribute "identifier" "float id" [1812]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["apple1:BranchShape"]
+										Attribute "identifier" "float id" [3371]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,apple1:PxrLMDiffuse1SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/apple1_BranchShape.job.rib"] "float[6] bound" [0.539995 0.759502 1.59274 2.32525 -0.00282446 0.216862] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Picnic_Bench1:Bench"]
+						Attribute "identifier" "float id" [929]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["basket:Basket"]
+						Attribute "identifier" "float id" [1813]
+						ConcatTransform [ 2.3223 0 1.34078 0  -0 2.68156 0 0  -1.34078 -0 2.3223 0  1.08912 5.2325 -0.245025 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["basket:Body"]
+							Attribute "identifier" "float id" [1814]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["basket:BodyShape"]
+									Attribute "identifier" "float id" [3372]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,basket:PxrLMDiffuse2SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/basket_BodyShape.job.rib"] "float[6] bound" [-0.586745 0.604462 -0.0130476 0.859901 -0.434609 0.43834] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["basket:Cover"]
+							Attribute "identifier" "float id" [1815]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["basket:CoverShape"]
+									Attribute "identifier" "float id" [3373]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,basket:PxrLMDiffuse2SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/basket_CoverShape.job.rib"] "float[6] bound" [-0.597131 0.608264 0.818794 0.942115 -0.419963 0.471423] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["basket:Left_Handle"]
+							Attribute "identifier" "float id" [1816]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["basket:Left_HandleShape"]
+									Attribute "identifier" "float id" [3374]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,basket:PxrLMDiffuse2SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/basket_Left_HandleShape.job.rib"] "float[6] bound" [-0.375072 -0.0044341 0.763787 1.51344 -0.470343 0.530623] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["basket:Right_Handle"]
+							Attribute "identifier" "float id" [1817]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["basket:Right_HandleShape"]
+									Attribute "identifier" "float id" [3375]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,basket:PxrLMDiffuse2SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/basket_Right_HandleShape.job.rib"] "float[6] bound" [-0.00365686 0.366537 0.756341 1.50787 -0.467707 0.533329] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["BirthdayCake:Cake"]
+						Attribute "identifier" "float id" [46]
+						ConcatTransform [ 2.36824 0 0 0  0 2.36824 0 0  0 0 2.36824 0  -14.0917 5.92626 1.15489 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BirthdayCake:Bottom"]
+							Attribute "identifier" "float id" [45]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["BirthdayCake:BottomShape"]
+									Attribute "identifier" "float id" [1867]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,BirthdayCake:PxrLMDiffuse4SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BirthdayCake_BottomShape.job.rib"] "float[6] bound" [2.59717 4.59717 -0.264703 0.264703 -0.998027 0.998027] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BirthdayCake:Middle"]
+							Attribute "identifier" "float id" [58]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["BirthdayCake:MiddleShape"]
+									Attribute "identifier" "float id" [1879]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,BirthdayCake:PxrLMDiffuse5SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BirthdayCake_MiddleShape.job.rib"] "float[6] bound" [2.80483 4.38952 0.228116 0.647586 -0.790779 0.790779] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BirthdayCake:Top"]
+							Attribute "identifier" "float id" [59]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["BirthdayCake:TopShape"]
+									Attribute "identifier" "float id" [1880]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,BirthdayCake:PxrLMDiffuse4SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BirthdayCake_TopShape.job.rib"] "float[6] bound" [3.02052 4.17383 0.626744 0.932027 -0.575515 0.575515] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BirthdayCake:Candle1"]
+							Attribute "identifier" "float id" [47]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["BirthdayCake:CandleShape1"]
+									Attribute "identifier" "float id" [1868]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,BirthdayCake:PxrLMPlastic1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BirthdayCake_CandleShape1.job.rib"] "float[6] bound" [3.17434 3.23746 0.893504 1.14458 -0.126971 -0.0669335] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BirthdayCake:Candle2"]
+							Attribute "identifier" "float id" [48]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["BirthdayCake:CandleShape2"]
+									Attribute "identifier" "float id" [1869]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,BirthdayCake:PxrLMPlastic1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BirthdayCake_CandleShape2.job.rib"] "float[6] bound" [3.29347 3.3566 0.893504 1.14458 -0.328782 -0.268744] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BirthdayCake:Candle3"]
+							Attribute "identifier" "float id" [49]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["BirthdayCake:CandleShape3"]
+									Attribute "identifier" "float id" [1870]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,BirthdayCake:PxrLMPlastic1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BirthdayCake_CandleShape3.job.rib"] "float[6] bound" [3.54827 3.6114 0.893504 1.14458 -0.431824 -0.371787] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BirthdayCake:Candle4"]
+							Attribute "identifier" "float id" [50]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["BirthdayCake:CandleShape4"]
+									Attribute "identifier" "float id" [1871]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,BirthdayCake:PxrLMPlastic1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BirthdayCake_CandleShape4.job.rib"] "float[6] bound" [3.79759 3.86071 0.893504 1.14458 -0.391467 -0.331429] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BirthdayCake:Candle5"]
+							Attribute "identifier" "float id" [51]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["BirthdayCake:CandleShape5"]
+									Attribute "identifier" "float id" [1872]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,BirthdayCake:PxrLMPlastic1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BirthdayCake_CandleShape5.job.rib"] "float[6] bound" [3.96075 4.02387 0.893504 1.14458 -0.193017 -0.132979] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BirthdayCake:Candle6"]
+							Attribute "identifier" "float id" [52]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["BirthdayCake:CandleShape6"]
+									Attribute "identifier" "float id" [1873]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,BirthdayCake:PxrLMPlastic1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BirthdayCake_CandleShape6.job.rib"] "float[6] bound" [3.98432 4.04745 0.893504 1.14458 0.0137041 0.0737417] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BirthdayCake:Candle7"]
+							Attribute "identifier" "float id" [53]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["BirthdayCake:CandleShape7"]
+									Attribute "identifier" "float id" [1874]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,BirthdayCake:PxrLMPlastic1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BirthdayCake_CandleShape7.job.rib"] "float[6] bound" [3.9106 3.97372 0.893504 1.14458 0.20674 0.266777] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BirthdayCake:Candle8"]
+							Attribute "identifier" "float id" [54]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["BirthdayCake:CandleShape8"]
+									Attribute "identifier" "float id" [1875]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,BirthdayCake:PxrLMPlastic1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BirthdayCake_CandleShape8.job.rib"] "float[6] bound" [3.73561 3.79874 0.893504 1.14458 0.33019 0.390228] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BirthdayCake:Candle9"]
+							Attribute "identifier" "float id" [55]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["BirthdayCake:CandleShape9"]
+									Attribute "identifier" "float id" [1876]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,BirthdayCake:PxrLMPlastic1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BirthdayCake_CandleShape9.job.rib"] "float[6] bound" [3.51537 3.57849 0.893504 1.14458 0.358421 0.418458] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BirthdayCake:Candle10"]
+							Attribute "identifier" "float id" [56]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["BirthdayCake:CandleShape10"]
+									Attribute "identifier" "float id" [1877]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,BirthdayCake:PxrLMPlastic1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BirthdayCake_CandleShape10.job.rib"] "float[6] bound" [3.32572 3.38885 0.893504 1.14458 0.270697 0.330735] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BirthdayCake:Candle12"]
+							Attribute "identifier" "float id" [57]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["BirthdayCake:CandleShape12"]
+									Attribute "identifier" "float id" [1878]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,BirthdayCake:PxrLMPlastic1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BirthdayCake_CandleShape12.job.rib"] "float[6] bound" [3.20052 3.26365 0.893504 1.14458 0.0908071 0.150845] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Bag_and_Chip:Chips"]
+						Attribute "identifier" "float id" [8]
+						ConcatTransform [ 1.03526 0 -0.620343 0  0 1.20689 0 0  0.620343 0 1.03526 0  5.08957 5.32067 1.65328 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Bag_and_Chip:Packet"]
+							Attribute "identifier" "float id" [10]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["Bag_and_Chip:PacketShape"]
+									Attribute "identifier" "float id" [1833]
+									Illuminate "Moon_HighlightShape" 0
+									Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+									Sides 2
+									ShadingInterpolation "smooth"
+									Attribute "user" "int receivesShadows" [1]
+									Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+									Attribute "shade" "string transmissionhitmode" ["shader"]
+									Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+									##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse1SG,
+									TransformBegin 
+										Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_PacketShape.job.rib"] "float[6] bound" [-0.83683 0.777558 -0.010154 0.492637 -1.16861 0.993931] "int __immediatesubdivide" [0]
+									TransformEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Bag_and_Chip:Chips"]
+							Attribute "identifier" "float id" [9]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube3"]
+								Attribute "identifier" "float id" [11]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape3"]
+										Attribute "identifier" "float id" [1834]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape3.job.rib"] "float[6] bound" [-0.157887 0.249523 0.0299724 0.110265 0.419586 0.873228] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube4"]
+								Attribute "identifier" "float id" [12]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape4"]
+										Attribute "identifier" "float id" [1835]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape4.job.rib"] "float[6] bound" [-0.0932779 0.356487 0.0251016 0.105394 0.571848 1.05346] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube5"]
+								Attribute "identifier" "float id" [13]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape5"]
+										Attribute "identifier" "float id" [1836]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape5.job.rib"] "float[6] bound" [-0.556704 -0.158392 0.00289786 0.0831909 0.664199 1.11125] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube6"]
+								Attribute "identifier" "float id" [14]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape6"]
+										Attribute "identifier" "float id" [1837]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape6.job.rib"] "float[6] bound" [-0.387488 -0.0703034 0.0421667 0.122459 0.587234 0.970532] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube7"]
+								Attribute "identifier" "float id" [15]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape7"]
+										Attribute "identifier" "float id" [1838]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape7.job.rib"] "float[6] bound" [-0.16178 0.155405 0.0921504 0.172443 0.553977 0.937274] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube8"]
+								Attribute "identifier" "float id" [16]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape8"]
+										Attribute "identifier" "float id" [1839]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape8.job.rib"] "float[6] bound" [0.160454 0.555862 0.0940393 0.174332 0.386863 0.831784] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube9"]
+								Attribute "identifier" "float id" [17]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape9"]
+										Attribute "identifier" "float id" [1840]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape9.job.rib"] "float[6] bound" [-0.365936 0.124925 0.0279195 0.108212 0.646523 1.14389] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube10"]
+								Attribute "identifier" "float id" [18]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape10"]
+										Attribute "identifier" "float id" [1841]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape10.job.rib"] "float[6] bound" [0.0297894 0.431375 0.0583561 0.138649 0.464664 0.914106] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube11"]
+								Attribute "identifier" "float id" [19]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape11"]
+										Attribute "identifier" "float id" [1842]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape11.job.rib"] "float[6] bound" [0.0857246 0.53549 0.0460258 0.126319 0.571848 1.05346] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube12"]
+								Attribute "identifier" "float id" [20]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape12"]
+										Attribute "identifier" "float id" [1843]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape12.job.rib"] "float[6] bound" [0.0764883 0.544726 0.00808156 0.0883741 0.914901 1.40633] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube13"]
+								Attribute "identifier" "float id" [21]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape13"]
+										Attribute "identifier" "float id" [1844]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape13.job.rib"] "float[6] bound" [-0.131506 0.318259 0.00808156 0.0883741 0.919809 1.40142] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube14"]
+								Attribute "identifier" "float id" [22]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape14"]
+										Attribute "identifier" "float id" [1845]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape14.job.rib"] "float[6] bound" [0.129576 0.472175 0.00808156 0.0883741 1.18155 1.5856] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube15"]
+								Attribute "identifier" "float id" [23]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape15"]
+										Attribute "identifier" "float id" [1846]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape15.job.rib"] "float[6] bound" [-0.254612 0.0853305 -0.0353129 0.172464 1.28066 1.70131] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube16"]
+								Attribute "identifier" "float id" [24]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape16"]
+										Attribute "identifier" "float id" [1847]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape16.job.rib"] "float[6] bound" [-0.309523 0.140242 0.00808156 0.0883741 1.51664 1.99826] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube17"]
+								Attribute "identifier" "float id" [25]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape17"]
+										Attribute "identifier" "float id" [1848]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape17.job.rib"] "float[6] bound" [-0.526103 -0.102285 0.00808156 0.0883741 1.52491 1.98999] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube18"]
+								Attribute "identifier" "float id" [26]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape18"]
+										Attribute "identifier" "float id" [1849]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape18.job.rib"] "float[6] bound" [-0.539076 -0.0893111 0.00808156 0.0883741 1.05093 1.53254] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube19"]
+								Attribute "identifier" "float id" [27]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape19"]
+										Attribute "identifier" "float id" [1850]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape19.job.rib"] "float[6] bound" [-0.381781 0.0679841 0.00808156 0.0883741 1.05093 1.53254] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube20"]
+								Attribute "identifier" "float id" [28]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape20"]
+										Attribute "identifier" "float id" [1851]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape20.job.rib"] "float[6] bound" [-0.586987 -0.236694 0.00808156 0.0883741 1.08663 1.49684] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube21"]
+								Attribute "identifier" "float id" [29]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape21"]
+										Attribute "identifier" "float id" [1852]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape21.job.rib"] "float[6] bound" [-0.365936 0.124925 0.0279195 0.108212 0.118422 0.61579] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube22"]
+								Attribute "identifier" "float id" [30]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape22"]
+										Attribute "identifier" "float id" [1853]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape22.job.rib"] "float[6] bound" [-0.387488 -0.0703034 0.0421667 0.122459 0.352164 0.735462] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube23"]
+								Attribute "identifier" "float id" [31]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape23"]
+										Attribute "identifier" "float id" [1854]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape23.job.rib"] "float[6] bound" [0.0857246 0.53549 0.0460258 0.126319 0.571848 1.05346] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube24"]
+								Attribute "identifier" "float id" [32]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape24"]
+										Attribute "identifier" "float id" [1855]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape24.job.rib"] "float[6] bound" [0.0857246 0.53549 0.121297 0.20159 0.571848 1.05346] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube25"]
+								Attribute "identifier" "float id" [33]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape25"]
+										Attribute "identifier" "float id" [1856]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape25.job.rib"] "float[6] bound" [-0.556704 -0.158392 0.071686 0.151978 0.664199 1.11125] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube26"]
+								Attribute "identifier" "float id" [34]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape26"]
+										Attribute "identifier" "float id" [1857]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape26.job.rib"] "float[6] bound" [-0.471185 -0.154 0.105 0.185292 0.352164 0.735462] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube27"]
+								Attribute "identifier" "float id" [35]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape27"]
+										Attribute "identifier" "float id" [1858]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape27.job.rib"] "float[6] bound" [-0.77274 -0.374428 0.124942 0.205235 0.664199 1.11125] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube28"]
+								Attribute "identifier" "float id" [36]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape28"]
+										Attribute "identifier" "float id" [1859]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape28.job.rib"] "float[6] bound" [-0.54309 -0.161197 0.087333 0.241444 0.672755 1.1027] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube29"]
+								Attribute "identifier" "float id" [37]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape29"]
+										Attribute "identifier" "float id" [1860]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape29.job.rib"] "float[6] bound" [-0.020803 0.36109 0.087333 0.241444 0.672755 1.1027] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube30"]
+								Attribute "identifier" "float id" [38]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape30"]
+										Attribute "identifier" "float id" [1861]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape30.job.rib"] "float[6] bound" [0.251982 0.633875 0.087333 0.241444 0.672755 1.1027] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube31"]
+								Attribute "identifier" "float id" [39]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape31"]
+										Attribute "identifier" "float id" [1862]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape31.job.rib"] "float[6] bound" [-0.697081 -0.315187 0.087333 0.241444 0.39474 0.824683] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube32"]
+								Attribute "identifier" "float id" [40]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape32"]
+										Attribute "identifier" "float id" [1863]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape32.job.rib"] "float[6] bound" [-0.252228 0.129666 0.087333 0.241444 0.937476 1.36742] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Bag_and_Chip:pCube33"]
+								Attribute "identifier" "float id" [41]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["Bag_and_Chip:pCubeShape33"]
+										Attribute "identifier" "float id" [1864]
+										Illuminate "Moon_HighlightShape" 0
+										Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,Bag_and_Chip:PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Bag_and_Chip_pCubeShape33.job.rib"] "float[6] bound" [-0.16069 0.221204 0.00682461 0.160935 0.937476 1.36742] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["SunPath"]
+					Attribute "identifier" "float id" [1374]
+					ConcatTransform [ 7.77156e-016 -0.996454 -0.0841427 0  0.996189 -0.00733892 0.0869106 0  -0.0872199 -0.0838221 0.992656 0  -17.0428 -993.271 -148.266 1 ]
+					AttributeBegin 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["lamp:Lamp"]
+					Attribute "identifier" "float id" [1822]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -25.0561 0 10.6226 1 ]
+					AttributeBegin 
+						Attribute "identifier" "string name" ["lamp:Glass"]
+						Attribute "identifier" "float id" [1821]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["lamp:GlassShape"]
+								Attribute "identifier" "float id" [3377]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,lamp:PxrLMGlass1SG,lampset,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/lamp_GlassShape.job.rib"] "float[6] bound" [-1.57241 1.57241 22.3683 25.7426 -1.57241 1.57241] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["lamp:Body"]
+						Attribute "identifier" "float id" [1820]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["lamp:BodyShape"]
+								Attribute "identifier" "float id" [3376]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,lamp:PxrLMDiffuse1SG,lampset,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/lamp_BodyShape.job.rib"] "float[6] bound" [-3.70195 3.27403 0.145815 30.102 -2.87058 2.87058] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["sun:Sun"]
+					Attribute "identifier" "float id" [1828]
+					ConcatTransform [ 2.22045e-016 0 1 0  -0 1 0 0  -1 -0 2.22045e-016 0  -19.9865 49.9545 -26.6856 1 ]
+					AttributeBegin 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["sun:SunShape"]
+							Attribute "identifier" "float id" [3386]
+							Illuminate "Moon_HighlightShape" 0
+							Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+							Sides 2
+							ShadingInterpolation "smooth"
+							Attribute "user" "int receivesShadows" [1]
+							Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+							Attribute "shade" "string transmissionhitmode" ["shader"]
+							Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+							##RLF Inject SurfaceShading -attribute sets@,sun:PxrLMDiffuse1SG,
+							TransformBegin 
+								Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/sun_SunShape.job.rib"] "float[6] bound" [-1.34077 1.34077 -0.801183 6.70667 -3.98239 4.03737] "int __immediatesubdivide" [0]
+							TransformEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["moon:Moon"]
+					Attribute "identifier" "float id" [1823]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -19.9972 82.033 -48.1898 1 ]
+					AttributeBegin 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["moon:MoonShape"]
+							Attribute "identifier" "float id" [3378]
+							Sides 2
+							ShadingInterpolation "smooth"
+							Attribute "user" "int receivesShadows" [1]
+							Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+							Attribute "shade" "string transmissionhitmode" ["shader"]
+							Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+							##RLF Inject SurfaceShading -attribute sets@,moon:PxrLMDiffuse1SG,
+							TransformBegin 
+								Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/moon_MoonShape.job.rib"] "float[6] bound" [-2.6 1.77737 -2.54184 2.57719 -1.50769 1.47195] "int __immediatesubdivide" [0]
+							TransformEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Tree:Tree_Group"]
+					Attribute "identifier" "float id" [1381]
+					ConcatTransform [ 1.59448 0 4.11592 0  -0 4.41398 0 0  -4.11592 -0 1.59448 0  -35.3818 0 -14.1215 1 ]
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Tree:Trunk"]
+						Attribute "identifier" "float id" [1382]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -1.53473 0.5 -0.160786 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Tree:TrunkShape"]
+								Attribute "identifier" "float id" [3009]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,Tree:PxrLMDiffuse3SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Tree_TrunkShape.job.rib"] "float[6] bound" [-1.85775 1.07972 -0.648383 6.58702 -2.22282 2.14586] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Tree:Bush1"]
+						Attribute "identifier" "float id" [1376]
+						ConcatTransform [ 0.327513 -0.0516465 -0.00241566 0  0.040397 0.261318 -0.109958 0  0.0220349 0.125414 0.306144 0  -0.901708 4.62802 -1.52588 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Tree:BushShape1"]
+								Attribute "identifier" "float id" [3004]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,Tree:PxrLMDiffuse2SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Tree_BushShape1.job.rib"] "float[6] bound" [-4.43847 4.23954 -2.88338 3.78387 -4.5424 4.5457] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Tree:Bush2"]
+						Attribute "identifier" "float id" [1377]
+						ConcatTransform [ 0.211201 0.148936 -0.0433241 0  -0.133941 0.176369 -0.0466455 0  0.00306564 0.0691689 0.252728 0  -3.49356 5.04264 -1.09603 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Tree:BushShape2"]
+								Attribute "identifier" "float id" [3005]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,Tree:PxrLMDiffuse2SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Tree_BushShape2.job.rib"] "float[6] bound" [-4.55439 4.54793 -2.80263 4.44457 -4.47974 4.57272] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Tree:Head"]
+						Attribute "identifier" "float id" [1380]
+						ConcatTransform [ 0.624765 -0.100663 0.00241332 0  0.086967 0.539451 -0.0129329 0  9.88003e-018 0.0151672 0.632646 0  -1.77635 7.37831 -0.138676 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Tree:HeadShape"]
+								Attribute "identifier" "float id" [3008]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,Tree:PxrLMDiffuse1SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Tree_HeadShape.job.rib"] "float[6] bound" [-4.55439 4.54793 -2.80263 4.44457 -4.47974 4.57272] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Tree:Bush3"]
+						Attribute "identifier" "float id" [1378]
+						ConcatTransform [ 0.367994 -0.05803 -0.00271423 0  0.0501743 0.317557 0.0132682 0  0.00028583 -0.0155974 0.372224 0  -0.899695 3.63347 1.87969 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Tree:BushShape3"]
+								Attribute "identifier" "float id" [3006]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,Tree:PxrLMDiffuse2SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Tree_BushShape3.job.rib"] "float[6] bound" [-4.56203 4.52812 -2.74279 5.24191 -4.42215 4.67642] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Tree:Bush4"]
+						Attribute "identifier" "float id" [1379]
+						ConcatTransform [ 0.328947 0.121957 0.00371115 0  -0.0969532 0.257651 0.126647 0  0.0478156 -0.138668 0.318713 0  -2.91688 5.13858 1.26058 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Tree:BushShape4"]
+								Attribute "identifier" "float id" [3007]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,Tree:PxrLMDiffuse1SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Tree_BushShape4.job.rib"] "float[6] bound" [-4.55439 4.54793 -2.80263 4.44457 -4.47974 4.57272] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Ground_and_lights:pPlane1"]
+					Attribute "identifier" "float id" [923]
+					ConcatTransform [ 948.866 0 0 0  0 948.866 0 0  0 0 948.866 0  0 13.5387 -431.331 1 ]
+					AttributeBegin 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Ground_and_lights:pPlaneShape1"]
+							Attribute "identifier" "float id" [2608]
+							Illuminate "Moon_HighlightShape" 0
+							Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+							Sides 2
+							ShadingInterpolation "smooth"
+							Attribute "user" "int receivesShadows" [1]
+							Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+							Attribute "shade" "string transmissionhitmode" ["shader"]
+							Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+							##RLF Inject SurfaceShading -attribute sets@,Ground_and_lights:PxrLMDiffuse2SG,
+							TransformBegin 
+								Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/Ground_and_lights_pPlaneShape1.job.rib"] "float[6] bound" [-0.559691 0.5 -0.0156074 0.121644 -0.5 0.5] "int __immediatesubdivide" [0]
+							TransformEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Ground_and_lights:PxrStdEnvDayLight1"]
+					Attribute "identifier" "float id" [922]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -0.0891472 2.94397 -29.3 1 ]
+					AttributeBegin 
+					AttributeEnd 
+				AttributeEnd 
+			AttributeEnd 
+			AttributeBegin 
+				Attribute "identifier" "string name" ["Characters"]
+				Attribute "identifier" "float id" [490]
+				ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Expansion_Lattice"]
+					Attribute "identifier" "float id" [493]
+					ConcatTransform [ 2.44119 0 0 0  0 2.92701 0 0  0 0 2.44119 0  -16.9902 20.0226 1.55173 1 ]
+					AttributeBegin 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Other"]
+					Attribute "identifier" "float id" [928]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["YellowBalloon1:nurbsCircle1"]
+						Attribute "identifier" "float id" [1803]
+						ConcatTransform [ 2.14452 0 0 0  0 2.14452 0 0  0 0 2.14452 0  0 -0.140991 -0.359932 1 ]
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["YellowBalloon1:transform1"]
+							Attribute "identifier" "float id" [1807]
+							ConcatTransform [ 0.466304 0 0 0  0 0.466304 0 0  0 0 0.466304 0  0 0.0657446 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["YellowBalloon1:joint11"]
+								Attribute "identifier" "float id" [1800]
+								ConcatTransform [ 0.978507 0 0.206214 0  -0 1 0 0  -0.206214 -0 0.978507 0  -0.560135 -0.196153 1.36543 1 ]
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["YellowBalloon1:transform2"]
+							Attribute "identifier" "float id" [1808]
+							ConcatTransform [ 0.466304 0 0 0  0 0.466304 0 0  0 0 0.466304 0  0 0.0657446 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["YellowBalloon1:joint12"]
+								Attribute "identifier" "float id" [1801]
+								ConcatTransform [ 0.978507 0 0.206214 0  -0 1 0 0  -0.206214 -0 0.978507 0  0.530459 -0.159237 1.34972 1 ]
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["PurpleBalloon1:nurbsCircle1"]
+						Attribute "identifier" "float id" [1366]
+						ConcatTransform [ 2.14452 0 0 0  0 2.14452 0 0  0 0 2.14452 0  0 -0.140991 -0.331 1 ]
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["PurpleBalloon1:transform1"]
+							Attribute "identifier" "float id" [1370]
+							ConcatTransform [ 0.466304 0 0 0  0 0.466304 0 0  0 0 0.466304 0  0 0.0657446 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["PurpleBalloon1:joint11"]
+								Attribute "identifier" "float id" [1363]
+								ConcatTransform [ 0.978507 0 0.206214 0  -0 1 0 0  -0.206214 -0 0.978507 0  -0.560135 -0.196153 1.36543 1 ]
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["PurpleBalloon1:transform2"]
+							Attribute "identifier" "float id" [1371]
+							ConcatTransform [ 0.466304 0 0 0  0 0.466304 0 0  0 0 0.466304 0  0 0.0657446 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["PurpleBalloon1:joint12"]
+								Attribute "identifier" "float id" [1364]
+								ConcatTransform [ 0.978507 0 0.206214 0  -0 1 0 0  -0.206214 -0 0.978507 0  0.530459 -0.159237 1.34972 1 ]
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:nurbsCircle1"]
+						Attribute "identifier" "float id" [479]
+						ConcatTransform [ 2.14452 0 0 0  0 2.14452 0 0  0 0 2.14452 0  0 -0.140991 -0.384172 1 ]
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:transform1"]
+							Attribute "identifier" "float id" [483]
+							ConcatTransform [ 0.466304 0 0 0  0 0.466304 0 0  0 0 0.466304 0  0 0.0657446 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:joint11"]
+								Attribute "identifier" "float id" [476]
+								ConcatTransform [ 0.978507 0 0.206214 0  -0 1 0 0  -0.206214 -0 0.978507 0  -0.560135 -0.196153 1.36543 1 ]
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:transform2"]
+							Attribute "identifier" "float id" [484]
+							ConcatTransform [ 0.466304 0 0 0  0 0.466304 0 0  0 0 0.466304 0  0 0.0657446 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:joint12"]
+								Attribute "identifier" "float id" [477]
+								ConcatTransform [ 0.978507 0 0.206214 0  -0 1 0 0  -0.206214 -0 0.978507 0  0.530459 -0.159237 1.34972 1 ]
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["YellowBalloon1:YellowBalloon"]
+					Attribute "identifier" "float id" [1795]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  23.1981 11.8542 0.720253 1 ]
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:Balloon_Center"]
+						Attribute "identifier" "float id" [1384]
+						ConcatTransform [ 0.999583 -0.027887 -0.00746635 0  0.0275946 0.998943 -0.0367519 0  0.00848336 0.0365305 0.999297 0  0.0589291 -0.0533283 0 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:Balloon_CenterShape"]
+								Attribute "identifier" "float id" [3010]
+								Sides 2
+								ShadingInterpolation "constant"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [0] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+shadow"]
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:FACE_CTRL"]
+							Attribute "identifier" "float id" [1397]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 1.46973 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:X_LBL"]
+								Attribute "identifier" "float id" [1548]
+								ConcatTransform [ -1.01628 -0 -0 0  -0 -1.01628 -0 0  -0 -0 -1.01628 0  0 0.426852 5.27501 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:EYE_CTRL"]
+									Attribute "identifier" "float id" [1395]
+									ConcatTransform [ -1.01628 -0 -0 0  -0 -1.01628 -0 0  -0 -0 -1.01628 0  0 0.424635 5.27223 1 ]
+									AttributeBegin 
+									AttributeEnd 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:LB_CTRL"]
+										Attribute "identifier" "float id" [1402]
+										ConcatTransform [ -1.01628 -0 -0 0  -0 -1.01628 -0 0  -0 -0 -1.01628 0  0.485627 0.391517 5.27223 1 ]
+										AttributeBegin 
+										AttributeEnd 
+										AttributeBegin 
+											Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:LW_CTRL"]
+											Attribute "identifier" "float id" [1417]
+											ConcatTransform [ -1.01628 -0 -0 0  -0 -1.01628 -0 0  -0 -0 -1.01628 0  0.494471 0.403251 5.27223 1 ]
+											AttributeBegin 
+											AttributeEnd 
+										AttributeEnd 
+									AttributeEnd 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:RB_CTRL"]
+										Attribute "identifier" "float id" [1480]
+										ConcatTransform [ -1.01628 -0 -0 0  -0 -1.01628 -0 0  -0 -0 -1.01628 0  -0.500699 0.387427 5.27223 1 ]
+										AttributeBegin 
+										AttributeEnd 
+										AttributeBegin 
+											Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:RW_CTRL"]
+											Attribute "identifier" "float id" [1495]
+											ConcatTransform [ -1.01628 -0 -0 0  -0 -1.01628 -0 0  -0 -0 -1.01628 0  -0.490528 0.403251 5.27223 1 ]
+											AttributeBegin 
+											AttributeEnd 
+										AttributeEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:R_EB_CTRL"]
+								Attribute "identifier" "float id" [1507]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -0.148624 0.0520238 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:R_UD_LBL"]
+									Attribute "identifier" "float id" [1523]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:L_EB_CTRL"]
+								Attribute "identifier" "float id" [1429]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0.0855566 0.0576455 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:L_UD_LBL"]
+									Attribute "identifier" "float id" [1445]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:TRI_CTRL"]
+								Attribute "identifier" "float id" [1546]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:TRI_LBL"]
+									Attribute "identifier" "float id" [1547]
+									ConcatTransform [ 7.49698e-017 -0.337634 -3.74849e-017 0  3.74849e-017 -7.49698e-017 0.337634 0  -0.337634 -1.12455e-016 0 0  0.00105513 -1.72251 2.65165 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["YellowBalloon1:Face_Rig1:M_CTRL"]
+								Attribute "identifier" "float id" [1453]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["YellowBalloon1:pSphere1"]
+						Attribute "identifier" "float id" [1806]
+						ConcatTransform [ 1.22008 -0.0340387 -0.00911338 0  0.0362875 1.31363 -0.0483295 0  0.0103547 0.0445889 1.21973 0  0.069314 -0.0639941 -0.00148895 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["YellowBalloon1:pSphereShape1"]
+								Attribute "identifier" "float id" [3368]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,YellowBalloon1:PxrLMDiffuse4SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/0000/deformingGeoCache.0000.zip!renderman/Set/rib/0000/YellowBalloon1_pSphereShape1.0000.rib"] "float[6] bound" [-1 1 -1.22583 1 -1 1] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["YellowBalloon1:pCylinder1"]
+						Attribute "identifier" "float id" [1805]
+						ConcatTransform [ 0.966173 -0.256004 0.0311686 0  0.248361 0.956195 0.154945 0  -0.0694697 -0.141962 0.987431 0  0.555031 0.260598 -2.50655 1 ]
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["pCylinderShape1Deformed"]
+								Attribute "identifier" "float id" [3382]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse4SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/0000/deformingGeoCache.0000.zip!renderman/Set/rib/0000/YellowBalloon1_pCylinder1_pCylinderShape1Deformed.0000.rib"] "float[6] bound" [-0.850148 0.0211109 -10.2581 -1.77493 2.29453 2.85483] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["YellowBalloon1:pCone1"]
+						Attribute "identifier" "float id" [1804]
+						ConcatTransform [ 0.999583 -0.027887 -0.00746635 0  0.0275946 0.998943 -0.0367519 0  0.00848336 0.0365305 0.999297 0  0.0375288 -0.259189 -2.85131 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["YellowBalloon1:pConeShape1"]
+								Attribute "identifier" "float id" [3365]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,YellowBalloon1:PxrLMDiffuse4SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/YellowBalloon1_pConeShape1.job.rib"] "float[6] bound" [-0.153744 0.179873 -1.65295 -1.30217 2.58223 2.93301] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["YellowBalloon1:curve1"]
+						Attribute "identifier" "float id" [1796]
+						ConcatTransform [ 0.966173 -0.256004 0.0311686 0  0.248361 0.956195 0.154945 0  -0.0694697 -0.141962 0.987431 0  0.254949 -0.157984 0.222983 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["PurpleBalloon1:YellowBalloon"]
+					Attribute "identifier" "float id" [1357]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  20.8544 12.5357 1.55173 1 ]
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["PurpleBalloon1:Face_Rig1:Balloon_Center"]
+						Attribute "identifier" "float id" [946]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0.0106657 0 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["PurpleBalloon1:Face_Rig1:Balloon_CenterShape"]
+								Attribute "identifier" "float id" [2641]
+								Sides 2
+								ShadingInterpolation "constant"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [0] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+shadow"]
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["PurpleBalloon1:Face_Rig1:FACE"]
+							Attribute "identifier" "float id" [958]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["PurpleBalloon1:ffd1Lattice"]
+						Attribute "identifier" "float id" [1362]
+						ConcatTransform [ 2.44119 0 0 0  0 2.92701 0 0  0 0 2.44119 0  0 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["PurpleBalloon1:ffd1Base"]
+						Attribute "identifier" "float id" [1361]
+						ConcatTransform [ 2.44119 0 0 0  0 2.92701 0 0  0 0 2.44119 0  -0.403396 -0.148485 -2.76748 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["PurpleBalloon1:pSphere1"]
+						Attribute "identifier" "float id" [1369]
+						ConcatTransform [ 1.22059 0 0 0  0 1.31502 0 0  0 0 1.22059 0  0 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["pSphereShape1Deformed"]
+								Attribute "identifier" "float id" [3383]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,PurpleBalloon1:PxrLMDiffuse1SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/0000/deformingGeoCache.0000.zip!renderman/Set/rib/0000/pSphereShape1Deformed.0000.rib"] "float[6] bound" [-1 1 -1.22583 1 -1 1] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["PurpleBalloon1:pCylinder1"]
+						Attribute "identifier" "float id" [1368]
+						ConcatTransform [ 0.997646 0.0621197 -0.0290519 0  -0.0531553 0.968132 0.244734 0  0.0433289 -0.242613 0.969155 0  -0.205038 0.926735 -2.2728 1 ]
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["pCylinderShape1Deformed"]
+								Attribute "identifier" "float id" [3381]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse4SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/0000/deformingGeoCache.0000.zip!renderman/Set/rib/0000/PurpleBalloon1_pCylinder1_pCylinderShape1Deformed.0000.rib"] "float[6] bound" [-0.494557 0.0373903 -10.1476 -1.22391 2.4352 2.81968] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["PurpleBalloon1:pCone1"]
+						Attribute "identifier" "float id" [1367]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 -0.103967 -2.76747 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["PurpleBalloon1:pConeShape1"]
+								Attribute "identifier" "float id" [2997]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,PurpleBalloon1:PxrLMDiffuse1SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/PurpleBalloon1_pConeShape1.job.rib"] "float[6] bound" [-0.153744 0.179873 -1.65295 -1.30217 2.58223 2.93301] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["PurpleBalloon1:curve1"]
+						Attribute "identifier" "float id" [1358]
+						ConcatTransform [ 0.997646 0.0621197 -0.0290519 0  -0.0531553 0.968132 0.244734 0  0.0433289 -0.242613 0.969155 0  -0.100708 0.289326 0.383961 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:YellowBalloon"]
+					Attribute "identifier" "float id" [472]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  18.668 11.6412 -0.572252 1 ]
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center"]
+						Attribute "identifier" "float id" [61]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0.0101698 0.0128368 -0.00138727 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:Face_Rig1:Balloon_CenterShape"]
+								Attribute "identifier" "float id" [1881]
+								Sides 2
+								ShadingInterpolation "constant"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [0] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+shadow"]
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:Face_Rig1:FACE"]
+							Attribute "identifier" "float id" [73]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -0.0316738 0.00401813 0.0407352 1 ]
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:pSphere1"]
+						Attribute "identifier" "float id" [482]
+						ConcatTransform [ 1.22059 0 0 0  0 1.31502 0 0  0 0 1.22059 0  0.0101698 0.00217112 -0.00138727 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:pSphereShape1"]
+								Attribute "identifier" "float id" [2239]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,BlueBalloonwithFaceandCheeks:PxrLMDiffuse1SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/0000/deformingGeoCache.0000.zip!renderman/Set/rib/0000/BlueBalloonwithFaceandCheeks_pSphereShape1.0000.rib"] "float[6] bound" [-1 1 -1.22583 1 -1 1] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:pCylinder1"]
+						Attribute "identifier" "float id" [481]
+						ConcatTransform [ 0.969538 0.244583 -0.0132728 0  -0.244272 0.96947 0.021439 0  0.0181112 -0.0175437 0.999682 0  -0.406773 0.341589 -2.73517 1 ]
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["pCylinderShape1Deformed"]
+								Attribute "identifier" "float id" [3380]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse4SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/0000/deformingGeoCache.0000.zip!renderman/Set/rib/0000/BlueBalloonwithFaceandCheeks_pCylinder1_pCylinderShape1Deformed.0000.rib"] "float[6] bound" [-1.66518 0.0473452 -10.6417 -1.99286 2.27588 2.81578] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:pCone1"]
+						Attribute "identifier" "float id" [480]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 -0.103967 -2.76747 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:pConeShape1"]
+								Attribute "identifier" "float id" [2236]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,BlueBalloonwithFaceandCheeks:PxrLMDiffuse1SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/BlueBalloonwithFaceandCheeks_pConeShape1.job.rib"] "float[6] bound" [-0.153744 0.179873 -1.65295 -1.30217 2.58223 2.93301] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["BlueBalloonwithFaceandCheeks:curve1"]
+						Attribute "identifier" "float id" [473]
+						ConcatTransform [ 0.998694 0.0503858 -0.00841372 0  -0.0500269 0.998006 0.0384781 0  0.0103357 -0.038007 0.999224 0  0.0519996 -0.753777 0.0847207 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:YellowBalloon"]
+					Attribute "identifier" "float id" [906]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  21.2943 11.1344 -0.857152 1 ]
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:Balloon_Center"]
+						Attribute "identifier" "float id" [495]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0.0106657 0 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:Balloon_CenterShape"]
+								Attribute "identifier" "float id" [2246]
+								Sides 2
+								ShadingInterpolation "constant"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [0] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+shadow"]
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:FACE_CTRL"]
+							Attribute "identifier" "float id" [508]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -3.08185 -1.01041 1.00581 1 ]
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:X_LBL"]
+								Attribute "identifier" "float id" [659]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:EYE_CTRL"]
+									Attribute "identifier" "float id" [506]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:LB_CTRL"]
+										Attribute "identifier" "float id" [513]
+										ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+										AttributeBegin 
+										AttributeEnd 
+										AttributeBegin 
+											Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:LW_CTRL"]
+											Attribute "identifier" "float id" [528]
+											ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+											AttributeBegin 
+											AttributeEnd 
+										AttributeEnd 
+									AttributeEnd 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:RB_CTRL"]
+										Attribute "identifier" "float id" [591]
+										ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+										AttributeBegin 
+										AttributeEnd 
+										AttributeBegin 
+											Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:RW_CTRL"]
+											Attribute "identifier" "float id" [606]
+											ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+											AttributeBegin 
+											AttributeEnd 
+										AttributeEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:R_EB_CTRL"]
+								Attribute "identifier" "float id" [618]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -0.148624 0.0520238 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:R_UD_LBL"]
+									Attribute "identifier" "float id" [634]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:L_EB_CTRL"]
+								Attribute "identifier" "float id" [540]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0.0855566 0.0576455 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:L_UD_LBL"]
+									Attribute "identifier" "float id" [556]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:TRI_CTRL"]
+								Attribute "identifier" "float id" [657]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:TRI_LBL"]
+									Attribute "identifier" "float id" [658]
+									ConcatTransform [ 7.49698e-017 -0.337634 -3.74849e-017 0  3.74849e-017 -7.49698e-017 0.337634 0  -0.337634 -1.12455e-016 0 0  0.00105513 -1.72251 2.65165 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:Face_Rig1:M_CTRL"]
+								Attribute "identifier" "float id" [564]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:ffd1Lattice"]
+						Attribute "identifier" "float id" [911]
+						ConcatTransform [ 2.44119 0 0 0  0 2.92701 0 0  0 0 2.44119 0  0 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:ffd1Base"]
+						Attribute "identifier" "float id" [910]
+						ConcatTransform [ 2.44119 0 0 0  0 2.92701 0 0  0 0 2.44119 0  -0.403396 -0.148485 -2.76748 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:pSphere1"]
+						Attribute "identifier" "float id" [918]
+						ConcatTransform [ 1.22059 0 0 0  0 1.31502 0 0  0 0 1.22059 0  0 0 0 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:pSphereShape1"]
+								Attribute "identifier" "float id" [2605]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,GreenBalloonwithFaceandCheeks:PxrLMDiffuse1SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/0000/deformingGeoCache.0000.zip!renderman/Set/rib/0000/GreenBalloonwithFaceandCheeks_pSphereShape1.0000.rib"] "float[6] bound" [-1 1 -1.22583 1 -1 1] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:pCylinder1"]
+						Attribute "identifier" "float id" [917]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0.271655 -2.76747 1 ]
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["pCylinderShape1Deformed"]
+								Attribute "identifier" "float id" [3379]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse4SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/0000/deformingGeoCache.0000.zip!renderman/Set/rib/0000/GreenBalloonwithFaceandCheeks_pCylinder1_pCylinderShape1Deformed.0000.rib"] "float[6] bound" [-0.322947 0.338696 -8.92048 -1.61458 2.72896 2.79116] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:pCone1"]
+						Attribute "identifier" "float id" [916]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 -0.103967 -2.76747 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:pConeShape1"]
+								Attribute "identifier" "float id" [2602]
+								Illuminate "Moon_HighlightShape" 0
+								Attribute "user" "string lightcategory" ["&-Moon_HighlightShape"]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,GreenBalloonwithFaceandCheeks:PxrLMDiffuse1SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Set/rib/job/staticGeoCache.job.zip!renderman/Set/rib/job/GreenBalloonwithFaceandCheeks_pConeShape1.job.rib"] "float[6] bound" [-0.153744 0.179873 -1.65295 -1.30217 2.58223 2.93301] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["GreenBalloonwithFaceandCheeks:curve1"]
+						Attribute "identifier" "float id" [907]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+					AttributeEnd 
+				AttributeEnd 
+			AttributeEnd 
+			AttributeBegin 
+				Attribute "identifier" "string name" ["Distant_Light"]
+				Attribute "identifier" "float id" [491]
+				ConcatTransform [ 1 0 -0 0  -0 0.972162 -0.234308 0  0 0.234308 0.972162 0  0 38.4182 84.9985 1 ]
+				AttributeBegin 
+				AttributeEnd 
+			AttributeEnd 
+			AttributeBegin 
+				Attribute "identifier" "string name" ["Lamp_Light_14"]
+				Attribute "identifier" "float id" [926]
+				ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -25.0617 24.2146 10.8203 1 ]
+				AttributeBegin 
+				AttributeEnd 
+			AttributeEnd 
+			AttributeBegin 
+			AttributeEnd 
+			AttributeBegin 
+			AttributeEnd 
+			AttributeBegin 
+				Attribute "identifier" "string name" ["Moon_Highlight"]
+				Attribute "identifier" "float id" [927]
+				ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -20.6204 48.9329 -35.0827 1 ]
+				AttributeBegin 
+				AttributeEnd 
+			AttributeEnd 
+			AttributeBegin 
+			AttributeEnd 
+			##RLF ScopeEnd -name camera2_camShape2_RerenderRIS
+		WorldEnd 
+	ResourceEnd 
+	##streammarker 0
+FrameEnd 

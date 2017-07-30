@@ -1,0 +1,3210 @@
+##RenderMan RIB
+#Created by RenderMan for Maya 20.10 (@1623687 Jun 15 2016)
+#Wed Aug 24 11:53:49 AM Pacific Daylight Time 2016
+version 3.04
+Option "ribparse" "string varsubst" [""]
+Option "ribparse" "string varsubst" ["$"]
+IfBegin "!defined(RMSPROJ_FROM_ENV)" 
+	Option "user" "string RMSPROJ" ["C:/Users/Arthur/Dropbox/The Curious Balloon/CB/"]
+IfEnd 
+IfBegin "!defined(RMSTREE)" 
+	Option "user" "string RMSTREE" ["C:/Program Files/Pixar/RenderManStudio-20.10-maya2016.5/"]
+IfEnd 
+Option "searchpath" "string resource" ["${RMSPROJ}:@"]
+Option "searchpath" "string archive" ["${RMSPROJ}:."]
+Option "searchpath" "string display" ["${RMSTREE}/bin:@"]
+Option "searchpath" "string shader" ["${RMSPROJ}:${RMSTREE}/lib/shaders/:@"]
+Option "searchpath" "string texture" ["${RMSPROJ}:${RMSTREE}/lib/textures/:@"]
+Option "searchpath" "string rixplugin" ["${RMSTREE}/lib/shaders/:@"]
+Option "searchpath" "string dirmap" [""]
+Option "searchpath" "string rifilter" ["${RMSTREE}/lib/rif/:${RMANTREE}/etc:@"]
+Option "searchpath" "string procedural" ["${RMSTREE}/lib/plugins/:${RMSTREE}/lib/plugins:${RMANTREE}/etc:@"]
+##rifcontrol insert begin -rif RLFInjector -rifend
+FrameBegin 64
+	Identity 
+	Option "user" "string pass_id" ["frontShape_Final"] "string pass_phase" ["/Job/Frames/Images"] "string pass_class" ["Final"] "string pass_flavor" [""] "string pass_crew" [""] "string pass_camera_name" ["frontShape"] "string pass_camera_flavor" [""] "string pass_layer" ["defaultRenderLayer"] "string renderer" ["RIS"] "int pass_features_trace" [1] "int input_color_profile" [0]
+	Option "trace" "int maxdepth" [10]
+	PixelVariance 0.005
+	Option "bucket" "string order" ["horizontal"]
+	Option "limits" "int[2] bucketsize" [16 16]
+	Option "limits" "int gridsize" [256]
+	Option "trace" "float decimationrate" [1]
+	Option "hair" "float minwidth" [0.5]
+	Option "statistics" "int level" [1]
+	Option "statistics" "string filename" ["stdout"]
+	Option "statistics" "string xmlfilename" ["renderman/Face Rig/rib/0064/frontShape_Final.0064.xml"]
+	Option "limits" "color zthreshold" [0.996 0.996 0.996]
+	Option "limits" "color othreshold" [0.996 0.996 0.996]
+	Option "limits" "int texturememory" [2097152]
+	Option "limits" "int geocachememory" [2097152]
+	Option "limits" "int proceduralmemory" [0]
+	Option "limits" "int deepshadowtiles" [1000]
+	Option "limits" "int deepshadowmemory" [102400]
+	Option "limits" "int radiositycachememory" [102400]
+	Option "limits" "int brickmemory" [10240]
+	Option "shading" "int directlightinglocalizedsampling" [0]
+	Option "limits" "int opacitycachememory" [1024000]
+	CropWindow 0 1 0 1
+	Option "photon" "string lifetime" ["transient"]
+	Option "photon" "int emit" [0]
+	Hider "raytrace" "int adaptall" [0] "string integrationmode" ["path"] "int incremental" [1] "string pixelfiltermode" ["weighted"] "int minsamples" [0] "int maxsamples" [512] "float darkfalloff" [0.025]
+	Integrator "PxrPathTracer" "PxrPathTracer" "int maxPathLength" [10] "string sampleMode" ["bxdf"] "int numLightSamples" [8] "int numBxdfSamples" [8] "int numIndirectSamples" [1] "int numDiffuseSamples" [1] "int numSpecularSamples" [1] "int numSubsurfaceSamples" [1] "int numRefractionSamples" [1] "int rouletteDepth" [4] "float rouletteThreshold" [0.2] "string imagePlaneSubset" ["rman__imageplane"] "int clampDepth" [2] "float clampLuminance" [10] "int allowCaustics" [0]
+	Format 1440 810 1
+	Option "user" "string[1] lightgroups" ["environment"]
+	Display "renderman/Face Rig/images/Face Rig" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "int merge" [0] "string connection" ["-launchURI C:/Program%20Files/Pixar/RenderManStudio-20.10-maya2016.5/bin/it"] "string dspyParams" [" itOpenHandler {::ice::startTimer;};;; itCloseHandler {::ice::endTimer %arglist; };;; dspyRender -renderer preview -time 64 -crop 0 1 0 1 -port 50857 -context \"renderman/Face Rig/images/Face Rig\" -notes \"(Wed Aug 24 11:53:49 AM Pacific Daylight Time 2016)\nPxrPathTracer  MaxSamples 512  Mode bxdf  Light 8  Bsdf 8  Indir 1\""]
+	#Camera frontShape
+	Clipping 0.1 10000
+	Projection "orthographic" 
+	ScreenWindow -4.75669 4.75669 -2.67564 2.67564
+	Shutter 0 0
+	ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 -1 0  -0.261843 0.157037 100.532 1 ]
+	Camera "world" "float[2] shutteropening" [0 1]
+	Option "user" "color camera_bg" [0 0 0] "float camera_bga" [0]
+	Imager "background" "color color" [0 0 0] "float alpha" [0]
+	ResourceBegin 
+		WorldBegin 
+			##RLF ScopeBegin -name frontShape_Final -localbinding 1 -rlffilename renderman/Face Rig/rib/0064/frontShape_Final.0064.rlf -namespace 
+			ScopedCoordinateSystem "world_ref"
+			Attribute "visibility" "int transmission" [1] "int indirect" [1]
+			Bxdf "PxrDiffuse" "default" 
+			Attribute "user" "int shader_bindingstrength" [0]
+			Attribute "trace" "int maxdiffusedepth" [1] "int maxspeculardepth" [2] "int samplemotion" [1] "float autobias" [1] "float bias" [0.001] "int displacements" [1]
+			Attribute "dice" "string referencecamera" ["worldcamera"]
+			ShadingRate 1
+			Attribute "displacementbound" "string coordinatesystem" ["shader"] "float sphere" [0]
+			Attribute "photon" "string causticmap" [""] "string globalmap" [""]
+			Attribute "user" "string irRenderCam" ["true,0.261843,-0.157037,100.532"]
+			Attribute "user" "string irRenderCamFOV" ["0"]
+			Attribute "user" "string irRenderCamXform" ["1,0,0,0,0,1,0,0,0,0,1,0,0.261843,-0.157037,100.532,1"]
+			Attribute "user" "string irRenderCamRatio" ["1"]
+			AttributeBegin 
+				Attribute "identifier" "string name" ["PxrStdEnvMapLightShape1"]
+				Attribute "grouping" "string membership" ["+rman__imageplane"]
+				Transform [ -1 0 -1.22465e-016 0  0 1 0 0  -1.22465e-016 -0 1 0  0 0 0 1 ]
+				Rotate -90 1 0 0
+				Bxdf "PxrLightEmission" "visualizer" "string __instanceid" ["PxrStdEnvMapLightShape1_visualizer"]
+				IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+					ShadingRate 10
+					Surface "renderman/Face Rig/shaders/PxrStdEnvMapLightShape1_rfm" "float rman__LightPrimaryVisibility" [1] "float exposure" [0] "string rman__EnvMap" [""] "color envTint" [1 1 1] "float enableProcedural" [1] "float[2] rman__ProceduralResolution" [1024 512] "color proceduralColor" [1 1 1] "float enableTemperature" [0] 
+						"float temperature" [6500] "color specAmount" [1 1 1] "color diffAmount" [1 1 1] "float fixedSampleCount" [-1] "float importance" [1] "float enableShadows" [1] "color shadowColor" [0 0 0] 
+						"float adaptiveShadows" [1] "float shadowMaxDist" [-1] "float shadowTraceBias" [-1] "string shadowSubset" [""] "string shadowExcludeSubset" [""] "string __group" ["environment"] "float intensity" [1] "string coordSys" ["shader"] "__instanceid" ["renderman/Face Rig/shaders/PxrStdEnvMapLightShape1_rfm_0"]
+					ShadingRate 10
+					AreaLightSource "renderman/Face Rig/shaders/PxrStdEnvMapLightShape1_rfm" "PxrStdEnvMapLightShape1" "float rman__LightPrimaryVisibility" [1] "float exposure" [0] "string rman__EnvMap" [""] "color envTint" [1 1 1] "float enableProcedural" [1] "float[2] rman__ProceduralResolution" [1024 512] "color proceduralColor" [1 1 1] "float enableTemperature" [0] 
+						"float temperature" [6500] "color specAmount" [1 1 1] "color diffAmount" [1 1 1] "float fixedSampleCount" [-1] "float importance" [1] "float enableShadows" [1] "color shadowColor" [0 0 0] 
+						"float adaptiveShadows" [1] "float shadowMaxDist" [-1] "float shadowTraceBias" [-1] "string shadowSubset" [""] "string shadowExcludeSubset" [""] "string __group" ["environment"] "float intensity" [1] "string coordSys" ["shader"] "__instanceid" ["renderman/Face Rig/shaders/PxrStdEnvMapLightShape1_rfm_0"]
+					Attribute "user" "int shader_bindingstrength" [0]
+				IfEnd 
+				Attribute "visibility" "int camera" [1]
+				Attribute "visibility" "int indirect" [0] "int transmission" [0]
+				ShadingRate 10
+				Sides 1
+				Attribute "dice" "string offscreenstrategy" ["sphericalprojection"]
+				ReverseOrientation 
+				Opacity [1 1 1]
+				Sides 1
+				Geometry "envsphere" "constant float[2] resolution" [1024 512]
+			AttributeEnd 
+			Illuminate "PxrStdEnvMapLightShape1" 1
+			AttributeBegin 
+			AttributeEnd 
+			AttributeBegin 
+			AttributeEnd 
+			AttributeBegin 
+			AttributeEnd 
+			AttributeBegin 
+			AttributeEnd 
+			AttributeBegin 
+				Attribute "identifier" "string name" ["MESH"]
+				Attribute "identifier" "float id" [69]
+				ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Cone"]
+					Attribute "identifier" "float id" [9]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+					AttributeBegin 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["ConeShape"]
+							Attribute "identifier" "float id" [421]
+							Sides 2
+							ShadingInterpolation "smooth"
+							Attribute "user" "int receivesShadows" [1]
+							Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+							Attribute "shade" "string transmissionhitmode" ["shader"]
+							Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+							##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse1SG,
+							TransformBegin 
+								Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/ConeShape.job.rib"] "float[6] bound" [-0.166809 0.166809 -1.86058 -1.5098 -0.175393 0.175393] "int __immediatesubdivide" [0]
+							TransformEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Cone_orientConstraint1"]
+						Attribute "identifier" "float id" [10]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Sphere"]
+					Attribute "identifier" "float id" [158]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+					AttributeBegin 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["SphereShape"]
+							Attribute "identifier" "float id" [516]
+							Sides 2
+							ShadingInterpolation "smooth"
+							Attribute "user" "int receivesShadows" [1]
+							Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+							Attribute "shade" "string transmissionhitmode" ["shader"]
+							Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+							##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse1SG,
+							TransformBegin 
+								Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/SphereShape.job.rib"] "float[6] bound" [-1.22059 1.22059 -1.61199 1.31502 -1.22059 1.22059] "int __immediatesubdivide" [0]
+							TransformEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+			AttributeEnd 
+			AttributeBegin 
+				Attribute "identifier" "string name" ["Balloon_Center"]
+				Attribute "identifier" "float id" [2]
+				ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+				AttributeBegin 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Balloon_CenterShape"]
+						Attribute "identifier" "float id" [418]
+						Sides 2
+						ShadingInterpolation "constant"
+						Attribute "user" "int receivesShadows" [1]
+						Attribute "visibility" "int camera" [1] "int indirect" [0] "int transmission" [1]
+						Attribute "shade" "string transmissionhitmode" ["shader"]
+						Attribute "grouping" "string membership" ["+shadow"]
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["FACE"]
+					Attribute "identifier" "float id" [14]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+					AttributeBegin 
+						Attribute "identifier" "string name" ["REB"]
+						Attribute "identifier" "float id" [104]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 -1.11022e-016 0 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["REBShape"]
+								Attribute "identifier" "float id" [486]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [0]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction"]
+								##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse3SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/0064/deformingGeoCache.0064.zip!renderman/Face Rig/rib/0064/REBShape.0064.rib"] "float[6] bound" [-0.423203 -0.159834 0.540826 0.680127 1.13948 1.13948] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["REB_parentConstraint1"]
+							Attribute "identifier" "float id" [109]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["RW"]
+						Attribute "identifier" "float id" [110]
+						ConcatTransform [ 0.964699 0 0.263354 0  -0 1 0 0  -0.263354 -0 0.964699 0  0.31629 0 0.0584041 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["RWShape"]
+								Attribute "identifier" "float id" [496]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,initialShadingGroup,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/RWShape.job.rib"] "float[6] bound" [-0.385916 -0.107712 0.0721534 0.359181 1.20526 1.26048] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["RB"]
+						Attribute "identifier" "float id" [96]
+						ConcatTransform [ 0.964699 0 0.263354 0  -0 1 0 0  -0.263354 -0 0.964699 0  0.321502 0 0.0829328 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["RBShape"]
+								Attribute "identifier" "float id" [477]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse2SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/0064/deformingGeoCache.0064.zip!renderman/Face Rig/rib/0064/RBShape.0064.rib"] "float[6] bound" [-0.312897 -0.176039 0.133547 0.28861 1.23978 1.26735] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["RB_parentConstraint1"]
+							Attribute "identifier" "float id" [102]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["RB_scaleConstraint1"]
+							Attribute "identifier" "float id" [103]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["RWS"]
+						Attribute "identifier" "float id" [111]
+						ConcatTransform [ 0.964699 0 0.263354 0  -0 1 0 0  -0.263354 -0 0.964699 0  0.325618 0 0.0923554 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["RWSShape"]
+								Attribute "identifier" "float id" [495]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse4SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/RWSShape.job.rib"] "float[6] bound" [-0.257626 -0.228792 0.183349 0.217538 1.26644 1.27161] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["RWS_parentConstraint1"]
+							Attribute "identifier" "float id" [112]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["RWS_scaleConstraint1"]
+							Attribute "identifier" "float id" [113]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["LEB"]
+						Attribute "identifier" "float id" [25]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["LEBShape"]
+								Attribute "identifier" "float id" [435]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse3SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/0064/deformingGeoCache.0064.zip!renderman/Face Rig/rib/0064/LEBShape.0064.rib"] "float[6] bound" [0.159438 0.422807 0.540826 0.680127 1.13948 1.13948] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["LEB_parentConstraint1"]
+							Attribute "identifier" "float id" [30]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["LW"]
+						Attribute "identifier" "float id" [31]
+						ConcatTransform [ 0.994517 0 -0.104576 0  0 1 0 0  0.104576 0 0.994517 0  -0.127724 0 -0.0192068 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["LWShape"]
+								Attribute "identifier" "float id" [444]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,initialShadingGroup,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/LWShape.job.rib"] "float[6] bound" [0.103148 0.381352 0.0721534 0.359181 1.20526 1.26048] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["LB"]
+						Attribute "identifier" "float id" [17]
+						ConcatTransform [ 0.994517 0 -0.104576 0  0 1 0 0  0.104576 0 0.994517 0  -0.129751 0 0.0110618 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["LBShape"]
+								Attribute "identifier" "float id" [425]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse2SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/0064/deformingGeoCache.0064.zip!renderman/Face Rig/rib/0064/LBShape.0064.rib"] "float[6] bound" [0.176167 0.313025 0.133547 0.28861 1.23978 1.26735] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["LB_parentConstraint1"]
+							Attribute "identifier" "float id" [23]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["LB_scaleConstraint1"]
+							Attribute "identifier" "float id" [24]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["LWS"]
+						Attribute "identifier" "float id" [32]
+						ConcatTransform [ 0.994517 0 -0.104576 0  0 1 0 0  0.104576 0 0.994517 0  -0.131361 0 0.028103 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["LWSShape"]
+								Attribute "identifier" "float id" [443]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse4SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/LWSShape.job.rib"] "float[6] bound" [0.231439 0.260272 0.183349 0.217538 1.26644 1.27161] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["LWS_parentConstraint1"]
+							Attribute "identifier" "float id" [33]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["LWS_scaleConstraint1"]
+							Attribute "identifier" "float id" [34]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["M_Smile"]
+						Attribute "identifier" "float id" [77]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 5.55112e-017 0 1 ]
+						AttributeBegin 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["M_SmileShape"]
+								Attribute "identifier" "float id" [468]
+								Sides 2
+								ShadingInterpolation "smooth"
+								Attribute "user" "int receivesShadows" [1]
+								Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+								Attribute "shade" "string transmissionhitmode" ["shader"]
+								Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+								##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse5SG,
+								TransformBegin 
+									Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/0064/deformingGeoCache.0064.zip!renderman/Face Rig/rib/0064/M_SmileShape.0064.rib"] "float[6] bound" [-0.167721 0.160536 -0.442224 -0.393459 1.20797 1.20797] "int __immediatesubdivide" [0]
+								TransformEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["M_Smile_parentConstraint1"]
+							Attribute "identifier" "float id" [78]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Blendshapes"]
+						Attribute "identifier" "float id" [3]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Square"]
+							Attribute "identifier" "float id" [159]
+							ConcatTransform [ 1 0 0 0  0 2.22045e-016 1 0  0 -1 2.22045e-016 0  3.24471 0.0741734 1.12074 1 ]
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["RB_Down"]
+								Attribute "identifier" "float id" [100]
+								ConcatTransform [ 0.964699 0.263354 0 0  -8.32667e-017 2.22045e-016 -1 0  -0.263354 0.964699 2.22045e-016 0  0.0153315 -1.03781 0.0741734 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["RB_DownShape"]
+										Attribute "identifier" "float id" [482]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/RB_DownShape.job.rib"] "float[6] bound" [-0.312897 -0.176039 0.150871 0.28861 1.23978 1.26735] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["LB_Down"]
+								Attribute "identifier" "float id" [21]
+								ConcatTransform [ 1 0 -0 0  -0 2.22045e-016 -1 0  0 1 2.22045e-016 0  -0.60828 -1.12074 0.0741734 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["LB_DownShape"]
+										Attribute "identifier" "float id" [430]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/LB_DownShape.job.rib"] "float[6] bound" [0.176167 0.313025 0.152277 0.28861 1.23978 1.26735] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["RB_Up"]
+								Attribute "identifier" "float id" [101]
+								ConcatTransform [ 0.964699 0.263354 0 0  -8.32667e-017 2.22045e-016 -1 0  -0.263354 0.964699 2.22045e-016 0  0.428474 -1.03781 0.0741734 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["RB_UpShape"]
+										Attribute "identifier" "float id" [484]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/RB_UpShape.job.rib"] "float[6] bound" [-0.312897 -0.176039 0.133421 0.234037 1.23978 1.26735] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["LB_Up"]
+								Attribute "identifier" "float id" [22]
+								ConcatTransform [ 1 0 -0 0  -0 2.22045e-016 -1 0  0 1 2.22045e-016 0  -0.183137 -1.12074 0.0741734 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["LB_UpShape"]
+										Attribute "identifier" "float id" [433]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/LB_UpShape.job.rib"] "float[6] bound" [0.176167 0.313025 0.133547 0.234918 1.23978 1.26735] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["RB_Blink"]
+								Attribute "identifier" "float id" [97]
+								ConcatTransform [ 0.964699 0.263354 0 0  -8.32667e-017 2.22045e-016 -1 0  -0.263354 0.964699 2.22045e-016 0  0.879188 -1.03781 0.0741734 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["RB_BlinkShape"]
+										Attribute "identifier" "float id" [479]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/RB_BlinkShape.job.rib"] "float[6] bound" [-0.312897 -0.176039 0.189985 0.197903 1.23978 1.26735] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["LB_Blink"]
+								Attribute "identifier" "float id" [18]
+								ConcatTransform [ 0.994517 -0.104576 0 0  4.16334e-017 4.44089e-016 -1 0  0.104576 0.994517 4.44089e-016 0  0.16214 -1.10968 0.0741734 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["LB_BlinkShape"]
+										Attribute "identifier" "float id" [427]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse2SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/LB_BlinkShape.job.rib"] "float[6] bound" [0.176167 0.313025 0.187417 0.193545 1.23978 1.26735] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["REB_Happy"]
+								Attribute "identifier" "float id" [108]
+								ConcatTransform [ 1 0 -0 0  -0 2.22045e-016 -1 0  0 1 2.22045e-016 0  -0.269711 -1.12074 0.0833407 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["REB_HappyShape"]
+										Attribute "identifier" "float id" [493]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse3SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/REB_HappyShape.job.rib"] "float[6] bound" [-0.406187 -0.146434 0.530265 0.642709 1.13948 1.13948] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["LEB_Happy"]
+								Attribute "identifier" "float id" [29]
+								ConcatTransform [ 1 0 -0 0  -0 2.22045e-016 -1 0  0 1 2.22045e-016 0  0.2184 -1.12074 0.0973395 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["LEB_HappyShape"]
+										Attribute "identifier" "float id" [441]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse3SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/LEB_HappyShape.job.rib"] "float[6] bound" [0.135418 0.394862 0.533491 0.645297 1.13948 1.13948] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["REB_Angry_Pointy"]
+								Attribute "identifier" "float id" [106]
+								ConcatTransform [ 1 0 -0 0  -0 2.22045e-016 -1 0  0 1 2.22045e-016 0  -0.029593 -1.12074 0.0741734 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["REB_Angry_PointyShape"]
+										Attribute "identifier" "float id" [491]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse3SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/REB_Angry_PointyShape.job.rib"] "float[6] bound" [-0.407877 -0.165205 0.501821 0.673483 1.13948 1.13948] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["LEB_Angry_Pointy"]
+								Attribute "identifier" "float id" [27]
+								ConcatTransform [ 1 0 -0 0  -0 2.22045e-016 -1 0  0 1 2.22045e-016 0  0.0142884 -1.12074 0.0741734 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["LEB_Angry_PointyShape"]
+										Attribute "identifier" "float id" [439]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse3SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/LEB_Angry_PointyShape.job.rib"] "float[6] bound" [0.112943 0.352775 0.500655 0.67375 1.13948 1.13973] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["REB_Angry"]
+								Attribute "identifier" "float id" [105]
+								ConcatTransform [ 1 0 -0 0  -0 2.22045e-016 -1 0  0 1 2.22045e-016 0  0.131925 -1.12074 0.0741734 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["REB_AngryShape"]
+										Attribute "identifier" "float id" [488]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse3SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/0064/deformingGeoCache.0064.zip!renderman/Face Rig/rib/0064/REB_AngryShape.0064.rib"] "float[6] bound" [-0.409093 -0.168886 0.49978 0.643412 1.13948 1.13948] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["LEB_Angry"]
+								Attribute "identifier" "float id" [26]
+								ConcatTransform [ 1 0 -0 0  -0 2.22045e-016 -1 0  0 1 2.22045e-016 0  -0.14001 -1.12074 0.0741734 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["LEB_AngryShape"]
+										Attribute "identifier" "float id" [437]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse3SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/LEB_AngryShape.job.rib"] "float[6] bound" [0.112943 0.352775 0.500942 0.645987 1.13948 1.13973] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["M_Neutral"]
+								Attribute "identifier" "float id" [72]
+								ConcatTransform [ 1 0 -0 0  -0 2.22045e-016 -1 0  0 1 2.22045e-016 0  -0.660379 -1.12074 0.232507 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["M_NeutralShape"]
+										Attribute "identifier" "float id" [461]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse5SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/M_NeutralShape.job.rib"] "float[6] bound" [-0.0432035 0.0432037 -0.43829 -0.411545 1.20948 1.20948] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["M_Open_Small"]
+								Attribute "identifier" "float id" [74]
+								ConcatTransform [ 1 0 -0 0  -0 2.22045e-016 -1 0  0 1 2.22045e-016 0  -0.515535 -1.12074 0.232507 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["M_Open_SmallShape"]
+										Attribute "identifier" "float id" [463]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse5SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/M_Open_SmallShape.job.rib"] "float[6] bound" [-0.0432035 0.0432037 -0.435191 -0.333731 1.20948 1.20948] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["M_Open_Big"]
+								Attribute "identifier" "float id" [73]
+								ConcatTransform [ 1 0 -0 0  -0 2.22045e-016 -1 0  0 1 2.22045e-016 0  -0.345173 -1.12074 0.232507 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["M_Open_BigShape"]
+										Attribute "identifier" "float id" [462]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse5SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/M_Open_BigShape.job.rib"] "float[6] bound" [-0.0764003 0.0764004 -0.474171 -0.294751 1.20948 1.20948] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["M_Surprise"]
+								Attribute "identifier" "float id" [79]
+								ConcatTransform [ 1 0 -0 0  -0 2.22045e-016 -1 0  0 1 2.22045e-016 0  -0.177327 -1.12074 0.232507 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["M_SurpriseShape"]
+										Attribute "identifier" "float id" [469]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse5SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/M_SurpriseShape.job.rib"] "float[6] bound" [-0.0533543 0.0533544 -0.474171 -0.294751 1.20948 1.20948] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["M_Skew_Left"]
+								Attribute "identifier" "float id" [75]
+								ConcatTransform [ 1 0 -0 0  -0 2.22045e-016 -1 0  0 1 2.22045e-016 0  0.119274 -1.12074 0.232507 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["M_Skew_LeftShape"]
+										Attribute "identifier" "float id" [464]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse5SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/M_Skew_LeftShape.job.rib"] "float[6] bound" [-0.185723 0.15992 -0.435631 -0.314478 1.20948 1.20948] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["M_Skew_Right"]
+								Attribute "identifier" "float id" [76]
+								ConcatTransform [ 1 0 -0 0  -0 2.22045e-016 -1 0  0 1 2.22045e-016 0  0.540168 -1.12074 0.232507 1 ]
+								AttributeBegin 
+									AttributeBegin 
+										Attribute "identifier" "string name" ["M_Skew_RightShape"]
+										Attribute "identifier" "float id" [466]
+										Sides 2
+										ShadingInterpolation "smooth"
+										Attribute "user" "int receivesShadows" [1]
+										Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
+										Attribute "shade" "string transmissionhitmode" ["shader"]
+										Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+										##RLF Inject SurfaceShading -attribute sets@,PxrLMDiffuse5SG,
+										TransformBegin 
+											Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/Face Rig/rib/job/staticGeoCache.job.zip!renderman/Face Rig/rib/job/M_Skew_RightShape.job.rib"] "float[6] bound" [-0.180963 0.15446 -0.429201 -0.320843 1.20948 1.20948] "int __immediatesubdivide" [0]
+										TransformEnd 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Blendshapes_Text"]
+								Attribute "identifier" "float id" [4]
+								ConcatTransform [ 0.203271 0 -0 0  -0 4.51352e-017 -0.203271 0  0 0.203271 4.51352e-017 0  -0.788757 -0.00306214 -0.810461 1 ]
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve124"]
+									Attribute "identifier" "float id" [168]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve125"]
+									Attribute "identifier" "float id" [169]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve126"]
+									Attribute "identifier" "float id" [170]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve127"]
+									Attribute "identifier" "float id" [171]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve128"]
+									Attribute "identifier" "float id" [172]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve129"]
+									Attribute "identifier" "float id" [173]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve130"]
+									Attribute "identifier" "float id" [174]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve131"]
+									Attribute "identifier" "float id" [175]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve132"]
+									Attribute "identifier" "float id" [176]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve133"]
+									Attribute "identifier" "float id" [177]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve134"]
+									Attribute "identifier" "float id" [178]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve135"]
+									Attribute "identifier" "float id" [179]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve136"]
+									Attribute "identifier" "float id" [180]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve137"]
+									Attribute "identifier" "float id" [181]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve138"]
+									Attribute "identifier" "float id" [182]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve139"]
+									Attribute "identifier" "float id" [183]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve140"]
+									Attribute "identifier" "float id" [184]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve141"]
+									Attribute "identifier" "float id" [185]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["FACE_CTRL"]
+					Attribute "identifier" "float id" [15]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+					AttributeBegin 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["X_LBL"]
+						Attribute "identifier" "float id" [167]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["EYE_CTRL"]
+							Attribute "identifier" "float id" [13]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["LB_CTRL"]
+								Attribute "identifier" "float id" [20]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["LW_CTRL"]
+									Attribute "identifier" "float id" [35]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["RB_CTRL"]
+								Attribute "identifier" "float id" [99]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["RW_CTRL"]
+									Attribute "identifier" "float id" [114]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["R_EB_CTRL"]
+						Attribute "identifier" "float id" [126]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["R_UD_LBL"]
+							Attribute "identifier" "float id" [142]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["L_EB_CTRL"]
+						Attribute "identifier" "float id" [47]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["L_UD_LBL"]
+							Attribute "identifier" "float id" [63]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["TRI_CTRL"]
+						Attribute "identifier" "float id" [165]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["TRI_LBL"]
+							Attribute "identifier" "float id" [166]
+							ConcatTransform [ 7.49698e-017 -0.337634 -3.74849e-017 0  3.74849e-017 -7.49698e-017 0.337634 0  -0.337634 -1.12455e-016 0 0  0.00105513 -1.72251 2.65165 1 ]
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["M_CTRL"]
+						Attribute "identifier" "float id" [71]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+			AttributeEnd 
+			AttributeBegin 
+				Attribute "identifier" "string name" ["EXP_CTRL"]
+				Attribute "identifier" "float id" [11]
+				ConcatTransform [ 1 0 0 0  0 -4.44089e-016 1 0  0 -1 -4.44089e-016 0  -2.57169 0.251596 1.25279 1 ]
+				AttributeBegin 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["Facial_Expressions_Text"]
+					Attribute "identifier" "float id" [16]
+					ConcatTransform [ 1 0 -0 0  -0 -4.44089e-016 -1 0  0 1 -4.44089e-016 0  -5.33412 -3.1877e-016 -0.661392 1 ]
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve339"]
+						Attribute "identifier" "float id" [382]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve340"]
+						Attribute "identifier" "float id" [383]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0.592763 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve341"]
+						Attribute "identifier" "float id" [384]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0.592763 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve342"]
+						Attribute "identifier" "float id" [385]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  1.18553 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve343"]
+						Attribute "identifier" "float id" [386]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  1.77829 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve344"]
+						Attribute "identifier" "float id" [387]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  1.77829 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve345"]
+						Attribute "identifier" "float id" [388]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  2.37105 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve346"]
+						Attribute "identifier" "float id" [389]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  2.37105 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve347"]
+						Attribute "identifier" "float id" [390]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  2.96382 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve348"]
+						Attribute "identifier" "float id" [391]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  4.14934 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve349"]
+						Attribute "identifier" "float id" [392]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  4.74211 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve350"]
+						Attribute "identifier" "float id" [393]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  5.33487 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve351"]
+						Attribute "identifier" "float id" [394]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  5.33487 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve352"]
+						Attribute "identifier" "float id" [395]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  5.92763 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve353"]
+						Attribute "identifier" "float id" [396]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  6.52039 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve354"]
+						Attribute "identifier" "float id" [397]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  6.52039 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve355"]
+						Attribute "identifier" "float id" [398]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  7.11316 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve356"]
+						Attribute "identifier" "float id" [399]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  7.70592 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve357"]
+						Attribute "identifier" "float id" [400]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  8.29868 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve358"]
+						Attribute "identifier" "float id" [401]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  8.29868 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve359"]
+						Attribute "identifier" "float id" [402]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  8.89145 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve360"]
+						Attribute "identifier" "float id" [403]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  8.89145 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve361"]
+						Attribute "identifier" "float id" [404]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  9.48421 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["curve362"]
+						Attribute "identifier" "float id" [405]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  10.077 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["BLINK_CTRL"]
+					Attribute "identifier" "float id" [1]
+					ConcatTransform [ 0.05 0 -0 0  -0 -2.22045e-017 -0.05 0  0 0.05 -2.22045e-017 0  -0.0164321 -0.000524311 0.207065 1 ]
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Blink_Slider1_Base_Grp"]
+						Attribute "identifier" "float id" [6]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Blink_Slider1_Ctrl"]
+							Attribute "identifier" "float id" [7]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Blink_Text"]
+						Attribute "identifier" "float id" [8]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["curve363"]
+							Attribute "identifier" "float id" [406]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["curve364"]
+							Attribute "identifier" "float id" [407]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["curve365"]
+							Attribute "identifier" "float id" [408]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["curve366"]
+							Attribute "identifier" "float id" [409]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["curve367"]
+							Attribute "identifier" "float id" [410]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["curve368"]
+							Attribute "identifier" "float id" [411]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["curve369"]
+							Attribute "identifier" "float id" [412]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["curve370"]
+							Attribute "identifier" "float id" [413]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["L_CTRL"]
+					Attribute "identifier" "float id" [46]
+					ConcatTransform [ 1 0 -0 0  -0 -4.44089e-016 -1 0  0 1 -4.44089e-016 0  2.57169 1.11731e-016 0.251596 1 ]
+					AttributeBegin 
+						Attribute "identifier" "string name" ["LEB_CTRL"]
+						Attribute "identifier" "float id" [28]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["L_Happy_Grp"]
+							Attribute "identifier" "float id" [48]
+							ConcatTransform [ 0.05 0 0 0  0 0.05 0 0  0 0 0.05 0  -2.33678 0.653239 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["L_Happy_Slider1_Base_Grp"]
+								Attribute "identifier" "float id" [50]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["L_Happy_Slider1_Ctrl"]
+									Attribute "identifier" "float id" [51]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["L_Happy_Text"]
+								Attribute "identifier" "float id" [52]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve142"]
+									Attribute "identifier" "float id" [186]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve143"]
+									Attribute "identifier" "float id" [187]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve144"]
+									Attribute "identifier" "float id" [188]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve145"]
+									Attribute "identifier" "float id" [189]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve146"]
+									Attribute "identifier" "float id" [190]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve147"]
+									Attribute "identifier" "float id" [191]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve148"]
+									Attribute "identifier" "float id" [192]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve149"]
+									Attribute "identifier" "float id" [193]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve150"]
+									Attribute "identifier" "float id" [194]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve151"]
+									Attribute "identifier" "float id" [195]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["L_Angry_Grp"]
+							Attribute "identifier" "float id" [36]
+							ConcatTransform [ 0.05 0 0 0  0 0.05 0 0  0 0 0.05 0  -2.03678 0.653239 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["L_Angry_Slider1_Base_Grp"]
+								Attribute "identifier" "float id" [38]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["L_Angry_Slider1_Ctrl"]
+									Attribute "identifier" "float id" [39]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["L_Angry_Text"]
+								Attribute "identifier" "float id" [40]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve152"]
+									Attribute "identifier" "float id" [196]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve153"]
+									Attribute "identifier" "float id" [197]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve154"]
+									Attribute "identifier" "float id" [198]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve155"]
+									Attribute "identifier" "float id" [199]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve156"]
+									Attribute "identifier" "float id" [200]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve157"]
+									Attribute "identifier" "float id" [201]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve158"]
+									Attribute "identifier" "float id" [202]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve159"]
+									Attribute "identifier" "float id" [203]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve160"]
+									Attribute "identifier" "float id" [204]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["L_Pointy_Grp"]
+							Attribute "identifier" "float id" [58]
+							ConcatTransform [ 0.05 0 0 0  0 0.05 0 0  0 0 0.05 0  -1.73678 0.657176 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["L_Pointy_Slider1_Base_Grp"]
+								Attribute "identifier" "float id" [60]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["L_Pointy_Slider1_Ctrl"]
+									Attribute "identifier" "float id" [61]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["L_Pointy_Text"]
+								Attribute "identifier" "float id" [62]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve161"]
+									Attribute "identifier" "float id" [205]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve162"]
+									Attribute "identifier" "float id" [206]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve163"]
+									Attribute "identifier" "float id" [207]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve164"]
+									Attribute "identifier" "float id" [208]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve165"]
+									Attribute "identifier" "float id" [209]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve166"]
+									Attribute "identifier" "float id" [210]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve167"]
+									Attribute "identifier" "float id" [211]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve168"]
+									Attribute "identifier" "float id" [212]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve169"]
+									Attribute "identifier" "float id" [213]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve170"]
+									Attribute "identifier" "float id" [214]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve171"]
+									Attribute "identifier" "float id" [215]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["LB_CTRL"]
+						Attribute "identifier" "float id" [19]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["L_Upper_Grp"]
+							Attribute "identifier" "float id" [64]
+							ConcatTransform [ 0.05 0 0 0  0 0.05 0 0  0 0 0.05 0  -2.33521 0.0419766 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["L_Upper_Slider1_Base_Grp"]
+								Attribute "identifier" "float id" [66]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["L_Upper_Slider1_Ctrl"]
+									Attribute "identifier" "float id" [67]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["L_Upper_Text"]
+								Attribute "identifier" "float id" [68]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve172"]
+									Attribute "identifier" "float id" [216]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve173"]
+									Attribute "identifier" "float id" [217]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve174"]
+									Attribute "identifier" "float id" [218]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve175"]
+									Attribute "identifier" "float id" [219]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve176"]
+									Attribute "identifier" "float id" [220]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve177"]
+									Attribute "identifier" "float id" [221]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve178"]
+									Attribute "identifier" "float id" [222]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve179"]
+									Attribute "identifier" "float id" [223]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve180"]
+									Attribute "identifier" "float id" [224]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve181"]
+									Attribute "identifier" "float id" [225]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["L_Lower_Grp"]
+							Attribute "identifier" "float id" [53]
+							ConcatTransform [ 0.05 0 0 0  0 0.05 0 0  0 0 0.05 0  -2.03521 0.0409596 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["L_Lower_Slider1_Base_Grp"]
+								Attribute "identifier" "float id" [55]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["L_Lower_Slider1_Ctrl"]
+									Attribute "identifier" "float id" [56]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["L_Lower_Text"]
+								Attribute "identifier" "float id" [57]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve182"]
+									Attribute "identifier" "float id" [226]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve183"]
+									Attribute "identifier" "float id" [227]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve184"]
+									Attribute "identifier" "float id" [228]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve185"]
+									Attribute "identifier" "float id" [229]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve186"]
+									Attribute "identifier" "float id" [230]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve187"]
+									Attribute "identifier" "float id" [231]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve188"]
+									Attribute "identifier" "float id" [232]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve189"]
+									Attribute "identifier" "float id" [233]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve190"]
+									Attribute "identifier" "float id" [234]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["L_Blink_Grp"]
+							Attribute "identifier" "float id" [41]
+							ConcatTransform [ 0.05 0 0 0  0 0.05 0 0  0 0 0.05 0  -1.73521 0.0418621 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["L_Blink_Slider1_Base_Grp"]
+								Attribute "identifier" "float id" [43]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["L_Blink_Slider1_Ctrl"]
+									Attribute "identifier" "float id" [44]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["L_Blink_Text"]
+								Attribute "identifier" "float id" [45]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve191"]
+									Attribute "identifier" "float id" [235]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve192"]
+									Attribute "identifier" "float id" [236]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve193"]
+									Attribute "identifier" "float id" [237]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve194"]
+									Attribute "identifier" "float id" [238]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve195"]
+									Attribute "identifier" "float id" [239]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve196"]
+									Attribute "identifier" "float id" [240]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve197"]
+									Attribute "identifier" "float id" [241]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve198"]
+									Attribute "identifier" "float id" [242]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve199"]
+									Attribute "identifier" "float id" [243]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve200"]
+									Attribute "identifier" "float id" [244]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["R_CTRL"]
+					Attribute "identifier" "float id" [125]
+					ConcatTransform [ 1 0 -0 0  -0 -4.44089e-016 -1 0  0 1 -4.44089e-016 0  2.57169 1.11731e-016 0.251596 1 ]
+					AttributeBegin 
+						Attribute "identifier" "string name" ["REB_CTRL"]
+						Attribute "identifier" "float id" [107]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["R_Happy_Grp"]
+							Attribute "identifier" "float id" [127]
+							ConcatTransform [ 0.05 0 0 0  0 0.05 0 0  0 0 0.05 0  -3.43275 0.653239 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["R_Happy_Slider1_Base_Grp"]
+								Attribute "identifier" "float id" [129]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["R_Happy_Slider1_Ctrl"]
+									Attribute "identifier" "float id" [130]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 1.77636e-014 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["R_Happy_Text"]
+								Attribute "identifier" "float id" [131]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve201"]
+									Attribute "identifier" "float id" [245]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve202"]
+									Attribute "identifier" "float id" [246]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve203"]
+									Attribute "identifier" "float id" [247]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve204"]
+									Attribute "identifier" "float id" [248]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve205"]
+									Attribute "identifier" "float id" [249]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve206"]
+									Attribute "identifier" "float id" [250]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve207"]
+									Attribute "identifier" "float id" [251]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve208"]
+									Attribute "identifier" "float id" [252]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve209"]
+									Attribute "identifier" "float id" [253]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve210"]
+									Attribute "identifier" "float id" [254]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve211"]
+									Attribute "identifier" "float id" [255]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["R_Angry_Grp"]
+							Attribute "identifier" "float id" [115]
+							ConcatTransform [ 0.05 0 0 0  0 0.05 0 0  0 0 0.05 0  -3.13275 0.653239 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["R_Angry_Slider1_Base_Grp"]
+								Attribute "identifier" "float id" [117]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["R_Angry_Slider1_Ctrl"]
+									Attribute "identifier" "float id" [118]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["R_Angry_Text"]
+								Attribute "identifier" "float id" [119]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve212"]
+									Attribute "identifier" "float id" [256]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve213"]
+									Attribute "identifier" "float id" [257]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve214"]
+									Attribute "identifier" "float id" [258]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve215"]
+									Attribute "identifier" "float id" [259]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve216"]
+									Attribute "identifier" "float id" [260]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve217"]
+									Attribute "identifier" "float id" [261]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve218"]
+									Attribute "identifier" "float id" [262]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve219"]
+									Attribute "identifier" "float id" [263]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve220"]
+									Attribute "identifier" "float id" [264]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve221"]
+									Attribute "identifier" "float id" [265]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["R_Pointy_Grp"]
+							Attribute "identifier" "float id" [137]
+							ConcatTransform [ 0.05 0 0 0  0 0.05 0 0  0 0 0.05 0  -2.83275 0.656787 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["R_Pointy_Slider1_Base_Grp"]
+								Attribute "identifier" "float id" [139]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["R_Pointy_Slider1_Ctrl"]
+									Attribute "identifier" "float id" [140]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["R_Pointy_Text"]
+								Attribute "identifier" "float id" [141]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve222"]
+									Attribute "identifier" "float id" [266]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve223"]
+									Attribute "identifier" "float id" [267]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve224"]
+									Attribute "identifier" "float id" [268]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve225"]
+									Attribute "identifier" "float id" [269]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve226"]
+									Attribute "identifier" "float id" [270]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve227"]
+									Attribute "identifier" "float id" [271]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve228"]
+									Attribute "identifier" "float id" [272]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve229"]
+									Attribute "identifier" "float id" [273]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve230"]
+									Attribute "identifier" "float id" [274]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve231"]
+									Attribute "identifier" "float id" [275]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve232"]
+									Attribute "identifier" "float id" [276]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve233"]
+									Attribute "identifier" "float id" [277]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["RB_CTRL"]
+						Attribute "identifier" "float id" [98]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["R_Upper_Grp"]
+							Attribute "identifier" "float id" [143]
+							ConcatTransform [ 0.05 0 0 0  0 0.05 0 0  0 0 0.05 0  -3.43275 0.0417389 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["R_Upper_Slider1_Base_Grp"]
+								Attribute "identifier" "float id" [145]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["R_Upper_Slider1_Ctrl"]
+									Attribute "identifier" "float id" [146]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["R_Upper_Text"]
+								Attribute "identifier" "float id" [147]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve234"]
+									Attribute "identifier" "float id" [278]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve235"]
+									Attribute "identifier" "float id" [279]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve236"]
+									Attribute "identifier" "float id" [280]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve237"]
+									Attribute "identifier" "float id" [281]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve238"]
+									Attribute "identifier" "float id" [282]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve239"]
+									Attribute "identifier" "float id" [283]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve240"]
+									Attribute "identifier" "float id" [284]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve241"]
+									Attribute "identifier" "float id" [285]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve242"]
+									Attribute "identifier" "float id" [286]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve243"]
+									Attribute "identifier" "float id" [287]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve244"]
+									Attribute "identifier" "float id" [288]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["R_Lower_Grp"]
+							Attribute "identifier" "float id" [132]
+							ConcatTransform [ 0.05 0 0 0  0 0.05 0 0  0 0 0.05 0  -3.13275 0.0405766 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["R_Lower_Slider1_Base_Grp"]
+								Attribute "identifier" "float id" [134]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["R_Lower_Slider1_Ctrl"]
+									Attribute "identifier" "float id" [135]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["R_Lower_Text"]
+								Attribute "identifier" "float id" [136]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve245"]
+									Attribute "identifier" "float id" [289]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve246"]
+									Attribute "identifier" "float id" [290]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve247"]
+									Attribute "identifier" "float id" [291]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve248"]
+									Attribute "identifier" "float id" [292]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve249"]
+									Attribute "identifier" "float id" [293]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve250"]
+									Attribute "identifier" "float id" [294]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve251"]
+									Attribute "identifier" "float id" [295]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve252"]
+									Attribute "identifier" "float id" [296]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve253"]
+									Attribute "identifier" "float id" [297]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve254"]
+									Attribute "identifier" "float id" [298]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["R_Blink_Grp"]
+							Attribute "identifier" "float id" [120]
+							ConcatTransform [ 0.05 0 0 0  0 0.05 0 0  0 0 0.05 0  -2.83275 0.0416244 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["R_Blink_Slider1_Base_Grp"]
+								Attribute "identifier" "float id" [122]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["R_Blink_Slider1_Ctrl"]
+									Attribute "identifier" "float id" [123]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["R_Blink_Text"]
+								Attribute "identifier" "float id" [124]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve255"]
+									Attribute "identifier" "float id" [299]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve256"]
+									Attribute "identifier" "float id" [300]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve257"]
+									Attribute "identifier" "float id" [301]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve258"]
+									Attribute "identifier" "float id" [302]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve259"]
+									Attribute "identifier" "float id" [303]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve260"]
+									Attribute "identifier" "float id" [304]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve261"]
+									Attribute "identifier" "float id" [305]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve262"]
+									Attribute "identifier" "float id" [306]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve263"]
+									Attribute "identifier" "float id" [307]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve264"]
+									Attribute "identifier" "float id" [308]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+								AttributeBegin 
+									Attribute "identifier" "string name" ["curve265"]
+									Attribute "identifier" "float id" [309]
+									ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+									AttributeBegin 
+									AttributeEnd 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["M_CTRL"]
+					Attribute "identifier" "float id" [70]
+					ConcatTransform [ 0.05 0 -0 0  -0 -2.22045e-017 -0.05 0  0 0.05 -2.22045e-017 0  -0.857703 3.32188e-016 0.748022 1 ]
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Neutral_Grp"]
+						Attribute "identifier" "float id" [80]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Neutral_Slider1_Base_Grp"]
+							Attribute "identifier" "float id" [82]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Neutral_Slider1_Ctrl"]
+								Attribute "identifier" "float id" [83]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Neutral_Text"]
+							Attribute "identifier" "float id" [84]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve266"]
+								Attribute "identifier" "float id" [310]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve267"]
+								Attribute "identifier" "float id" [311]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve268"]
+								Attribute "identifier" "float id" [312]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve269"]
+								Attribute "identifier" "float id" [313]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve270"]
+								Attribute "identifier" "float id" [314]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve271"]
+								Attribute "identifier" "float id" [315]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve272"]
+								Attribute "identifier" "float id" [316]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve273"]
+								Attribute "identifier" "float id" [317]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve274"]
+								Attribute "identifier" "float id" [318]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Open_Sm_Grp"]
+						Attribute "identifier" "float id" [90]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  6 0 0 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Open_Sm_Slider1_Base_Grp"]
+							Attribute "identifier" "float id" [92]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Open_Sm_Slider1_Ctrl"]
+								Attribute "identifier" "float id" [93]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Open_Sm_Text"]
+							Attribute "identifier" "float id" [94]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve275"]
+								Attribute "identifier" "float id" [319]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve276"]
+								Attribute "identifier" "float id" [320]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve277"]
+								Attribute "identifier" "float id" [321]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve278"]
+								Attribute "identifier" "float id" [322]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve279"]
+								Attribute "identifier" "float id" [323]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve280"]
+								Attribute "identifier" "float id" [324]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve281"]
+								Attribute "identifier" "float id" [325]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve282"]
+								Attribute "identifier" "float id" [326]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve283"]
+								Attribute "identifier" "float id" [327]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve284"]
+								Attribute "identifier" "float id" [328]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Open_Big_Grp"]
+						Attribute "identifier" "float id" [85]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  12 0 0 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Open_Big_Slider1_Base_Grp"]
+							Attribute "identifier" "float id" [87]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Open_Big_Slider1_Ctrl"]
+								Attribute "identifier" "float id" [88]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Open_Big_Text"]
+							Attribute "identifier" "float id" [89]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve285"]
+								Attribute "identifier" "float id" [329]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve286"]
+								Attribute "identifier" "float id" [330]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve287"]
+								Attribute "identifier" "float id" [331]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve288"]
+								Attribute "identifier" "float id" [332]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve289"]
+								Attribute "identifier" "float id" [333]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve290"]
+								Attribute "identifier" "float id" [334]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve291"]
+								Attribute "identifier" "float id" [335]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve292"]
+								Attribute "identifier" "float id" [336]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve293"]
+								Attribute "identifier" "float id" [337]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve294"]
+								Attribute "identifier" "float id" [338]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve295"]
+								Attribute "identifier" "float id" [339]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve296"]
+								Attribute "identifier" "float id" [340]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve297"]
+								Attribute "identifier" "float id" [341]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve298"]
+								Attribute "identifier" "float id" [342]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve299"]
+								Attribute "identifier" "float id" [343]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Surprised_Grp"]
+						Attribute "identifier" "float id" [160]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  21.8971 0 0 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Surprised_Slider1_Base_Grp"]
+							Attribute "identifier" "float id" [162]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Surprised_Slider1_Ctrl"]
+								Attribute "identifier" "float id" [163]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Surprised_Text"]
+							Attribute "identifier" "float id" [164]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve300"]
+								Attribute "identifier" "float id" [344]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve301"]
+								Attribute "identifier" "float id" [345]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve302"]
+								Attribute "identifier" "float id" [346]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve303"]
+								Attribute "identifier" "float id" [347]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve304"]
+								Attribute "identifier" "float id" [348]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve305"]
+								Attribute "identifier" "float id" [349]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve306"]
+								Attribute "identifier" "float id" [350]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve307"]
+								Attribute "identifier" "float id" [351]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve308"]
+								Attribute "identifier" "float id" [352]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve309"]
+								Attribute "identifier" "float id" [353]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve310"]
+								Attribute "identifier" "float id" [354]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve311"]
+								Attribute "identifier" "float id" [355]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve312"]
+								Attribute "identifier" "float id" [356]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Skew_Left_Grp"]
+						Attribute "identifier" "float id" [148]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  27.9579 0 0 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Skew_Left_Slider1_Base_Grp"]
+							Attribute "identifier" "float id" [150]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Skew_Left_Slider1_Ctrl"]
+								Attribute "identifier" "float id" [151]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Skew_Left_Text"]
+							Attribute "identifier" "float id" [152]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve313"]
+								Attribute "identifier" "float id" [357]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve314"]
+								Attribute "identifier" "float id" [358]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve315"]
+								Attribute "identifier" "float id" [359]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve316"]
+								Attribute "identifier" "float id" [360]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve317"]
+								Attribute "identifier" "float id" [361]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve318"]
+								Attribute "identifier" "float id" [362]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve319"]
+								Attribute "identifier" "float id" [363]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve320"]
+								Attribute "identifier" "float id" [364]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve321"]
+								Attribute "identifier" "float id" [365]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve322"]
+								Attribute "identifier" "float id" [366]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve323"]
+								Attribute "identifier" "float id" [367]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+					AttributeBegin 
+						Attribute "identifier" "string name" ["Skew_Right_Grp"]
+						Attribute "identifier" "float id" [153]
+						ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  33.9313 0 0 1 ]
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Skew_Right_Slider1_Base_Grp"]
+							Attribute "identifier" "float id" [155]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+							AttributeBegin 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["Skew_Right_Slider1_Ctrl"]
+								Attribute "identifier" "float id" [156]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+						AttributeBegin 
+							Attribute "identifier" "string name" ["Skew_Right_Text"]
+							Attribute "identifier" "float id" [157]
+							ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  -4 4.5 0 1 ]
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve324"]
+								Attribute "identifier" "float id" [368]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve325"]
+								Attribute "identifier" "float id" [369]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve326"]
+								Attribute "identifier" "float id" [370]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve327"]
+								Attribute "identifier" "float id" [371]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve328"]
+								Attribute "identifier" "float id" [372]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve329"]
+								Attribute "identifier" "float id" [373]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve330"]
+								Attribute "identifier" "float id" [374]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve331"]
+								Attribute "identifier" "float id" [375]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve332"]
+								Attribute "identifier" "float id" [376]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve333"]
+								Attribute "identifier" "float id" [377]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve334"]
+								Attribute "identifier" "float id" [378]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve335"]
+								Attribute "identifier" "float id" [379]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve336"]
+								Attribute "identifier" "float id" [380]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+							AttributeBegin 
+								Attribute "identifier" "string name" ["curve337"]
+								Attribute "identifier" "float id" [381]
+								ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+								AttributeBegin 
+								AttributeEnd 
+							AttributeEnd 
+						AttributeEnd 
+					AttributeEnd 
+				AttributeEnd 
+				AttributeBegin 
+					Attribute "identifier" "string name" ["EXP_CTRL_parentConstraint1"]
+					Attribute "identifier" "float id" [12]
+					ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+				AttributeEnd 
+			AttributeEnd 
+			AttributeBegin 
+				Attribute "identifier" "string name" ["PxrStdEnvMapLight1"]
+				Attribute "identifier" "float id" [95]
+				ConcatTransform [ -231.224 -0 -0 0  0 231.224 0 0  0 0 231.224 0  0 0 0 1 ]
+				AttributeBegin 
+				AttributeEnd 
+			AttributeEnd 
+			##RLF ScopeEnd -name frontShape_Final
+		WorldEnd 
+	ResourceEnd 
+	##streammarker 1
+FrameEnd 

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RenderManLookFile Version="1" Format="RenderMan Look Data" AssemblyName="sideShape_Final">
+    <InjectablePayloads>
+        <Payload Id="PxrLMDiffuse3SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "place2dTexture11" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["place2dTexture11_0"]
+	Pattern "PxrMayaFile" "file9" "string fileTextureName" ["renderman/textures/job/Bark.png.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["place2dTexture11:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["file9_0"]
+	Bxdf "PxrLMDiffuse" "Trunk_M" "reference color frontColor" ["file9:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["Trunk_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="PxrLMDiffuse2SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "place2dTexture10" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["place2dTexture10_0"]
+	Pattern "PxrMayaFile" "file8" "string fileTextureName" ["renderman/textures/job/Leaves Bright.jpg.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["place2dTexture10:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["file8_0"]
+	Bxdf "PxrLMDiffuse" "Bright_Leaves_M" "reference color frontColor" ["file8:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["Bright_Leaves_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="PxrLMDiffuse1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Pattern "PxrMayaPlacement2d" "place2dTexture9" "float[2] coverage" [1 1] "float[2] translateFrame" [0 0] "float rotateFrame" [0] "int mirrorU" [0] "int mirrorV" [0] "int stagger" [0] "int wrapU" [1] "int wrapV" [1] "float[2] repeatUV" [1 1] "float[2] offset" [0 0] "float rotateUV" [0] 
+		"float[2] noiseUV" [0 0] "__instanceid" ["place2dTexture9_0"]
+	Pattern "PxrMayaFile" "file7" "string fileTextureName" ["renderman/textures/job/Leaves Dark.jpg.tex"] "int colorProfile" [0] "string colorSpace" ["sRGB"] "int colorManagementEnabled" [1] "float preFilter" [0] "float preFilterRadius" [2] "float filterType" [3] "int useFrameExtension" [0] "int frameExtension" [1] "int frameOffset" [0] "int spriteNum" [-9999] "float __faceindex" [0] "color defaultColor" [0.214041 0.214041 0.214041] "color colorGain" [1 1 1] 
+		"color colorOffset" [0 0 0] "float alphaGain" [1] "float alphaOffset" [0] "int alphaIsLuminance" [0] "float filter" [1] "float filterOffset" [0] "int invert" [0] "reference struct manifold" ["place2dTexture9:result"] "string rman__tx2dFilter" ["1"] "float rman__tx2dSwidth" [1] "float rman__tx2dTwidth" [1] "int rman__tx2dLerp" [0] "int rman__applysRGB" [-1] 
+		"string rman__udim" ["none"] "int rman__unpremultiply" [0] "__instanceid" ["file7_0"]
+	Bxdf "PxrLMDiffuse" "Dark_Leaves_M" "reference color frontColor" ["file7:outColor"] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] "normal bumpNormal" [0 0 0] 
+		"float presence" [1] "int inputAOV" [0] "__instanceid" ["Dark_Leaves_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+    </InjectablePayloads>
+    <TightBindings>
+        <Binding Key="Tree_Group/Bush4/BushShape4" PayloadId="PxrLMDiffuse1SG"/>
+        <Binding Key="Tree_Group/Head/HeadShape" PayloadId="PxrLMDiffuse1SG"/>
+        <Binding Key="Tree_Group/Trunk/TrunkShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Tree_Group/Bush1/BushShape1" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Tree_Group/Bush2/BushShape2" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Tree_Group/Bush3/BushShape3" PayloadId="PxrLMDiffuse2SG"/>
+    </TightBindings>
+</RenderManLookFile>

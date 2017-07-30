@@ -1,0 +1,292 @@
+##RenderMan RIB
+version 3.04
+Option "rerender" "int[2] lodrange" [0 3]
+##streammarker61
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFractal" "PxrFractal1" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal1_2"]
+Pattern "PxrFractal" "PxrFractal3" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal3_2"]
+Pattern "PxrFractal" "PxrFractal2" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal2_2"]
+Pattern "PxrBump" "PxrBump1" "float scale" [-37.6462] "int disable" [0] "reference float inputBump" ["PxrFractal3:resultF"] "string filename" [""] "int firstChannel" [0] "int atlasStyle" [0] "int invertT" [1] "float blur" [0] "int lerp" [1] "normal inputN" [1 0 0] "int reverse" [0] "__instanceid" ["PxrBump1_2"]
+Pattern "PxrMix" "PxrMix1" "color color1" [0.167259 0.159121 0.00361124] "color color2" [0.0568754 0.159121 0.00361124] "reference float mix" ["PxrFractal2:resultF"] "__instanceid" ["PxrMix1_2"]
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.591549] "float size" [1.26761] "int octaves" [1] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_2"]
+Pattern "PxrToFloat3" "contrast1_value" "float input" [0] "reference float inputR" ["PxrFractal1:resultF"] "float inputG" [0] "float inputB" [0] "__instanceid" ["contrast1_value_2"]
+Pattern "PxrSeExpr" "contrast1" "reference vector value" ["contrast1_value:resultRGB"] "vector contrast" [4 4 4] "vector bias" [0.5 0.5 0.5] "string expression" ["resultRGB = contrast(bias(value,1-bias),contrast*.25); resultRGB"] "__instanceid" ["contrast1_2"]
+Pattern "PxrToFloat" "contrast1_outValue_0" "reference color input" ["contrast1:resultRGB"] "int mode" [0] "__instanceid" ["contrast1_outValue_0_2"]
+Pattern "PxrLMLayer" "RUST" "reference float layerMask" ["contrast1_outValue_0:resultF"] "int diffuseBehavior" [1] "reference color diffuseColor" ["PxrMix1:resultRGB"] "float diffuseRoughness" [1] "color sheen" [0 0 0] "color incandescence" [0 0 0] "reference normal diffuseNn" ["PxrBump1:resultN"] "int specularBehavior" [1] "color specularColor" [1 1 1] 
+"float specularRoughness" [0.8] "color specularEta" [0 1 1] "color specularKappa" [0.658538 0.658538 0.658538] "normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] 
+"int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] "normal clearcoatNn" [0 0 0] 
+"float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["RUST_2"]
+Pattern "PxrLMLayer" "VARNISH" "reference struct lmlayer" ["RUST:result"] "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] 
+"normal diffuseNn" [0 0 0] "int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] 
+"normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] 
+"float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] "normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["VARNISH_2"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["VARNISH:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_2"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker62
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFractal" "PxrFractal1" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal1_2"]
+Pattern "PxrFractal" "PxrFractal3" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal3_2"]
+Pattern "PxrFractal" "PxrFractal2" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal2_2"]
+Pattern "PxrBump" "PxrBump1" "float scale" [-37.6462] "int disable" [0] "reference float inputBump" ["PxrFractal3:resultF"] "string filename" [""] "int firstChannel" [0] "int atlasStyle" [0] "int invertT" [1] "float blur" [0] "int lerp" [1] "normal inputN" [1 0 0] "int reverse" [0] "__instanceid" ["PxrBump1_2"]
+Pattern "PxrMix" "PxrMix1" "color color1" [0.167259 0.159121 0.00361124] "color color2" [0.0568754 0.159121 0.00361124] "reference float mix" ["PxrFractal2:resultF"] "__instanceid" ["PxrMix1_2"]
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.591549] "float size" [1.26761] "int octaves" [1] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_2"]
+Pattern "PxrToFloat3" "contrast1_value" "float input" [0] "reference float inputR" ["PxrFractal1:resultF"] "float inputG" [0] "float inputB" [0] "__instanceid" ["contrast1_value_2"]
+Pattern "PxrSeExpr" "contrast1" "reference vector value" ["contrast1_value:resultRGB"] "vector contrast" [4 4 4] "vector bias" [0.5 0.5 0.5] "string expression" ["resultRGB = contrast(bias(value,1-bias),contrast*.25); resultRGB"] "__instanceid" ["contrast1_2"]
+Pattern "PxrToFloat" "contrast1_outValue_0" "reference color input" ["contrast1:resultRGB"] "int mode" [0] "__instanceid" ["contrast1_outValue_0_2"]
+Pattern "PxrLMLayer" "RUST" "reference float layerMask" ["contrast1_outValue_0:resultF"] "int diffuseBehavior" [1] "reference color diffuseColor" ["PxrMix1:resultRGB"] "float diffuseRoughness" [1] "color sheen" [0 0 0] "color incandescence" [0 0 0] "reference normal diffuseNn" ["PxrBump1:resultN"] "int specularBehavior" [1] "color specularColor" [1 1 1] 
+"float specularRoughness" [0.8] "color specularEta" [0 1 1] "color specularKappa" [0.658538 0.658538 0.658538] "normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] 
+"int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] "normal clearcoatNn" [0 0 0] 
+"float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["RUST_2"]
+Pattern "PxrLMLayer" "VARNISH" "reference struct lmlayer" ["RUST:result"] "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] 
+"normal diffuseNn" [0 0 0] "int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] 
+"normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] 
+"float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] "normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["VARNISH_2"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["VARNISH:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_2"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker63
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFractal" "PxrFractal1" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal1_2"]
+Pattern "PxrFractal" "PxrFractal3" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal3_2"]
+Pattern "PxrFractal" "PxrFractal2" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal2_2"]
+Pattern "PxrBump" "PxrBump1" "float scale" [-37.6462] "int disable" [0] "reference float inputBump" ["PxrFractal3:resultF"] "string filename" [""] "int firstChannel" [0] "int atlasStyle" [0] "int invertT" [1] "float blur" [0] "int lerp" [1] "normal inputN" [1 0 0] "int reverse" [0] "__instanceid" ["PxrBump1_2"]
+Pattern "PxrMix" "PxrMix1" "color color1" [0.167259 0.159121 0.00361124] "color color2" [0.498397 0.159121 0.00361124] "reference float mix" ["PxrFractal2:resultF"] "__instanceid" ["PxrMix1_2"]
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.591549] "float size" [1.26761] "int octaves" [1] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_2"]
+Pattern "PxrToFloat3" "contrast1_value" "float input" [0] "reference float inputR" ["PxrFractal1:resultF"] "float inputG" [0] "float inputB" [0] "__instanceid" ["contrast1_value_2"]
+Pattern "PxrSeExpr" "contrast1" "reference vector value" ["contrast1_value:resultRGB"] "vector contrast" [4 4 4] "vector bias" [0.5 0.5 0.5] "string expression" ["resultRGB = contrast(bias(value,1-bias),contrast*.25); resultRGB"] "__instanceid" ["contrast1_2"]
+Pattern "PxrToFloat" "contrast1_outValue_0" "reference color input" ["contrast1:resultRGB"] "int mode" [0] "__instanceid" ["contrast1_outValue_0_2"]
+Pattern "PxrLMLayer" "RUST" "reference float layerMask" ["contrast1_outValue_0:resultF"] "int diffuseBehavior" [1] "reference color diffuseColor" ["PxrMix1:resultRGB"] "float diffuseRoughness" [1] "color sheen" [0 0 0] "color incandescence" [0 0 0] "reference normal diffuseNn" ["PxrBump1:resultN"] "int specularBehavior" [1] "color specularColor" [1 1 1] 
+"float specularRoughness" [0.8] "color specularEta" [0 1 1] "color specularKappa" [0.658538 0.658538 0.658538] "normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] 
+"int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] "normal clearcoatNn" [0 0 0] 
+"float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["RUST_2"]
+Pattern "PxrLMLayer" "VARNISH" "reference struct lmlayer" ["RUST:result"] "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] 
+"normal diffuseNn" [0 0 0] "int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] 
+"normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] 
+"float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] "normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["VARNISH_2"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["VARNISH:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_2"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker64
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFractal" "PxrFractal1" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal1_2"]
+Pattern "PxrFractal" "PxrFractal3" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal3_2"]
+Pattern "PxrFractal" "PxrFractal2" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal2_2"]
+Pattern "PxrBump" "PxrBump1" "float scale" [-37.6462] "int disable" [0] "reference float inputBump" ["PxrFractal3:resultF"] "string filename" [""] "int firstChannel" [0] "int atlasStyle" [0] "int invertT" [1] "float blur" [0] "int lerp" [1] "normal inputN" [1 0 0] "int reverse" [0] "__instanceid" ["PxrBump1_2"]
+Pattern "PxrMix" "PxrMix1" "color color1" [0.167259 0.159121 0.00361124] "color color2" [0.294583 0.159121 0.00361124] "reference float mix" ["PxrFractal2:resultF"] "__instanceid" ["PxrMix1_2"]
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.591549] "float size" [1.26761] "int octaves" [1] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_2"]
+Pattern "PxrToFloat3" "contrast1_value" "float input" [0] "reference float inputR" ["PxrFractal1:resultF"] "float inputG" [0] "float inputB" [0] "__instanceid" ["contrast1_value_2"]
+Pattern "PxrSeExpr" "contrast1" "reference vector value" ["contrast1_value:resultRGB"] "vector contrast" [4 4 4] "vector bias" [0.5 0.5 0.5] "string expression" ["resultRGB = contrast(bias(value,1-bias),contrast*.25); resultRGB"] "__instanceid" ["contrast1_2"]
+Pattern "PxrToFloat" "contrast1_outValue_0" "reference color input" ["contrast1:resultRGB"] "int mode" [0] "__instanceid" ["contrast1_outValue_0_2"]
+Pattern "PxrLMLayer" "RUST" "reference float layerMask" ["contrast1_outValue_0:resultF"] "int diffuseBehavior" [1] "reference color diffuseColor" ["PxrMix1:resultRGB"] "float diffuseRoughness" [1] "color sheen" [0 0 0] "color incandescence" [0 0 0] "reference normal diffuseNn" ["PxrBump1:resultN"] "int specularBehavior" [1] "color specularColor" [1 1 1] 
+"float specularRoughness" [0.8] "color specularEta" [0 1 1] "color specularKappa" [0.658538 0.658538 0.658538] "normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] 
+"int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] "normal clearcoatNn" [0 0 0] 
+"float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["RUST_2"]
+Pattern "PxrLMLayer" "VARNISH" "reference struct lmlayer" ["RUST:result"] "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] 
+"normal diffuseNn" [0 0 0] "int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] 
+"normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] 
+"float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] "normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["VARNISH_2"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["VARNISH:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_2"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker65
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFractal" "PxrFractal1" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal1_2"]
+Pattern "PxrFractal" "PxrFractal3" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal3_2"]
+Pattern "PxrFractal" "PxrFractal2" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal2_2"]
+Pattern "PxrBump" "PxrBump1" "float scale" [-37.6462] "int disable" [0] "reference float inputBump" ["PxrFractal3:resultF"] "string filename" [""] "int firstChannel" [0] "int atlasStyle" [0] "int invertT" [1] "float blur" [0] "int lerp" [1] "normal inputN" [1 0 0] "int reverse" [0] "__instanceid" ["PxrBump1_2"]
+Pattern "PxrMix" "PxrMix1" "color color1" [0.167259 0.159121 0.00361124] "color color2" [0.294583 0.117707 0.00361124] "reference float mix" ["PxrFractal2:resultF"] "__instanceid" ["PxrMix1_2"]
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.591549] "float size" [1.26761] "int octaves" [1] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_2"]
+Pattern "PxrToFloat3" "contrast1_value" "float input" [0] "reference float inputR" ["PxrFractal1:resultF"] "float inputG" [0] "float inputB" [0] "__instanceid" ["contrast1_value_2"]
+Pattern "PxrSeExpr" "contrast1" "reference vector value" ["contrast1_value:resultRGB"] "vector contrast" [4 4 4] "vector bias" [0.5 0.5 0.5] "string expression" ["resultRGB = contrast(bias(value,1-bias),contrast*.25); resultRGB"] "__instanceid" ["contrast1_2"]
+Pattern "PxrToFloat" "contrast1_outValue_0" "reference color input" ["contrast1:resultRGB"] "int mode" [0] "__instanceid" ["contrast1_outValue_0_2"]
+Pattern "PxrLMLayer" "RUST" "reference float layerMask" ["contrast1_outValue_0:resultF"] "int diffuseBehavior" [1] "reference color diffuseColor" ["PxrMix1:resultRGB"] "float diffuseRoughness" [1] "color sheen" [0 0 0] "color incandescence" [0 0 0] "reference normal diffuseNn" ["PxrBump1:resultN"] "int specularBehavior" [1] "color specularColor" [1 1 1] 
+"float specularRoughness" [0.8] "color specularEta" [0 1 1] "color specularKappa" [0.658538 0.658538 0.658538] "normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] 
+"int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] "normal clearcoatNn" [0 0 0] 
+"float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["RUST_2"]
+Pattern "PxrLMLayer" "VARNISH" "reference struct lmlayer" ["RUST:result"] "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] 
+"normal diffuseNn" [0 0 0] "int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] 
+"normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] 
+"float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] "normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["VARNISH_2"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["VARNISH:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_2"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker66
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFractal" "PxrFractal1" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal1_2"]
+Pattern "PxrFractal" "PxrFractal3" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal3_2"]
+Pattern "PxrFractal" "PxrFractal2" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal2_2"]
+Pattern "PxrBump" "PxrBump1" "float scale" [-37.6462] "int disable" [0] "reference float inputBump" ["PxrFractal3:resultF"] "string filename" [""] "int firstChannel" [0] "int atlasStyle" [0] "int invertT" [1] "float blur" [0] "int lerp" [1] "normal inputN" [1 0 0] "int reverse" [0] "__instanceid" ["PxrBump1_2"]
+Pattern "PxrMix" "PxrMix1" "color color1" [0.167259 0.159121 0.00361124] "color color2" [0.294583 0.40336 0.00361124] "reference float mix" ["PxrFractal2:resultF"] "__instanceid" ["PxrMix1_2"]
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.591549] "float size" [1.26761] "int octaves" [1] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_2"]
+Pattern "PxrToFloat3" "contrast1_value" "float input" [0] "reference float inputR" ["PxrFractal1:resultF"] "float inputG" [0] "float inputB" [0] "__instanceid" ["contrast1_value_2"]
+Pattern "PxrSeExpr" "contrast1" "reference vector value" ["contrast1_value:resultRGB"] "vector contrast" [4 4 4] "vector bias" [0.5 0.5 0.5] "string expression" ["resultRGB = contrast(bias(value,1-bias),contrast*.25); resultRGB"] "__instanceid" ["contrast1_2"]
+Pattern "PxrToFloat" "contrast1_outValue_0" "reference color input" ["contrast1:resultRGB"] "int mode" [0] "__instanceid" ["contrast1_outValue_0_2"]
+Pattern "PxrLMLayer" "RUST" "reference float layerMask" ["contrast1_outValue_0:resultF"] "int diffuseBehavior" [1] "reference color diffuseColor" ["PxrMix1:resultRGB"] "float diffuseRoughness" [1] "color sheen" [0 0 0] "color incandescence" [0 0 0] "reference normal diffuseNn" ["PxrBump1:resultN"] "int specularBehavior" [1] "color specularColor" [1 1 1] 
+"float specularRoughness" [0.8] "color specularEta" [0 1 1] "color specularKappa" [0.658538 0.658538 0.658538] "normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] 
+"int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] "normal clearcoatNn" [0 0 0] 
+"float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["RUST_2"]
+Pattern "PxrLMLayer" "VARNISH" "reference struct lmlayer" ["RUST:result"] "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] 
+"normal diffuseNn" [0 0 0] "int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] 
+"normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] 
+"float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] "normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["VARNISH_2"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["VARNISH:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_2"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker67
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFractal" "PxrFractal1" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal1_2"]
+Pattern "PxrFractal" "PxrFractal3" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal3_2"]
+Pattern "PxrFractal" "PxrFractal2" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal2_2"]
+Pattern "PxrBump" "PxrBump1" "float scale" [-37.6462] "int disable" [0] "reference float inputBump" ["PxrFractal3:resultF"] "string filename" [""] "int firstChannel" [0] "int atlasStyle" [0] "int invertT" [1] "float blur" [0] "int lerp" [1] "normal inputN" [1 0 0] "int reverse" [0] "__instanceid" ["PxrBump1_2"]
+Pattern "PxrMix" "PxrMix1" "color color1" [0.167259 0.159121 0.00361124] "color color2" [0.00851214 0.00245356 6.19195e-05] "reference float mix" ["PxrFractal2:resultF"] "__instanceid" ["PxrMix1_2"]
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.591549] "float size" [1.26761] "int octaves" [1] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_2"]
+Pattern "PxrToFloat3" "contrast1_value" "float input" [0] "reference float inputR" ["PxrFractal1:resultF"] "float inputG" [0] "float inputB" [0] "__instanceid" ["contrast1_value_2"]
+Pattern "PxrSeExpr" "contrast1" "reference vector value" ["contrast1_value:resultRGB"] "vector contrast" [4 4 4] "vector bias" [0.5 0.5 0.5] "string expression" ["resultRGB = contrast(bias(value,1-bias),contrast*.25); resultRGB"] "__instanceid" ["contrast1_2"]
+Pattern "PxrToFloat" "contrast1_outValue_0" "reference color input" ["contrast1:resultRGB"] "int mode" [0] "__instanceid" ["contrast1_outValue_0_2"]
+Pattern "PxrLMLayer" "RUST" "reference float layerMask" ["contrast1_outValue_0:resultF"] "int diffuseBehavior" [1] "reference color diffuseColor" ["PxrMix1:resultRGB"] "float diffuseRoughness" [1] "color sheen" [0 0 0] "color incandescence" [0 0 0] "reference normal diffuseNn" ["PxrBump1:resultN"] "int specularBehavior" [1] "color specularColor" [1 1 1] 
+"float specularRoughness" [0.8] "color specularEta" [0 1 1] "color specularKappa" [0.658538 0.658538 0.658538] "normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] 
+"int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] "normal clearcoatNn" [0 0 0] 
+"float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["RUST_2"]
+Pattern "PxrLMLayer" "VARNISH" "reference struct lmlayer" ["RUST:result"] "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] 
+"normal diffuseNn" [0 0 0] "int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] 
+"normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] 
+"float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] "normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["VARNISH_2"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["VARNISH:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_2"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker68
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFractal" "PxrFractal1" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal1_2"]
+Pattern "PxrFractal" "PxrFractal3" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal3_2"]
+Pattern "PxrFractal" "PxrFractal2" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal2_2"]
+Pattern "PxrBump" "PxrBump1" "float scale" [-37.6462] "int disable" [0] "reference float inputBump" ["PxrFractal3:resultF"] "string filename" [""] "int firstChannel" [0] "int atlasStyle" [0] "int invertT" [1] "float blur" [0] "int lerp" [1] "normal inputN" [1 0 0] "int reverse" [0] "__instanceid" ["PxrBump1_2"]
+Pattern "PxrMix" "PxrMix1" "color color1" [0.167259 0.159121 0.00361124] "color color2" [0.473462 0.0528598 0.00439125] "reference float mix" ["PxrFractal2:resultF"] "__instanceid" ["PxrMix1_2"]
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.591549] "float size" [1.26761] "int octaves" [1] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_2"]
+Pattern "PxrToFloat3" "contrast1_value" "float input" [0] "reference float inputR" ["PxrFractal1:resultF"] "float inputG" [0] "float inputB" [0] "__instanceid" ["contrast1_value_2"]
+Pattern "PxrSeExpr" "contrast1" "reference vector value" ["contrast1_value:resultRGB"] "vector contrast" [4 4 4] "vector bias" [0.5 0.5 0.5] "string expression" ["resultRGB = contrast(bias(value,1-bias),contrast*.25); resultRGB"] "__instanceid" ["contrast1_2"]
+Pattern "PxrToFloat" "contrast1_outValue_0" "reference color input" ["contrast1:resultRGB"] "int mode" [0] "__instanceid" ["contrast1_outValue_0_2"]
+Pattern "PxrLMLayer" "RUST" "reference float layerMask" ["contrast1_outValue_0:resultF"] "int diffuseBehavior" [1] "reference color diffuseColor" ["PxrMix1:resultRGB"] "float diffuseRoughness" [1] "color sheen" [0 0 0] "color incandescence" [0 0 0] "reference normal diffuseNn" ["PxrBump1:resultN"] "int specularBehavior" [1] "color specularColor" [1 1 1] 
+"float specularRoughness" [0.8] "color specularEta" [0 1 1] "color specularKappa" [0.658538 0.658538 0.658538] "normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] 
+"int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] "normal clearcoatNn" [0 0 0] 
+"float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["RUST_2"]
+Pattern "PxrLMLayer" "VARNISH" "reference struct lmlayer" ["RUST:result"] "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] 
+"normal diffuseNn" [0 0 0] "int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] 
+"normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] 
+"float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] "normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["VARNISH_2"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["VARNISH:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_2"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker69
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFractal" "PxrFractal1" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal1_2"]
+Pattern "PxrFractal" "PxrFractal3" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal3_2"]
+Pattern "PxrFractal" "PxrFractal2" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal2_2"]
+Pattern "PxrBump" "PxrBump1" "float scale" [-37.6462] "int disable" [0] "reference float inputBump" ["PxrFractal3:resultF"] "string filename" [""] "int firstChannel" [0] "int atlasStyle" [0] "int invertT" [1] "float blur" [0] "int lerp" [1] "normal inputN" [1 0 0] "int reverse" [0] "__instanceid" ["PxrBump1_2"]
+Pattern "PxrMix" "PxrMix1" "color color1" [0.167259 0.159121 0.00361124] "color color2" [0.473462 0.448273 0.00439125] "reference float mix" ["PxrFractal2:resultF"] "__instanceid" ["PxrMix1_2"]
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.591549] "float size" [1.26761] "int octaves" [1] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_2"]
+Pattern "PxrToFloat3" "contrast1_value" "float input" [0] "reference float inputR" ["PxrFractal1:resultF"] "float inputG" [0] "float inputB" [0] "__instanceid" ["contrast1_value_2"]
+Pattern "PxrSeExpr" "contrast1" "reference vector value" ["contrast1_value:resultRGB"] "vector contrast" [4 4 4] "vector bias" [0.5 0.5 0.5] "string expression" ["resultRGB = contrast(bias(value,1-bias),contrast*.25); resultRGB"] "__instanceid" ["contrast1_2"]
+Pattern "PxrToFloat" "contrast1_outValue_0" "reference color input" ["contrast1:resultRGB"] "int mode" [0] "__instanceid" ["contrast1_outValue_0_2"]
+Pattern "PxrLMLayer" "RUST" "reference float layerMask" ["contrast1_outValue_0:resultF"] "int diffuseBehavior" [1] "reference color diffuseColor" ["PxrMix1:resultRGB"] "float diffuseRoughness" [1] "color sheen" [0 0 0] "color incandescence" [0 0 0] "reference normal diffuseNn" ["PxrBump1:resultN"] "int specularBehavior" [1] "color specularColor" [1 1 1] 
+"float specularRoughness" [0.8] "color specularEta" [0 1 1] "color specularKappa" [0.658538 0.658538 0.658538] "normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] 
+"int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] "normal clearcoatNn" [0 0 0] 
+"float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["RUST_2"]
+Pattern "PxrLMLayer" "VARNISH" "reference struct lmlayer" ["RUST:result"] "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] 
+"normal diffuseNn" [0 0 0] "int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] 
+"normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] 
+"float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] "normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["VARNISH_2"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["VARNISH:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_2"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker70
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFractal" "PxrFractal1" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal1_2"]
+Pattern "PxrFractal" "PxrFractal3" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal3_2"]
+Pattern "PxrFractal" "PxrFractal2" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal2_2"]
+Pattern "PxrBump" "PxrBump1" "float scale" [-37.6462] "int disable" [0] "reference float inputBump" ["PxrFractal3:resultF"] "string filename" [""] "int firstChannel" [0] "int atlasStyle" [0] "int invertT" [1] "float blur" [0] "int lerp" [1] "normal inputN" [1 0 0] "int reverse" [0] "__instanceid" ["PxrBump1_2"]
+Pattern "PxrMix" "PxrMix1" "color color1" [0.167259 0.159121 0.00361124] "color color2" [0.473462 0.252236 0.00439125] "reference float mix" ["PxrFractal2:resultF"] "__instanceid" ["PxrMix1_2"]
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.591549] "float size" [1.26761] "int octaves" [1] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_2"]
+Pattern "PxrToFloat3" "contrast1_value" "float input" [0] "reference float inputR" ["PxrFractal1:resultF"] "float inputG" [0] "float inputB" [0] "__instanceid" ["contrast1_value_2"]
+Pattern "PxrSeExpr" "contrast1" "reference vector value" ["contrast1_value:resultRGB"] "vector contrast" [4 4 4] "vector bias" [0.5 0.5 0.5] "string expression" ["resultRGB = contrast(bias(value,1-bias),contrast*.25); resultRGB"] "__instanceid" ["contrast1_2"]
+Pattern "PxrToFloat" "contrast1_outValue_0" "reference color input" ["contrast1:resultRGB"] "int mode" [0] "__instanceid" ["contrast1_outValue_0_2"]
+Pattern "PxrLMLayer" "RUST" "reference float layerMask" ["contrast1_outValue_0:resultF"] "int diffuseBehavior" [1] "reference color diffuseColor" ["PxrMix1:resultRGB"] "float diffuseRoughness" [1] "color sheen" [0 0 0] "color incandescence" [0 0 0] "reference normal diffuseNn" ["PxrBump1:resultN"] "int specularBehavior" [1] "color specularColor" [1 1 1] 
+"float specularRoughness" [0.8] "color specularEta" [0 1 1] "color specularKappa" [0.658538 0.658538 0.658538] "normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] 
+"int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] "normal clearcoatNn" [0 0 0] 
+"float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["RUST_2"]
+Pattern "PxrLMLayer" "VARNISH" "reference struct lmlayer" ["RUST:result"] "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] 
+"normal diffuseNn" [0 0 0] "int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] 
+"normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] 
+"float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] "normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["VARNISH_2"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["VARNISH:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_2"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker71
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFractal" "PxrFractal1" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal1_2"]
+Pattern "PxrFractal" "PxrFractal3" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal3_2"]
+Pattern "PxrFractal" "PxrFractal2" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal2_2"]
+Pattern "PxrBump" "PxrBump1" "float scale" [-37.6462] "int disable" [0] "reference float inputBump" ["PxrFractal3:resultF"] "string filename" [""] "int firstChannel" [0] "int atlasStyle" [0] "int invertT" [1] "float blur" [0] "int lerp" [1] "normal inputN" [1 0 0] "int reverse" [0] "__instanceid" ["PxrBump1_2"]
+Pattern "PxrMix" "PxrMix1" "color color1" [0.167259 0.159121 0.00361124] "color color2" [0.473462 0.195028 0.00439125] "reference float mix" ["PxrFractal2:resultF"] "__instanceid" ["PxrMix1_2"]
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.591549] "float size" [1.26761] "int octaves" [1] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_2"]
+Pattern "PxrToFloat3" "contrast1_value" "float input" [0] "reference float inputR" ["PxrFractal1:resultF"] "float inputG" [0] "float inputB" [0] "__instanceid" ["contrast1_value_2"]
+Pattern "PxrSeExpr" "contrast1" "reference vector value" ["contrast1_value:resultRGB"] "vector contrast" [4 4 4] "vector bias" [0.5 0.5 0.5] "string expression" ["resultRGB = contrast(bias(value,1-bias),contrast*.25); resultRGB"] "__instanceid" ["contrast1_2"]
+Pattern "PxrToFloat" "contrast1_outValue_0" "reference color input" ["contrast1:resultRGB"] "int mode" [0] "__instanceid" ["contrast1_outValue_0_2"]
+Pattern "PxrLMLayer" "RUST" "reference float layerMask" ["contrast1_outValue_0:resultF"] "int diffuseBehavior" [1] "reference color diffuseColor" ["PxrMix1:resultRGB"] "float diffuseRoughness" [1] "color sheen" [0 0 0] "color incandescence" [0 0 0] "reference normal diffuseNn" ["PxrBump1:resultN"] "int specularBehavior" [1] "color specularColor" [1 1 1] 
+"float specularRoughness" [0.8] "color specularEta" [0 1 1] "color specularKappa" [0.658538 0.658538 0.658538] "normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] 
+"int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] "normal clearcoatNn" [0 0 0] 
+"float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["RUST_2"]
+Pattern "PxrLMLayer" "VARNISH" "reference struct lmlayer" ["RUST:result"] "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] 
+"normal diffuseNn" [0 0 0] "int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] 
+"normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] 
+"float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] "normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["VARNISH_2"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["VARNISH:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_2"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker72
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFractal" "PxrFractal1" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal1_2"]
+Pattern "PxrFractal" "PxrFractal3" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal3_2"]
+Pattern "PxrFractal" "PxrFractal2" "int layers" [6] "float frequency" [1] "float lacunarity" [2] "float dimension" [1] "float erosion" [0] "float variation" [0] "__instanceid" ["PxrFractal2_2"]
+Pattern "PxrBump" "PxrBump1" "float scale" [-37.6462] "int disable" [0] "reference float inputBump" ["PxrFractal3:resultF"] "string filename" [""] "int firstChannel" [0] "int atlasStyle" [0] "int invertT" [1] "float blur" [0] "int lerp" [1] "normal inputN" [1 0 0] "int reverse" [0] "__instanceid" ["PxrBump1_2"]
+Pattern "PxrMix" "PxrMix1" "color color1" [0.167259 0.159121 0.00361124] "color color2" [0.473462 0.195028 0.00858285] "reference float mix" ["PxrFractal2:resultF"] "__instanceid" ["PxrMix1_2"]
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.591549] "float size" [1.26761] "int octaves" [1] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_2"]
+Pattern "PxrToFloat3" "contrast1_value" "float input" [0] "reference float inputR" ["PxrFractal1:resultF"] "float inputG" [0] "float inputB" [0] "__instanceid" ["contrast1_value_2"]
+Pattern "PxrSeExpr" "contrast1" "reference vector value" ["contrast1_value:resultRGB"] "vector contrast" [4 4 4] "vector bias" [0.5 0.5 0.5] "string expression" ["resultRGB = contrast(bias(value,1-bias),contrast*.25); resultRGB"] "__instanceid" ["contrast1_2"]
+Pattern "PxrToFloat" "contrast1_outValue_0" "reference color input" ["contrast1:resultRGB"] "int mode" [0] "__instanceid" ["contrast1_outValue_0_2"]
+Pattern "PxrLMLayer" "RUST" "reference float layerMask" ["contrast1_outValue_0:resultF"] "int diffuseBehavior" [1] "reference color diffuseColor" ["PxrMix1:resultRGB"] "float diffuseRoughness" [1] "color sheen" [0 0 0] "color incandescence" [0 0 0] "reference normal diffuseNn" ["PxrBump1:resultN"] "int specularBehavior" [1] "color specularColor" [1 1 1] 
+"float specularRoughness" [0.8] "color specularEta" [0 1 1] "color specularKappa" [0.658538 0.658538 0.658538] "normal specularNn" [0 0 0] "float specularAnisotropy" [0] "vector specularTn" [0 0

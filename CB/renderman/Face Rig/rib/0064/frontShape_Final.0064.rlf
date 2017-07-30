@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RenderManLookFile Version="1" Format="RenderMan Look Data" AssemblyName="frontShape_Final">
+    <InjectablePayloads>
+        <Payload Id="PxrLMDiffuse1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMDiffuse" "Balloon_M" "color frontColor" [0.470587 0.212583 0.000747409] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] 
+		"normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["Balloon_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="PxrLMDiffuse3SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMDiffuse" "EyeBrow_M" "color frontColor" [0.00405115 0.00237718 0] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] 
+		"normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["EyeBrow_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="initialShadingGroup" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="PxrLMDiffuse2SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMDiffuse" "Eye_Black_M" "color frontColor" [0 0 0] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] 
+		"normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["Eye_Black_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="PxrLMDiffuse4SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMDiffuse" "EyeWhite_M" "color frontColor" [1.00002 0.955963 0.87961] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] 
+		"normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["EyeWhite_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="PxrLMDiffuse5SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+	Displacement "null" 
+	Bxdf "PxrLMDiffuse" "Mouth_M" "color frontColor" [0.000752425 0.000752425 0.000752425] "color backColor" [0.214041 0.214041 0.214041] "float roughness" [0] "color sheen" [0 0 0] "float translucence" [0] "color incandescence" [0 0 0] 
+		"normal bumpNormal" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["Mouth_M_0"]
+	VPInterior "null" 
+	Interior "null" 
+	Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+    </InjectablePayloads>
+    <TightBindings>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/LB_Blink/LB_BlinkShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/LB_Down/LB_DownShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/LEB_Angry_Pointy/LEB_Angry_PointyShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/M_Surprise/M_SurpriseShape" PayloadId="PxrLMDiffuse5SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/REB_Angry/REB_AngryShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Balloon_Center/FACE/LEB/LEBShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Balloon_Center/FACE/LW/LWShape" PayloadId="initialShadingGroup"/>
+        <Binding Key="MESH/Cone/ConeShape" PayloadId="PxrLMDiffuse1SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/LEB_Angry/LEB_AngryShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/M_Neutral/M_NeutralShape" PayloadId="PxrLMDiffuse5SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/M_Open_Big/M_Open_BigShape" PayloadId="PxrLMDiffuse5SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/M_Skew_Right/M_Skew_RightShape" PayloadId="PxrLMDiffuse5SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/RB_Blink/RB_BlinkShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/RB_Down/RB_DownShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/REB_Angry_Pointy/REB_Angry_PointyShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Balloon_Center/FACE/REB/REBShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Balloon_Center/FACE/RW/RWShape" PayloadId="initialShadingGroup"/>
+        <Binding Key="MESH/Sphere/SphereShape" PayloadId="PxrLMDiffuse1SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/LEB_Happy/LEB_HappyShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/M_Open_Small/M_Open_SmallShape" PayloadId="PxrLMDiffuse5SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/M_Skew_Left/M_Skew_LeftShape" PayloadId="PxrLMDiffuse5SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/RB_Up/RB_UpShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Balloon_Center/FACE/LWS/LWSShape" PayloadId="PxrLMDiffuse4SG"/>
+        <Binding Key="Balloon_Center/FACE/M_Smile/M_SmileShape" PayloadId="PxrLMDiffuse5SG"/>
+        <Binding Key="Balloon_Center/FACE/RB/RBShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/LB_Up/LB_UpShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Balloon_Center/FACE/Blendshapes/Square/REB_Happy/REB_HappyShape" PayloadId="PxrLMDiffuse3SG"/>
+        <Binding Key="Balloon_Center/FACE/LB/LBShape" PayloadId="PxrLMDiffuse2SG"/>
+        <Binding Key="Balloon_Center/FACE/RWS/RWSShape" PayloadId="PxrLMDiffuse4SG"/>
+    </TightBindings>
+</RenderManLookFile>

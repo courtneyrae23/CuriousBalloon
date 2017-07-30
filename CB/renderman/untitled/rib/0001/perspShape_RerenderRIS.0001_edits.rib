@@ -1,0 +1,65 @@
+##RenderMan RIB
+version 3.04
+Option "rerender" "int[2] lodrange" [0 3]
+##streammarker60
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.450704] "float size" [0.760563] "int octaves" [1] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_0"]
+Pattern "PxrLMLayer" "PxrLMLayer1" "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] "normal diffuseNn" [0 0 0] 
+"int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] "normal specularNn" [0 0 0] 
+"float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] 
+"normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["PxrLMLayer1_0"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["PxrLMLayer1:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker61
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.450704] "float size" [0.760563] "int octaves" [1] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_0"]
+Pattern "PxrLMLayer" "PxrLMLayer1" "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] "normal diffuseNn" [0 0 0] 
+"int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] "normal specularNn" [0 0 0] 
+"float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] 
+"normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["PxrLMLayer1_0"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["PxrLMLayer1:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker62
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.450704] "float size" [0.760563] "int octaves" [2] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_0"]
+Pattern "PxrLMLayer" "PxrLMLayer1" "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] "normal diffuseNn" [0 0 0] 
+"int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] "normal specularNn" [0 0 0] 
+"float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] 
+"normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["PxrLMLayer1_0"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["PxrLMLayer1:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker63
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.450704] "float size" [0.760563] "int octaves" [2] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_0"]
+Pattern "PxrLMLayer" "PxrLMLayer1" "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] "normal diffuseNn" [0 0 0] 
+"int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] "normal specularNn" [0 0 0] 
+"float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] 
+"normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["PxrLMLayer1_0"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["PxrLMLayer1:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["PxrLMMetal1_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker64
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFlakes" "PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.5] "float flakeFreq" [64.7887] "float density" [0.450704] "float size" [1.43662] "int octaves" [2] "float jitter" [0.75] "int validateNormals" [0] "__instanceid" ["PxrFlakes1_0"]
+Pattern "PxrLMLayer" "PxrLMLayer1" "float layerMask" [1] "int diffuseBehavior" [0] "color diffuseColor" [0.214041 0.214041 0.214041] "float diffuseRoughness" [0] "color sheen" [0 0 0] "color incandescence" [0 0 0] "normal diffuseNn" [0 0 0] 
+"int specularBehavior" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.05] "color specularEta" [1.5 1.5 1.5] "color specularKappa" [0 0 0] "normal specularNn" [0 0 0] 
+"float specularAnisotropy" [0] "vector specularTn" [0 0 0] "int clearcoatBehavior" [1] "color clearcoatColor" [1 1 1] "float clearcoatEta" [1.3] "float clearcoatRoughness" [0.01] "float clearcoatThickness" [2.5] "color clearcoatTransmission" [1 0 0] 
+"normal clearcoatNn" [0 0 0] "float clearcoatAnisotropy" [0] "vector clearcoatTn" [0 0 0] "__instanceid" ["PxrLMLayer1_0"]
+Bxdf "PxrLMMetal" "PxrLMMetal1" "reference struct lmlayer" ["PxrLMLayer1:result"] "color eta" [4.36968 2.91671 1.6547] "color kappa" [5.20643 4.23137 3.75497] "float roughness" [0.4] "float anisotropy" [0] "color specularColor" [1 1 1] "reference normal bumpNormal" ["PxrFlakes1:resultN"] 
+"vector shadingTangent" [0 0 0] "float pres

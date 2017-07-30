@@ -1,0 +1,63 @@
+##RenderMan RIB
+version 3.04
+Option "rerender" "int[2] lodrange" [0 3]
+##streammarker318
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFlakes" "snow_PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.58427] "float flakeFreq" [75.2809] "float density" [0.929577] "float size" [1.12676] "int octaves" [5] "float jitter" [0.921348] "int validateNormals" [0] "__instanceid" ["snow_PxrFlakes1_1"]
+Bxdf "PxrLMSubsurface" "snow_PxrLMSubsurface3" "color nearColor" [1 1 1] "float nearWeight" [1] "float nearLength" [0.8] "color midColor" [0.132868 0.787412 0.603827] "float midWeight" [1] "float midLength" [1.23595] "color farColor" [0.0469642 0.367246 0.807346] 
+"float farWeight" [1] "float farLength" [2.69663] "float unitLength" [0.1] "int indirectAtSSS" [0] "reference normal bumpNormal" ["snow_PxrFlakes1:resultN"] "int continuationRays" [0] "float followTopology" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.157303] "float specularAnisotropy" [0] "color specularEta" [1.5 1.5 1.5] 
+"reference normal specularNn" ["snow_PxrFlakes1:resultN"] "vector specularTn" [0 0 0] "color clearcoatColor" [0 0 0] "float clearcoatRoughness" [0.05] "float clearcoatAnisotropy" [0] "float clearcoatEta" [1.8] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] 
+"normal clearcoatNn" [0 0 0] "vector clearcoatTn" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["snow_PxrLMSubsurface3_1"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker319
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFlakes" "snow_PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.58427] "float flakeFreq" [75.2809] "float density" [0.929577] "float size" [1.12676] "int octaves" [5] "float jitter" [0.921348] "int validateNormals" [0] "__instanceid" ["snow_PxrFlakes1_1"]
+Bxdf "PxrLMSubsurface" "snow_PxrLMSubsurface3" "color nearColor" [1 1 1] "float nearWeight" [1] "float nearLength" [0.8] "color midColor" [0.132868 0.787412 0.603827] "float midWeight" [1] "float midLength" [1.23595] "color farColor" [0.0469642 0.367246 0.807346] 
+"float farWeight" [1] "float farLength" [2.69663] "float unitLength" [0.1] "int indirectAtSSS" [0] "reference normal bumpNormal" ["snow_PxrFlakes1:resultN"] "int continuationRays" [0] "float followTopology" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.157303] "float specularAnisotropy" [0] "color specularEta" [1.5 1.5 1.5] 
+"reference normal specularNn" ["snow_PxrFlakes1:resultN"] "vector specularTn" [0 0 0] "color clearcoatColor" [0 0 0] "float clearcoatRoughness" [0.05] "float clearcoatAnisotropy" [0] "float clearcoatEta" [1.8] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] 
+"normal clearcoatNn" [0 0 0] "vector clearcoatTn" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["snow_PxrLMSubsurface3_1"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker320
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFlakes" "snow_PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.58427] "float flakeFreq" [75.2809] "float density" [0.929577] "float size" [1.12676] "int octaves" [5] "float jitter" [0.921348] "int validateNormals" [0] "__instanceid" ["snow_PxrFlakes1_1"]
+Bxdf "PxrLMSubsurface" "snow_PxrLMSubsurface3" "color nearColor" [1 1 1] "float nearWeight" [1] "float nearLength" [0.8] "color midColor" [0.132868 0.787412 0.603827] "float midWeight" [1] "float midLength" [1.23595] "color farColor" [0.0469642 0.367246 0.807346] 
+"float farWeight" [1] "float farLength" [2.69663] "float unitLength" [0.1] "int indirectAtSSS" [0] "reference normal bumpNormal" ["snow_PxrFlakes1:resultN"] "int continuationRays" [0] "float followTopology" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.157303] "float specularAnisotropy" [0] "color specularEta" [1.5 1.5 1.5] 
+"reference normal specularNn" ["snow_PxrFlakes1:resultN"] "vector specularTn" [0 0 0] "color clearcoatColor" [0 0 0] "float clearcoatRoughness" [0.05] "float clearcoatAnisotropy" [0] "float clearcoatEta" [1.8] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] 
+"normal clearcoatNn" [0 0 0] "vector clearcoatTn" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["snow_PxrLMSubsurface3_1"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker321
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFlakes" "snow_PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.58427] "float flakeFreq" [75.2809] "float density" [0.929577] "float size" [1.12676] "int octaves" [5] "float jitter" [0.921348] "int validateNormals" [0] "__instanceid" ["snow_PxrFlakes1_1"]
+Bxdf "PxrLMSubsurface" "snow_PxrLMSubsurface3" "color nearColor" [1 1 1] "float nearWeight" [1] "float nearLength" [0.8] "color midColor" [0.132868 0.787412 0.603827] "float midWeight" [1] "float midLength" [1.23595] "color farColor" [0.0469642 0.367246 0.807346] 
+"float farWeight" [1] "float farLength" [2.69663] "float unitLength" [0.1] "int indirectAtSSS" [0] "reference normal bumpNormal" ["snow_PxrFlakes1:resultN"] "int continuationRays" [0] "float followTopology" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.157303] "float specularAnisotropy" [0] "color specularEta" [1.5 1.5 1.5] 
+"reference normal specularNn" ["snow_PxrFlakes1:resultN"] "vector specularTn" [0 0 0] "color clearcoatColor" [0 0 0] "float clearcoatRoughness" [0.05] "float clearcoatAnisotropy" [0] "float clearcoatEta" [1.8] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] 
+"normal clearcoatNn" [0 0 0] "vector clearcoatTn" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["snow_PxrLMSubsurface3_1"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker322
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFlakes" "snow_PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.58427] "float flakeFreq" [75.2809] "float density" [0.929577] "float size" [1.12676] "int octaves" [5] "float jitter" [0.921348] "int validateNormals" [0] "__instanceid" ["snow_PxrFlakes1_1"]
+Bxdf "PxrLMSubsurface" "snow_PxrLMSubsurface3" "color nearColor" [1 1 1] "float nearWeight" [1] "float nearLength" [0.8] "color midColor" [0.132868 0.787412 0.603827] "float midWeight" [1] "float midLength" [1.23595] "color farColor" [0.0469642 0.367246 0.807346] 
+"float farWeight" [1] "float farLength" [2.69663] "float unitLength" [0.1] "int indirectAtSSS" [0] "reference normal bumpNormal" ["snow_PxrFlakes1:resultN"] "int continuationRays" [0] "float followTopology" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.157303] "float specularAnisotropy" [0] "color specularEta" [1.5 1.5 1.5] 
+"reference normal specularNn" ["snow_PxrFlakes1:resultN"] "vector specularTn" [0 0 0] "color clearcoatColor" [0 0 0] "float clearcoatRoughness" [0.05] "float clearcoatAnisotropy" [0] "float clearcoatEta" [1.8] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] 
+"normal clearcoatNn" [0 0 0] "vector clearcoatTn" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["snow_PxrLMSubsurface3_1"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker323
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Pattern "PxrFlakes" "snow_PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.58427] "float flakeFreq" [75.2809] "float density" [0.929577] "float size" [1.12676] "int octaves" [5] "float jitter" [0.921348] "int validateNormals" [0] "__instanceid" ["snow_PxrFlakes1_1"]
+Bxdf "PxrLMSubsurface" "snow_PxrLMSubsurface3" "color nearColor" [1 1 1] "float nearWeight" [1] "float nearLength" [0.8] "color midColor" [0.132868 0.787412 0.603827] "float midWeight" [1] "flo

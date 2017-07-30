@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RenderManLookFile Version="1" Format="RenderMan Look Data" AssemblyName="perspShape_RerenderRIS">
+    <InjectablePayloads>
+        <Payload Id="snow:PxrLMSubsurfaceSnowSG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+ShadingRate 1
+Attribute "displacementbound" "string coordinatesystem" ["shader"] "float sphere" [0.1]
+Attribute "dice" "int rasterorient" [0]
+Displacement "renderman/set/shaders/snow_RMSDisplacement2_rfm" "float disableDisplacement" [0] "float mask" [1] "float dispMode" [1] "float vectorEncoding" [1] "vector displacementVector" [0 0 0] "float displacementAmount" [0.04] "float displacementCenter" [0.5] "float tangentSource" [0] "float tangentInput" [-1] "float compositionRule" [1] 
+"float snow_solidFractal1_amplitude" [1] "float snow_solidFractal1_ratio" [0.793893] "float snow_solidFractal1_threshold" [0.00763359] "color snow_solidFractal1_ripples" [1 2 2] "float[2] snow_solidFractal1_depth" [0 8] "float snow_solidFractal1_frequencyRatio" [2.71756] "float snow_solidFractal1_bias" [0] "float snow_solidFractal1_inflection" [0] "float snow_solidFractal1_animated" [0] 
+"float snow_solidFractal1_timeRatio" [2] "float snow_solidFractal1_ti" [0] "float[16] snow_solidFractal1_placementMatrix" [1.25 -0 0 -0
+-0 1.25 -0 0 0 -0 1.25 -0 0.0545634 -1.46389 0.189164 1] "float snow_solidFractal1_filter" [1] "float snow_solidFractal1_filterOffset" [0] "float snow_solidFractal1_blend" [0] "float snow_solidFractal1_local" [0] "float snow_solidFractal1_wrap" [1] "float snow_solidFractal1_invert" [0] 
+"float snow_solidFractal1_alphaIsLuminance" [1] "color snow_solidFractal1_colorGain" [1 1 1] "color snow_solidFractal1_colorOffset" [0 0 0] "float snow_solidFractal1_alphaGain" [1] "float snow_solidFractal1_alphaOffset" [0] "color snow_solidFractal1_defaultColor" [0.214041 0.214041 0.214041] 
+"__instanceid" ["renderman/set/shaders/snow_RMSDisplacement2_rfm_0"]
+Pattern "PxrFlakes" "snow_PxrFlakes1" "normal inputNormal" [0 0 0] "float flakeAmount" [0.58427] "float flakeFreq" [75.2809] "float density" [0.929577] "float size" [1.12676] "int octaves" [5] "float jitter" [0.921348] "int validateNormals" [0] "__instanceid" ["snow_PxrFlakes1_1"]
+Bxdf "PxrLMSubsurface" "snow_PxrLMSubsurface3" "color nearColor" [1 1 1] "float nearWeight" [1] "float nearLength" [0.8] "color midColor" [0.132868 0.787412 0.603827] "float midWeight" [1] "float midLength" [1.23595] "color farColor" [0.0469642 0.367246 0.807346] 
+"float farWeight" [1] "float farLength" [2.69663] "float unitLength" [0.1] "int indirectAtSSS" [0] "reference normal bumpNormal" ["snow_PxrFlakes1:resultN"] "int continuationRays" [0] "float followTopology" [0] "color specularColor" [1 1 1] "float specularRoughness" [0.157303] "float specularAnisotropy" [0] "color specularEta" [1.5 1.5 1.5] 
+"reference normal specularNn" ["snow_PxrFlakes1:resultN"] "vector specularTn" [0 0 0] "color clearcoatColor" [0 0 0] "float clearcoatRoughness" [0.05] "float clearcoatAnisotropy" [0] "float clearcoatEta" [1.8] "float clearcoatThickness" [0] "color clearcoatTransmission" [1 1 1] 
+"normal clearcoatNn" [0 0 0] "vector clearcoatTn" [0 0 0] "float presence" [1] "int inputAOV" [0] "__instanceid" ["snow_PxrLMSubsurface3_1"]
+VPInterior "null" 
+Interior "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="initialShadingGroup" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+VPInterior "null" 
+Interior "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+    </InjectablePayloads>
+    <TightBindings>
+        <Binding Key="nurbsToPoly11/nurbsToPolyShape11" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane44/nurbsPlaneShape44" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane52/nurbsPlaneShape52" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane47/nurbsPlaneShape47" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane20/nurbsPlaneShape20" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane60/nurbsPlaneShape60" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane55/nurbsPlaneShape55" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane23/nurbsPlaneShape23" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane18/nurbsPlaneShape18" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsToPoly27/nurbsToPolyShape27" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane58/nurbsPlaneShape58" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsToPoly23/nurbsToPolyShape23" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsToPoly18/nurbsToPolyShape18" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane26/nurbsPlaneShape26" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsToPoly14/nurbsToPolyShape14" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane29/nurbsPlaneShape29" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="polySurface1/polySurfaceShape2" PayloadId="initialShadingGroup"/>
+        <Binding Key="nurbsToPoly10/nurbsToPolyShape10" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane37/nurbsPlaneShape37" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane50/nurbsPlaneShape50" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane45/nurbsPlaneShape45" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="pCube1/pCubeShape1" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane53/nurbsPlaneShape53" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane48/nurbsPlaneShape48" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsToPoly9/nurbsToPolyShape9" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane21/nurbsPlaneShape21" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane56/nurbsPlaneShape56" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsToPoly13/nurbsToPolyShape13" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane24/nurbsPlaneShape24" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="group/pasted__nurbsPlane6/pasted__nurbsPlaneShape6" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane59/nurbsPlaneShape59" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane27/nurbsPlaneShape27" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="group/pasted__nurbsPlane7/pasted__nurbsPlaneShape7" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane38/nurbsPlaneShape38" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsToPoly25/nurbsToPolyShape25" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane51/nurbsPlaneShape51" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane46/nurbsPlaneShape46" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsToPoly12/nurbsToPolyShape12" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane54/nurbsPlaneShape54" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane49/nurbsPlaneShape49" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane22/nurbsPlaneShape22" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane62/nurbsPlaneShape62" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane57/nurbsPlaneShape57" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane25/nurbsPlaneShape25" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsToPoly28/nurbsToPolyShape28" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsPlane28/nurbsPlaneShape28" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+        <Binding Key="nurbsToPoly24/nurbsToPolyShape24" PayloadId="snow:PxrLMSubsurfaceSnowSG"/>
+    </TightBindings>
+</RenderManLookFile>
